@@ -7,22 +7,21 @@
 		mapMutations
 	} from 'vuex';
 	export default {
+		data(){
+			return {
+				userInfo:{}
+			}
+		},
 		methods: {
 			...mapMutations(['login'])
-			// ...mapState(['userInfo'])
 		},
 		computed:{
-			...mapState(['userInfo']),
+			 ...mapState(['userInfo','token']),
+			
 		},
 		onLaunch: function() {
-			// ...mapState(['userInfo');
-			// ...mapState(['userInfo']);
-			//...mapState(['userInfo']),
-			// let userInfo = uni.getStorageSync('userInfo') || '';
-			let userInfo = uni.getStorageSync('userInfo') || '';
-			
-			console.log(userInfo);
-			if(userInfo.id){
+
+			if(this.token){
 				//更新登陆状态
 				uni.getStorage({
 					key: 'userInfo',
@@ -35,7 +34,7 @@
 					url: '/pages/login/login'
 				});
 			}
-			console.log(userInfo);
+
 			
 		},
 		onShow: function() {

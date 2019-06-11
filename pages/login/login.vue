@@ -38,11 +38,12 @@
 	import {mapState,mapMutations } from 'vuex';
 	import pullUp from '@/components/pull-up.vue';
 	import rules from '@/common/rules.js';
-	import {graceRules} from '@/common/graceRules.js';
+	import {graceRules,graceShowLoading,graceHideLoading} from '@/common/graceRules.js';
 	
 	export default{
 		data(){
 			return {
+				// userInfo:{},
 				SellerNo:'',
 				SellerName:'',
 				UserPhone: '',
@@ -56,16 +57,18 @@
 		},
 		onLoad(){
 			this.getSellerList();
+			this.getUserInfo();
 		},
 		computed:{
 			...mapState(['userInfo']),
 		},
 		methods: {
-			...mapMutations(['login']),
+			...mapMutations(['login','setToken']),
 			// 获取品牌渠道信息
 			async getSellerList() {
 				let _this = this;
-				let SellerList = await this.$http.GET('API/GetSellerList');
+				let SellerList = (await this.$http.GET('API/GetSellerList')).data;
+				
 				if(SellerList.length > 0){
 					_this.SellerName = SellerList[0].SellerName;
 					_this.SellerNo = SellerList[0].SellerNo;
@@ -73,15 +76,15 @@
 				}
 				_this.SellerList.push(...SellerList);
 			},
-			toggleTab(){
+			toggleTab(){//显示底部弹窗
 				this.$refs.picker.show();
 			},
-			onConfirm(val){
+			onConfirm(val){//获取选择的数据
 				let _this = this;
 				_this.SellerName = val.SellerName;
 				_this.SellerNo = val.SellerNo;
 			},
-			inputChange(e){
+			inputChange(e){//小程序上使用
 				const key = e.currentTarget.dataset.key;
 				this[key] = e.detail.value;
 			},
@@ -91,31 +94,39 @@
 			toRevPass(){
 				this.$api.msg('去修改密码');
 			},
-			async toLogin(){
+			async toLogin(){//点击注册
 				// this.logining = true;
-				const {UserPhone, password} = this;
-				/* 数据验证模块
-				if(!this.$api.match({
-					mobile,
-					password
-				})){
-					this.logining = false;
-					return;
-				}
-				*/
-				const sendData = {
-					UserPhone,
-					password
+				const {SellerNo,SellerName,UserPhone, password} = this;
+				/* 数据验证模块*/
+			 // 	if(!graceRules(sendData,rules.loginRule)){
+				// 	return false;
+				// };
+				// graceShowLoading('加载中···');
+				let param = {
+				  PassWord:'',
+				  UserPhone:UserPhone,
+				  SellerNo:SellerNo,
+				  SellerName:SellerName,
+				  OpenId:''
 				};
-				graceRules(sendData,rules.loginRule);
-				this.login(sendData);
-				// uni.switchTab ({
-				// 	url: '/pages/index/index'
-				// })
+				param.PassWord = (await this.$http.POST('API/PostEn',{Content:this.password})).details;//加密
+				console.log(param);
+	
+				let res = await this.$http.POST('API/SetLogin',param);
+				let userInfo = {...res.data.userInfo};
+				userInfo.isRecRebate = res.data.isRecRebate;
+				userInfo.IsOnlyGrand = res.data.IsOnlyGrand;
+				userInfo.IsOrder = res.data.IsOrder;
+				userInfo.IsPay = res.data.IsPay;
+				this.login(userInfo);//缓存个人信息
+				this.setToken(res.details)//缓存token
+				uni.switchTab ({
+					url: '/pages/index/index'
+				})
 			},
-			getLogin(){
+			getUserInfo(){
 				console.log(this.userInfo)
-			}
+			},
 		},
 		
 

@@ -8,17 +8,25 @@
 </template>
 
 <script>
+	import {mapState } from 'vuex';
 	export default {
 		data() {
 			return {
 				title: 'Hello word'
 			}
 		},
+		computed:{
+			...mapState(['userInfo']),
+		},
 		onLoad() {
-
+			this.getBannerList();
 		},
 		methods: {
-
+			async getBannerList(){
+				let _this = this;
+				let res = await _this.$http.ReqGet('API/GetBanner/6');
+				console.log(res);
+			}
 		}
 	}
 </script>

@@ -97,15 +97,15 @@
 			bindChange(val){
 				let _this=this;
 				let arr = val.detail.value;
-				console.log(arr);
-				console.log(_this.data);
+				// console.log(arr);
+				// console.log(_this.data);
 				_this.$nextTick(()=>{
 					_this.pickVal= arr;
 				})
 			},
 			initData(){
 				let _this=this;
-				console.log(_this)
+				// console.log(_this)
 				_this.data = _this.selectList;
 				_this.$nextTick(()=>{
 					_this.pickVal= [];
