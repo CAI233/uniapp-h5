@@ -1,0 +1,1 @@
+<view class="container"><view class="left-bottom-sign"></view><view class="right-top-sign"></view><view class="wrapper"><button data-event-opts="{{[['tap',[['outBtn',['$event']]]]]}}" class="confirm-btn" bindtap="__e">清除</button></view></view>

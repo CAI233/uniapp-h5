@@ -3,7 +3,7 @@ function HTTP(obj, config) {
 
 	let defaultConfig = {
 		isRes: false,
-		loading: true
+		loading: false
 	}
 
 	config = { ...defaultConfig,
@@ -22,10 +22,7 @@ function HTTP(obj, config) {
 			url: "",
 			data: {},
 			dataType: "json",
-			header: {
-				// "content-type": "application/json",
-				// "X-requested-With": "XMLHttpRequest"
-			},
+			header: {},
 			success: (res) => {
 				// console.log("HTTP请求结果：",res)
 				uni.hideLoading();
@@ -78,8 +75,6 @@ function HTTP(obj, config) {
 		options = { ...options,
 			...obj
 		};
-		// const OPENID = uni.getStorageSync("openId");
-		// if (OPENID) options["header"]["openId"] = OPENID;
 		if (options.url && options.method) {
 			wx.request(options);
 		} else {
@@ -92,7 +87,7 @@ function HTTP(obj, config) {
 	})
 }
 const apiUrl = 'https://sclmdrpapi.saselomo.com/';
-console.log(store.state);
+// console.log(store.state);
 
 let reqParam = {
 	'access_token':store.state.token,
@@ -111,5 +106,8 @@ export default {
 	},
 	ReqPOST(url,data = {},config){
 		return HTTP({url:apiUrl+url,data,method: "POST",header:reqParam}, config);
+	},
+	outGet(url,data = {},config){
+		return HTTP({url:url,data,method: "GET",}, config);
 	}
 }

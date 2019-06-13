@@ -12,11 +12,11 @@
 					<input type="text" :value="SellerName" placeholder="请选择对应渠道"  data-key="SellerNo" disabled @tap="toggleTab()"/>
 				</view>
 				<view class="input-item">
-					<input type="number" :value="UserPhone" placeholder="请输入手机号/微信号" maxlength="11" data-key="UserPhone" @input="inputChange" />
+					<input type="text" :value="UserPhone" placeholder="请输入手机号/微信号" maxlength="20" data-key="UserPhone" @input="inputChange" />
 				</view>
 				<view class="input-item">
-					<input type="mobile" value="" placeholder="请输入密码" placeholder-class="input-empty"  maxlength="20"
-						password data-key="password" @input="inputChange" @confirm="toLogin"
+					<input type="text" value="" placeholder="请输入密码" placeholder-class="input-empty"  maxlength="20"
+						password data-key="PassWord" @input="inputChange" @confirm="toLogin"
 					/>
 				</view>
 			</view>
@@ -30,7 +30,7 @@
 			还没有账号?
 			<text @click="toRegist">马上注册</text>
 		</view>
-		<pull-up step="1" :defaultVal="SellerNo" :current="true" @confirm="onConfirm" ref="picker" themeColor="#f00" :selectList="SellerList"></pull-up>
+		<pull-up step="1" v-if="SellerList.length > 0" :defaultVal="SellerNo" :current="true" @confirm="onConfirm" ref="picker" themeColor="#f00" :selectList="SellerList"></pull-up>
 	</view>
 </template>
 
@@ -47,7 +47,7 @@
 				SellerNo:'',
 				SellerName:'',
 				UserPhone: '',
-				password: '',
+				PassWord: '',
 				logining: false,
 				SellerList:[]
 			}
@@ -56,8 +56,8 @@
 			pullUp
 		},
 		onLoad(){
-			this.getSellerList();
-			this.getUserInfo();
+			this.loadExecution();	
+			
 		},
 		computed:{
 			...mapState(['userInfo']),
@@ -74,6 +74,7 @@
 					_this.SellerNo = SellerList[0].SellerNo;
 					
 				}
+				// _this.$emit("SellerList",SellerList);
 				_this.SellerList.push(...SellerList);
 			},
 			toggleTab(){//显示底部弹窗
@@ -96,23 +97,26 @@
 			},
 			async toLogin(){//点击注册
 				// this.logining = true;
-				const {SellerNo,SellerName,UserPhone, password} = this;
+				const {SellerNo,SellerName,UserPhone, PassWord} = this;
 				/* 数据验证模块*/
 			 // 	if(!graceRules(sendData,rules.loginRule)){
 				// 	return false;
 				// };
 				// graceShowLoading('加载中···');
 				let param = {
-				  PassWord:'',
+				  PassWord:PassWord,
 				  UserPhone:UserPhone,
 				  SellerNo:SellerNo,
 				  SellerName:SellerName,
 				  OpenId:''
 				};
-				param.PassWord = (await this.$http.POST('API/PostEn',{Content:this.password})).details;//加密
-				console.log(param);
-	
+				if(!graceRules(param,rules.loginRule)){
+					return false;
+				}
+				graceShowLoading('登陆中···');
+				param.PassWord = (await this.$http.POST('API/PostEn',{Content:this.PassWord})).details;//加密
 				let res = await this.$http.POST('API/SetLogin',param);
+				graceHideLoading();
 				let userInfo = {...res.data.userInfo};
 				userInfo.isRecRebate = res.data.isRecRebate;
 				userInfo.IsOnlyGrand = res.data.IsOnlyGrand;
@@ -124,9 +128,36 @@
 					url: '/pages/index/index'
 				})
 			},
-			getUserInfo(){
-				console.log(this.userInfo)
-			},
+			loadExecution(){
+				/**
+				 * 获取本地存储中launchFlag的值
+				 * 若存在，说明不是首次启动，直接进入首页；
+				 * 若不存在，说明是首次启动，进入引导页；
+				 */
+				try {
+				    const value = uni.getStorageSync('launchFlag');
+					// console.log(value);
+				    if (!value){
+				        uni.reLaunch({
+				        	url: '/pages/index/guide'
+				        });
+				    }else{
+						if(this.token){
+							console.log(this.userInfo);
+							uni.switchTab ({
+								url: '/pages/index/index'
+							})
+						}else{
+							this.getSellerList();
+						}
+					}
+				} catch(e) { 
+					// error 
+					uni.reLaunch({
+						url: '/pages/index/guide'
+					});
+				}
+			}
 		},
 		
 

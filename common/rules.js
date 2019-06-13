@@ -6,7 +6,7 @@ export default {
 		checkRule: "",
 		errorMsg: "请输入手机号/微信号"
 	},{
-		name: "password",
+		name: "PassWord",
 		checkType: "notnull",
 		checkRule: "6,20",
 		errorMsg: "密码不能少于6位"

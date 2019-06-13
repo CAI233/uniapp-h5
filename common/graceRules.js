@@ -109,6 +109,8 @@ function graceHideLoading(){
 	uni.hideLoading();
 }
 function graceModel(model,obj){
+	console.log(model);
+	console.log(obj);
 	if(obj.checkRule){//有限制长度
 		let typeArr = obj.checkRule.split(",");
 		if(typeArr.length == 1){//单独一个限制  必须满足最小值
@@ -116,7 +118,9 @@ function graceModel(model,obj){
 				graceToast(obj.errorMsg,1500,true);
 				return false;
 			}
+			return true;
 		}else{//两个限制，区间 
+			console.log(model[obj.name]);
 			if(model[obj.name].length < typeArr[0]){
 				graceToast(obj.errorMsg,1500,true);
 				return false;
@@ -125,24 +129,37 @@ function graceModel(model,obj){
 				graceToast(obj.errorMsg,1500,true);
 				return false;
 			}
-
+			return true;
 		}
 	}
+	return true;
 }
 function graceRules (obj,rule){
 	for(var i = 0; i < rule.length; i++){
-		switch(rule[i].checkType){//按类型校验
-			case 'notnull':
-					if(obj[rule[i].name].length <1){
+		if(!obj[rule[i].name] || obj[rule[i].name] == ''){
+			graceToast(rule[i].errorMsg,1500,true);
+			return false;
+		}else{
+			if(obj[rule[i].name] && rule[i].checkRule){
+				let typeArr = rule[i].checkRule.split(",");
+				if(typeArr.length == 1){//单独一个限制  必须满足最小值
+					if(obj[rule[i].name].length < typeArr[0]){
 						graceToast(rule[i].errorMsg,1500,true);
 						return false;
 					}
-					console.log(graceModel(obj,rule[i]));
-					graceModel(obj,rule[i]);
-				break;
-			case 'string':
-				console.log('string');
-				break;
+					return true;
+				}else{//两个限制，区间 
+					if(obj[rule[i].name].length < typeArr[0]){
+						graceToast(rule[i].errorMsg,1500,true);
+						return false;
+					}
+					if(obj[rule[i].name].length > typeArr[1]){
+						graceToast(rule[i].errorMsg,1500,true);
+						return false;
+					}
+					return true;
+				}
+			}
 		}
 	}
 	return true;

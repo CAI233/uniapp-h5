@@ -20,7 +20,11 @@
 			
 		},
 		onLaunch: function() {
-
+			// #ifdef APP-PLUS
+				// 锁定屏幕方向
+				plus.screen.lockOrientation('portrait-primary'); //锁定
+				
+			// #endif
 			if(this.token){
 				//更新登陆状态
 				uni.getStorage({
@@ -38,10 +42,10 @@
 			
 		},
 		onShow: function() {
-			console.log('App Show')
+			// console.log('App Show')
 		},
 		onHide: function() {
-			console.log('App Hide')
+			// console.log('App Hide')
 		},
 	}
 </script>
