@@ -7,23 +7,32 @@
 		<view class="wrapper">
 			<button class="confirm-btn" @tap="outBtn">清除</button>
 		</view>
+		<view class="wrapper">
+			<button class="confirm-btn" @tap="toggleTab()">选择弹窗</button>
+		</view>
+		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
+		<pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check>
 	</view>
 </template>
 
 <script>
+	// import pullRadio from '@/components/pull-radio.vue';
+	import pullCheck from '@/components/pull-check.vue';
 	export default{
 		data(){
 			return {
-				
+				isShow:false
 			}
 		},
 		components:{
+			// pullRadio
+			pullCheck
 		},
 		onLoad() {
 	
 		},
 		methods: {
-			outBtn(){
+			outBtn(){//清除
 				uni.showModal({
 					title: '清除launchFlag值',
 					content: '确定要清除launchFlag值，进行重启测试？',
@@ -63,6 +72,16 @@
 						}
 					}
 				});
+			},
+			toggleTab(){//显示底部弹窗
+				// this.$refs.pullRadio.show();
+				this.$refs.pullCheck.show();
+			},
+			submit(val){
+				console.log(val);
+			},
+			cancel(val){
+				console.log(val);
 			}
 		},
 		
