@@ -11,13 +11,15 @@
 			<button class="confirm-btn" @tap="toggleTab()">选择弹窗</button>
 		</view>
 		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
-		<pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check>
+		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
+		<pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date>
 	</view>
 </template>
 
 <script>
 	// import pullRadio from '@/components/pull-radio.vue';
-	import pullCheck from '@/components/pull-check.vue';
+	// import pullCheck from '@/components/pull-check.vue';
+	import pullDate from '@/components/pull-date.vue';
 	export default{
 		data(){
 			return {
@@ -26,7 +28,8 @@
 		},
 		components:{
 			// pullRadio
-			pullCheck
+			// pullCheck
+			pullDate
 		},
 		onLoad() {
 	
@@ -75,7 +78,8 @@
 			},
 			toggleTab(){//显示底部弹窗
 				// this.$refs.pullRadio.show();
-				this.$refs.pullCheck.show();
+				// this.$refs.pullCheck.show();
+				this.$refs.pullDate.show();
 			},
 			submit(val){
 				console.log(val);
