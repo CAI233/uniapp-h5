@@ -2,5 +2,7 @@
   "navigationBarTitleText": "我的",
   "bounce": "none",
   "titleNView": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "pull-list": "/components/pull-list"
+  }
 }

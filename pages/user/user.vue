@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
-		<view class="left-bottom-sign"></view>
+		<!-- <view class="left-bottom-sign"></view> -->
 		<!-- <view class="back-btn yticon icon-zuojiantou-up" @click="navBack"></view> -->
-		<view class="right-top-sign"></view>
+		<!-- <view class="right-top-sign"></view> -->
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
 			<button class="confirm-btn" @tap="outBtn">清除</button>
@@ -12,24 +12,40 @@
 		</view>
 		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
 		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
-		<pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date>
+		<!-- <pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date> -->
+		<pull-list v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullList" themeColor="#f00" :selectList="SellerList"></pull-list>
 	</view>
 </template>
 
 <script>
 	// import pullRadio from '@/components/pull-radio.vue';
 	// import pullCheck from '@/components/pull-check.vue';
-	import pullDate from '@/components/pull-date.vue';
+	// import pullDate from '@/components/pull-date.vue';
+	import pullList from '@/components/pull-list.vue';
 	export default{
 		data(){
 			return {
-				isShow:false
+				SellerNo:'800003',
+				isShow:false,
+				SellerList: [
+					{"SellerNo": "800001","SellerName": "1234656护肤",}, 
+					{"SellerNo": "800002","SellerName": "1234656彩妆",}, 
+					{"SellerNo": "800003","SellerName": "1234656养面膜",}, 
+					{"SellerNo": "800016","SellerName": "1234656健康",}, 
+					{"SellerNo": "800018","SellerName": "1234656全品牌",},
+					{"SellerNo": "8000012","SellerName": "1234656123护肤",}, 
+					{"SellerNo": "8000022","SellerName": "1234656123彩妆",}, 
+					{"SellerNo": "8000032","SellerName": "1234656123养面膜",}, 
+					{"SellerNo": "8000162","SellerName": "1234656123健康",}, 
+					{"SellerNo": "8000182","SellerName": "1234656123全品牌",},
+					]
 			}
 		},
 		components:{
 			// pullRadio
 			// pullCheck
-			pullDate
+			// pullDate,
+			pullList
 		},
 		onLoad() {
 	
@@ -79,13 +95,18 @@
 			toggleTab(){//显示底部弹窗
 				// this.$refs.pullRadio.show();
 				// this.$refs.pullCheck.show();
-				this.$refs.pullDate.show();
+				// this.$refs.pullDate.show();
+				this.$refs.pullList.show();
+				window.removeEventListener('scroll',this.onScroll);//移除全局滚动
+			},
+			onScroll(e){
+				console.log(e);
 			},
 			submit(val){
-				console.log(val);
+				// console.log(val);
 			},
 			cancel(val){
-				console.log(val);
+				// console.log(val);
 			}
 		},
 		
@@ -104,6 +125,7 @@
 		height: 100vh;
 		overflow: hidden;
 		background: #fff;
+		overflow: hidden;
 	}
 	.wrapper{
 		position:relative;

@@ -1096,6 +1096,12 @@ function gz$gwx_7(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_7)return __WXML_GLOBAL__.ops_cached.$gwx_7
 __WXML_GLOBAL__.ops_cached.$gwx_7=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+}
+function gz$gwx_8(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
+__WXML_GLOBAL__.ops_cached.$gwx_8=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'swiper-box'])
 Z([[7],[3,'tabCurrentIndex']])
@@ -1127,11 +1133,11 @@ Z([[2,'!='],[[6],[[7],[3,'item']],[3,'state']],[1,9]])
 Z(z[13])
 Z([[6],[[7],[3,'tabItem']],[3,'loadingType']])
 Z([[2,'+'],[1,'2-'],[[7],[3,'tabIndex']]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
 }
-function gz$gwx_8(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
-__WXML_GLOBAL__.ops_cached.$gwx_8=[];
+function gz$gwx_9(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
+__WXML_GLOBAL__.ops_cached.$gwx_9=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[2,'>'],[[6],[[7],[3,'SellerList']],[3,'length']],[1,0]])
 Z([3,'__l'])
@@ -1145,19 +1151,30 @@ Z([[7],[3,'SellerList']])
 Z([3,'1'])
 Z([3,'#f00'])
 Z(z[9])
-})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
-}
-function gz$gwx_9(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
-__WXML_GLOBAL__.ops_cached.$gwx_9=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
+}
+function gz$gwx_10(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
+__WXML_GLOBAL__.ops_cached.$gwx_10=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[2,'>'],[[6],[[7],[3,'SellerList']],[3,'length']],[1,0]])
+Z([3,'__l'])
+Z([3,'__e'])
+Z(z[2])
+Z([3,'vue-ref'])
+Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'^ok']],[[4],[[5],[[4],[[5],[1,'submit']]]]]]]],[[4],[[5],[[5],[1,'^cancel']],[[4],[[5],[[4],[[5],[1,'cancel']]]]]]]]])
+Z([3,'pullList'])
+Z([[7],[3,'SellerNo']])
+Z([[7],[3,'SellerList']])
+Z([3,'#f00'])
+Z([3,'1'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/empty.wxml','./components/pull-up.wxml','./components/uni-load-more/uni-load-more.wxml','./pages/cart/cart.wxml','./pages/category/category.wxml','./pages/index/guide.wxml','./pages/index/index.wxml','./pages/login/login.wxml','./pages/user/user.wxml'];d_[x[0]]={}
+var x=['./components/empty.wxml','./components/pull-list.wxml','./components/pull-up.wxml','./components/uni-load-more/uni-load-more.wxml','./pages/cart/cart.wxml','./pages/category/category.wxml','./pages/index/guide.wxml','./pages/index/index.wxml','./pages/login/login.wxml','./pages/user/user.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -1196,87 +1213,101 @@ e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 d_[x[6]]={}
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var oH=_mz(z,'swiper',['bindchange',0,'class',1,'current',1,'data-event-opts',2,'duration',3],[],e,s,gg)
-var cI=_v()
-_(oH,cI)
-var oJ=function(aL,lK,tM,gg){
-var bO=_mz(z,'scroll-view',['scrollY',-1,'bindscrolltolower',9,'class',1,'data-event-opts',2],[],aL,lK,gg)
-var oP=_v()
-_(bO,oP)
-if(_oz(z,12,aL,lK,gg)){oP.wxVkey=1
-var xQ=_mz(z,'empty',['bind:__l',13,'vueId',1],[],aL,lK,gg)
-_(oP,xQ)
-}
-var oR=_v()
-_(bO,oR)
-var fS=function(hU,cT,oV,gg){
-var oX=_n('view')
-_rz(z,oX,'class',19,hU,cT,gg)
-var lY=_v()
-_(oX,lY)
-if(_oz(z,20,hU,cT,gg)){lY.wxVkey=1
-}
-var aZ=_v()
-_(oX,aZ)
-if(_oz(z,21,hU,cT,gg)){aZ.wxVkey=1
-}
-var e2=_v()
-_(oX,e2)
-var b3=function(x5,o4,o6,gg){
-var c8=_v()
-_(o6,c8)
-if(_oz(z,26,x5,o4,gg)){c8.wxVkey=1
-}
-c8.wxXCkey=1
-return o6
-}
-e2.wxXCkey=2
-_2z(z,24,b3,hU,cT,gg,e2,'goodsItem','goodsIndex','goodsIndex')
-var t1=_v()
-_(oX,t1)
-if(_oz(z,27,hU,cT,gg)){t1.wxVkey=1
-}
-lY.wxXCkey=1
-aZ.wxXCkey=1
-t1.wxXCkey=1
-_(oV,oX)
-return oV
-}
-oR.wxXCkey=2
-_2z(z,17,fS,aL,lK,gg,oR,'item','index','index')
-var h9=_mz(z,'uni-load-more',['bind:__l',28,'status',1,'vueId',2],[],aL,lK,gg)
-_(bO,h9)
-oP.wxXCkey=1
-oP.wxXCkey=3
-_(tM,bO)
-return tM
-}
-cI.wxXCkey=4
-_2z(z,7,oJ,e,s,gg,cI,'tabItem','tabIndex','tabIndex')
-_(r,oH)
 return r
 }
 e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var cAB=_v()
-_(r,cAB)
-if(_oz(z,0,e,s,gg)){cAB.wxVkey=1
-var oBB=_mz(z,'pull-up',['bind:__l',1,'bind:confirm',1,'class',2,'current',3,'data-event-opts',4,'data-ref',5,'defaultVal',6,'selectList',7,'step',8,'themeColor',9,'vueId',10],[],e,s,gg)
-_(cAB,oBB)
+var cI=_mz(z,'swiper',['bindchange',0,'class',1,'current',1,'data-event-opts',2,'duration',3],[],e,s,gg)
+var oJ=_v()
+_(cI,oJ)
+var lK=function(tM,aL,eN,gg){
+var oP=_mz(z,'scroll-view',['scrollY',-1,'bindscrolltolower',9,'class',1,'data-event-opts',2],[],tM,aL,gg)
+var xQ=_v()
+_(oP,xQ)
+if(_oz(z,12,tM,aL,gg)){xQ.wxVkey=1
+var oR=_mz(z,'empty',['bind:__l',13,'vueId',1],[],tM,aL,gg)
+_(xQ,oR)
 }
-cAB.wxXCkey=1
-cAB.wxXCkey=3
+var fS=_v()
+_(oP,fS)
+var cT=function(oV,hU,cW,gg){
+var lY=_n('view')
+_rz(z,lY,'class',19,oV,hU,gg)
+var aZ=_v()
+_(lY,aZ)
+if(_oz(z,20,oV,hU,gg)){aZ.wxVkey=1
+}
+var t1=_v()
+_(lY,t1)
+if(_oz(z,21,oV,hU,gg)){t1.wxVkey=1
+}
+var b3=_v()
+_(lY,b3)
+var o4=function(o6,x5,f7,gg){
+var h9=_v()
+_(f7,h9)
+if(_oz(z,26,o6,x5,gg)){h9.wxVkey=1
+}
+h9.wxXCkey=1
+return f7
+}
+b3.wxXCkey=2
+_2z(z,24,o4,oV,hU,gg,b3,'goodsItem','goodsIndex','goodsIndex')
+var e2=_v()
+_(lY,e2)
+if(_oz(z,27,oV,hU,gg)){e2.wxVkey=1
+}
+aZ.wxXCkey=1
+t1.wxXCkey=1
+e2.wxXCkey=1
+_(cW,lY)
+return cW
+}
+fS.wxXCkey=2
+_2z(z,17,cT,tM,aL,gg,fS,'item','index','index')
+var o0=_mz(z,'uni-load-more',['bind:__l',28,'status',1,'vueId',2],[],tM,aL,gg)
+_(oP,o0)
+xQ.wxXCkey=1
+xQ.wxXCkey=3
+_(eN,oP)
+return eN
+}
+oJ.wxXCkey=4
+_2z(z,7,lK,e,s,gg,oJ,'tabItem','tabIndex','tabIndex')
+_(r,cI)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
+var oBB=_v()
+_(r,oBB)
+if(_oz(z,0,e,s,gg)){oBB.wxVkey=1
+var lCB=_mz(z,'pull-up',['bind:__l',1,'bind:confirm',1,'class',2,'current',3,'data-event-opts',4,'data-ref',5,'defaultVal',6,'selectList',7,'step',8,'themeColor',9,'vueId',10],[],e,s,gg)
+_(oBB,lCB)
+}
+oBB.wxXCkey=1
+oBB.wxXCkey=3
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
+d_[x[9]]={}
+var m9=function(e,s,r,gg){
+var z=gz$gwx_10()
+var tEB=_v()
+_(r,tEB)
+if(_oz(z,0,e,s,gg)){tEB.wxVkey=1
+var eFB=_mz(z,'pull-list',['bind:__l',1,'bind:cancel',1,'bind:ok',2,'class',3,'data-event-opts',4,'data-ref',5,'defaultVal',6,'selectList',7,'themeColor',8,'vueId',9],[],e,s,gg)
+_(tEB,eFB)
+}
+tEB.wxXCkey=1
+tEB.wxXCkey=3
+return r
+}
+e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -1300,6 +1331,9 @@ __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 __wxAppCode__['components/empty.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/empty.wxml']=$gwx('./components/empty.wxml');
 
+__wxAppCode__['components/pull-list.json']={"usingComponents":{},"component":true};
+__wxAppCode__['components/pull-list.wxml']=$gwx('./components/pull-list.wxml');
+
 __wxAppCode__['components/pull-up.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/pull-up.wxml']=$gwx('./components/pull-up.wxml');
 
@@ -1321,7 +1355,7 @@ __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 __wxAppCode__['pages/login/login.json']={"navigationBarTitleText":"","navigationStyle":"custom","titleNView":false,"animationType":"slide-in-bottom","usingComponents":{"pull-up":"/components/pull-up"}};
 __wxAppCode__['pages/login/login.wxml']=$gwx('./pages/login/login.wxml');
 
-__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"我的","bounce":"none","titleNView":false,"usingComponents":{}};
+__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"我的","bounce":"none","titleNView":false,"usingComponents":{"pull-list":"/components/pull-list"}};
 __wxAppCode__['pages/user/user.wxml']=$gwx('./pages/user/user.wxml');
 
 
@@ -1334,8 +1368,8 @@ define('common/runtime.js',function(require, module, exports, window, document, 
 
 (function (e) {
   function t(t) {
-    for (var r, o, l = t[0], i = t[1], c = t[2], p = 0, s = []; p < l.length; p++) {
-      o = l[p], u[o] && s.push(u[o][0]), u[o] = 0;
+    for (var r, o, a = t[0], i = t[1], c = t[2], p = 0, s = []; p < a.length; p++) {
+      o = a[p], u[o] && s.push(u[o][0]), u[o] = 0;
     }
 
     for (r in i) {
@@ -1348,17 +1382,17 @@ define('common/runtime.js',function(require, module, exports, window, document, 
       s.shift()();
     }
 
-    return a.push.apply(a, c || []), n();
+    return l.push.apply(l, c || []), n();
   }
 
   function n() {
-    for (var e, t = 0; t < a.length; t++) {
-      for (var n = a[t], r = !0, o = 1; o < n.length; o++) {
-        var l = n[o];
-        0 !== u[l] && (r = !1);
+    for (var e, t = 0; t < l.length; t++) {
+      for (var n = l[t], r = !0, o = 1; o < n.length; o++) {
+        var a = n[o];
+        0 !== u[a] && (r = !1);
       }
 
-      r && (a.splice(t--, 1), e = i(i.s = n[0]));
+      r && (l.splice(t--, 1), e = i(i.s = n[0]));
     }
 
     return e;
@@ -1371,9 +1405,9 @@ define('common/runtime.js',function(require, module, exports, window, document, 
       u = {
     "common/runtime": 0
   },
-      a = [];
+      l = [];
 
-  function l(e) {
+  function a(e) {
     return i.p + "" + e + ".js";
   }
 
@@ -1392,31 +1426,33 @@ define('common/runtime.js',function(require, module, exports, window, document, 
         n = {
       "components/empty": 1,
       "components/uni-load-more/uni-load-more": 1,
-      "components/pull-up": 1
+      "components/pull-up": 1,
+      "components/pull-list": 1
     };
     o[e] ? t.push(o[e]) : 0 !== o[e] && n[e] && t.push(o[e] = new Promise(function (t, n) {
       for (var r = ({
         "components/empty": "components/empty",
         "components/uni-load-more/uni-load-more": "components/uni-load-more/uni-load-more",
-        "components/pull-up": "components/pull-up"
-      }[e] || e) + ".wxss", u = i.p + r, a = document.getElementsByTagName("link"), l = 0; l < a.length; l++) {
-        var c = a[l],
+        "components/pull-up": "components/pull-up",
+        "components/pull-list": "components/pull-list"
+      }[e] || e) + ".wxss", u = i.p + r, l = document.getElementsByTagName("link"), a = 0; a < l.length; a++) {
+        var c = l[a],
             p = c.getAttribute("data-href") || c.getAttribute("href");
         if ("stylesheet" === c.rel && (p === r || p === u)) return t();
       }
 
       var s = document.getElementsByTagName("style");
 
-      for (l = 0; l < s.length; l++) {
-        c = s[l], p = c.getAttribute("data-href");
+      for (a = 0; a < s.length; a++) {
+        c = s[a], p = c.getAttribute("data-href");
         if (p === r || p === u) return t();
       }
 
       var f = document.createElement("link");
       f.rel = "stylesheet", f.type = "text/css", f.onload = t, f.onerror = function (t) {
         var r = t && t.target && t.target.src || u,
-            a = new Error("Loading CSS chunk " + e + " failed.\n(" + r + ")");
-        a.request = r, delete o[e], f.parentNode.removeChild(f), n(a);
+            l = new Error("Loading CSS chunk " + e + " failed.\n(" + r + ")");
+        l.request = r, delete o[e], f.parentNode.removeChild(f), n(l);
       }, f.href = u;
       var m = document.getElementsByTagName("head")[0];
       m.appendChild(f);
@@ -1425,13 +1461,13 @@ define('common/runtime.js',function(require, module, exports, window, document, 
     }));
     var r = u[e];
     if (0 !== r) if (r) t.push(r[2]);else {
-      var a = new Promise(function (t, n) {
+      var l = new Promise(function (t, n) {
         r = u[e] = [t, n];
       });
-      t.push(r[2] = a);
+      t.push(r[2] = l);
       var c,
           p = document.createElement("script");
-      p.charset = "utf-8", p.timeout = 120, i.nc && p.setAttribute("nonce", i.nc), p.src = l(e), c = function c(t) {
+      p.charset = "utf-8", p.timeout = 120, i.nc && p.setAttribute("nonce", i.nc), p.src = a(e), c = function c(t) {
         p.onerror = p.onload = null, clearTimeout(s);
         var n = u[e];
 
@@ -1439,8 +1475,8 @@ define('common/runtime.js',function(require, module, exports, window, document, 
           if (n) {
             var r = t && ("load" === t.type ? "missing" : t.type),
                 o = t && t.target && t.target.src,
-                a = new Error("Loading chunk " + e + " failed.\n(" + r + ": " + o + ")");
-            a.type = r, a.request = o, n[1](a);
+                l = new Error("Loading chunk " + e + " failed.\n(" + r + ": " + o + ")");
+            l.type = r, l.request = o, n[1](l);
           }
 
           u[e] = void 0;
@@ -1669,6 +1705,160 @@ define('components/empty.js',function(require, module, exports, window, document
 }, [['components/empty-create-component']]]);
 });
 require('components/empty.js');
+__wxRoute = 'components/pull-list';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/pull-list.js';
+
+define('components/pull-list.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+"use strict";
+
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/pull-list"], {
+  "1f81": function f81(t, i, s) {
+    "use strict";
+
+    var e = s("d7e6"),
+        n = s.n(e);
+    n.a;
+  },
+  "45e8": function e8(t, i, s) {
+    "use strict";
+
+    var e = function e() {
+      var t = this,
+          i = t.$createElement;
+      t._self._c;
+    },
+        n = [];
+
+    s.d(i, "a", function () {
+      return e;
+    }), s.d(i, "b", function () {
+      return n;
+    });
+  },
+  a479: function a479(t, i, s) {
+    "use strict";
+
+    Object.defineProperty(i, "__esModule", {
+      value: !0
+    }), i.default = void 0;
+    var e = {
+      data: function data() {
+        return {
+          isShow: !1,
+          start: 0,
+          startLate: 0,
+          move: 0,
+          lisY: 0,
+          lisM: 0,
+          isMove: !1,
+          lisIndex: 0,
+          dSellerNo: "",
+          step: 1
+        };
+      },
+      computed: {},
+      props: {
+        themeColor: {
+          type: String,
+          default: function _default() {
+            return "#f00";
+          }
+        },
+        selectList: {
+          type: Array,
+          default: function _default() {
+            return [];
+          }
+        },
+        defaultVal: {
+          type: String,
+          default: function _default() {
+            return "";
+          }
+        }
+      },
+      methods: {
+        lisStart: function lisStart(t) {
+          this.start = t.changedTouches[0].pageY, this.startLate = this.lisY, this.isMove = !0;
+        },
+        lisMove: function lisMove(t) {
+          if (this.move = t.changedTouches[0].pageY, !this.isMove) return !1;
+          this.lisM = this.move - this.start, this.lisY = this.move - this.start + this.startLate;
+        },
+        lisEnd: function lisEnd(t) {
+          if (!this.isMove) return !1;
+          if (this.lisY == this.startLate) return !1;
+          var i = this.selectList.length;
+          this.lisY >= 160 ? this.lisY = 160 : this.lisY <= 80 * -(i - 3) ? this.lisY = 80 * -(i - 3) : this.lisY = 80 * Math.floor(this.lisM / 80) + this.startLate, this.lisIndex = Math.floor(this.lisY / 80) - 2, this.dSellerNo = this.selectList[Math.abs(this.lisIndex)].SellerNo, this.dSellerName = this.selectList[Math.abs(this.lisIndex)].SellerName;
+        },
+        maskTap: function maskTap() {
+          this.isShow = !1;
+        },
+        show: function show() {
+          this.isShow = !0;
+        },
+        hide: function hide() {
+          this.isShow = !1, this.$emit("cancel", "222");
+        },
+        submit: function submit() {
+          this.$emit("ok", "111"), this.isShow = !1;
+        }
+      },
+      mounted: function mounted() {
+        var t = this;
+        this.dSellerNo = this.defaultVal, this.selectList.map(function (i, s) {
+          i.SellerNo == t.defaultVal && (t.dSellerName = i.SellerNo, t.lisIndex = s);
+        }), this.lisY = 160 - 80 * this.lisIndex;
+      }
+    };
+    i.default = e;
+  },
+  a501: function a501(t, i, s) {
+    "use strict";
+
+    s.r(i);
+    var e = s("a479"),
+        n = s.n(e);
+
+    for (var l in e) {
+      "default" !== l && function (t) {
+        s.d(i, t, function () {
+          return e[t];
+        });
+      }(l);
+    }
+
+    i["default"] = n.a;
+  },
+  beea: function beea(t, i, s) {
+    "use strict";
+
+    s.r(i);
+    var e = s("45e8"),
+        n = s("a501");
+
+    for (var l in n) {
+      "default" !== l && function (t) {
+        s.d(i, t, function () {
+          return n[t];
+        });
+      }(l);
+    }
+
+    s("1f81");
+    var a = s("2877"),
+        r = Object(a["a"])(n["default"], e["a"], e["b"], !1, null, null, null);
+    i["default"] = r.exports;
+  },
+  d7e6: function d7e6(t, i, s) {}
+}]);
+;
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push(['components/pull-list-create-component', {
+  'components/pull-list-create-component': function componentsPullListCreateComponent(module, exports, __webpack_require__) {
+    __webpack_require__('6e42')['createComponent'](__webpack_require__("beea"));
+  }
+}, [['components/pull-list-create-component']]]);
+});
+require('components/pull-list.js');
 __wxRoute = 'components/pull-up';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/pull-up.js';
 
 define('components/pull-up.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
@@ -1991,7 +2181,7 @@ require('pages/cart/cart.js');
 __wxRoute = 'pages/user/user';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/user/user.js';
 
 define('pages/user/user.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/user/user"],{"02c5":function(t,e,n){"use strict";n.r(e);var o=n("3271"),u=n.n(o);for(var a in o)"default"!==a&&function(t){n.d(e,t,function(){return o[t]})}(a);e["default"]=u.a},1464:function(t,e,n){"use strict";var o=function(){var t=this,e=t.$createElement;t._self._c},u=[];n.d(e,"a",function(){return o}),n.d(e,"b",function(){return u})},3271:function(t,e,n){"use strict";(function(t){Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var n={data:function(){return{title:"map",latitude:39.909,longitude:116.39742,covers:[],polyls:[{points:[{latitude:39.909,longitude:116.39742},{latitude:39.9,longitude:116.39}],color:"#0000AA",width:2,dottedLine:!0,arrowLine:!0,arrowIconPath:"../../static/logo.png"}]}},components:{},onLoad:function(){t.getLocation({type:"wgs84",success:function(t){console.log("当前位置的经度："+t.longitude," at pages\\user\\user.vue:59"),console.log("当前位置的纬度："+t.latitude," at pages\\user\\user.vue:60")}})},methods:{outBtn:function(){t.showModal({title:"清除launchFlag值",content:"确定要清除launchFlag值，进行重启测试？",success:function(e){e.confirm?(t.clearStorage(),t.showToast({icon:"none",duration:3e3,title:"清除成功2秒后重启"}),setTimeout(function(){t.hideToast(),plus.runtime.restart()},2e3)):e.cancel}})}}};e.default=n}).call(this,n("6e42")["default"])},"6bc8":function(t,e,n){"use strict";var o=n("aee4"),u=n.n(o);u.a},"733c":function(t,e,n){"use strict";n.r(e);var o=n("1464"),u=n("02c5");for(var a in u)"default"!==a&&function(t){n.d(e,t,function(){return u[t]})}(a);n("6bc8");var c=n("2877"),i=Object(c["a"])(u["default"],o["a"],o["b"],!1,null,null,null);e["default"]=i.exports},aee4:function(t,e,n){}},[["7a8b","common/runtime","common/vendor"]]]);
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["pages/user/user"],{"02c5":function(e,l,n){"use strict";n.r(l);var t=n("3271"),o=n.n(t);for(var r in t)"default"!==r&&function(e){n.d(l,e,function(){return t[e]})}(r);l["default"]=o.a},3271:function(e,l,n){"use strict";(function(e){Object.defineProperty(l,"__esModule",{value:!0}),l.default=void 0;var t=function(){return n.e("components/pull-list").then(n.bind(null,"beea"))},o={data:function(){return{SellerNo:"800001",isShow:!1,SellerList:[{SellerNo:"800001",SellerName:"三草两木·护肤"},{SellerNo:"800002",SellerName:"三草两木·彩妆"},{SellerNo:"800003",SellerName:"三草两木·养面膜"},{SellerNo:"800016",SellerName:"三草两木·健康"},{SellerNo:"800018",SellerName:"三草两木·全品牌"},{SellerNo:"8000012",SellerName:"三草两木·123护肤"},{SellerNo:"8000022",SellerName:"三草两木·123彩妆"},{SellerNo:"8000032",SellerName:"三草两木·123养面膜"},{SellerNo:"8000162",SellerName:"三草两木·123健康"},{SellerNo:"8000182",SellerName:"三草两木·123全品牌"}]}},components:{pullList:t},onLoad:function(){},methods:{outBtn:function(){e.showModal({title:"清除launchFlag值",content:"确定要清除launchFlag值，进行重启测试？",success:function(l){l.confirm?(e.clearStorage(),e.showToast({icon:"none",duration:3e3,title:"清除成功2秒后重启"}),setTimeout(function(){e.hideToast(),plus.runtime.restart()},2e3)):l.cancel}})},toggleTab:function(){this.$refs.pullList.show(),window.removeEventListener("scroll",this.onScroll)},onScroll:function(e){console.log(e," at pages\\user\\user.vue:103")},submit:function(e){},cancel:function(e){}}};l.default=o}).call(this,n("6e42")["default"])},"6bc8":function(e,l,n){"use strict";var t=n("aee4"),o=n.n(t);o.a},"733c":function(e,l,n){"use strict";n.r(l);var t=n("9d25"),o=n("02c5");for(var r in o)"default"!==r&&function(e){n.d(l,e,function(){return o[e]})}(r);n("6bc8");var u=n("2877"),a=Object(u["a"])(o["default"],t["a"],t["b"],!1,null,null,null);l["default"]=a.exports},"9d25":function(e,l,n){"use strict";var t=function(){var e=this,l=e.$createElement;e._self._c},o=[];n.d(l,"a",function(){return t}),n.d(l,"b",function(){return o})},aee4:function(e,l,n){}},[["7a8b","common/runtime","common/vendor"]]]);
 });
 require('pages/user/user.js');
 ;(function(global) {

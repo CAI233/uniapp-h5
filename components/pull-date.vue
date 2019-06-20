@@ -22,23 +22,14 @@
 							<view class="picker-weekday">六</view>
 						</view>
 						<view class="picker-con">
-							<view class="picker-day" v-for="pick in picker" 
-								:class="{'outfocus': pick.outfocus, 
-										'today': pick.showday, 
-										'start': showStartEnvfun(pick.dateNum,pick.outfocus), 
-										'end': showEndEnvfun(pick.dateNum,pick.outfocus), 
-										'black': showBlack(pick.dateNum,pick.outfocus), 
-										'half': showHalffun(pick.dateNum,pick.outfocus)}" 
-								@click="checkDay(pick.dateNum,pick.outfocus)">
-								{{pick.dateNum}}
-							</view>
+							
+							<view class="picker-day" v-for="(pick,index) in picker" :key="index" 
+								:class="{'noMonthBg':pick.isBg,'checked':pick.isCheck,'inTime':pick.isBl,'onDaye':pick.showday}"
+							@click="checkDate(pick.year,pick.month,pick.dateNum,pick)"><view class="picker-text">{{pick.dateNum}}</view></view>
 						</view>
 					</view>
 					<!-- <view class="confim" @click="confimDate">确定</view> -->
 				</view>
-				<!-- <view class="bottom-btn scan" @tap="qcScan(true)">拍摄</view>
-				<view class="bottom-btn scan floor" @tap="qcScan(false)">从手机相册选择</view>
-				<view class="bottom-btn" @tap="hide">取消</view> -->
 			</view>
 		</view>
 	</view>
@@ -88,57 +79,74 @@
                 } else {
                     currentMonth = false
                 }
-                let monthStartDate = this.getFirstDay(year, month)
+                let monthStartDate = this.getFirstDay(year, month) //每个月的第一天
 
-                var lastMonthRestDay = new Date(year, month - 1, 0).getDate()
+                var lastMonthRestDay = new Date(year, month - 1, 0).getDate(); //获取上一月的最后一天日期
                 //求上个月剩余多少天显示在本月
                 for (var i = 0; i < monthStartDate; i++) {
                     picks.push({
                         dateNum: lastMonthRestDay,
-                        // outfocus: false
-                        outfocus: true
+                        outfocus: true,
+						isBg:true,//是否是当月
+						month:month-1 == 0 ? 12 : month-1,
+						year:month-1 == 0 ? year-1 : year,
+						isCheck:false,
                     });
                     lastMonthRestDay--
                 }
-
-                picks = picks.reverse()
-
+                picks = picks.reverse();
                 let indexMoth = this.getMonthLen(year, month)
                 //本月天数
                 for (var i = 1; i <= indexMoth; i++) {
                     let showday = ''
                     if (currentMonth) {
                         if (this.today === i) {
-							console.log(this.today);
                             showday = true;
                         } else {
                             showday = false;
                         }
-
                     }
-                    if (currentMonth && this.today > i) {
-                        picks.push({
-                            dateNum: i,
-                            outfocus: true,
-                            showday: showday
-                        });
-                    } else {
-                        picks.push({
-                            dateNum: i,
-                            outfocus: false,
-                            showday: showday
-                        });
-                    }
+					picks.push({
+					    dateNum: i,
+					    outfocus: true,
+					    showday: showday,
+						isBg:false,//是否是当月
+						month:month,
+						year:year,
+						isCheck:false,
+					});
                 }
                 let nextMonLen = 42 - picks.length
                 //下月天数显示在本月
                 for (var i = 1; i <= nextMonLen; i++) {
                     picks.push({
                         dateNum: i,
-                        // outfocus: false
-                        outfocus: true
+                        outfocus: true,
+						isBg:true,//是否是当月
+						month:month+1 == 13 ? 1 : month+1,
+						year:month+1 == 13 ? year+1 : year,
+						isCheck:false,
                     })
                 }
+				if(this.startEnv || this.endEnv){
+					let startDate = this.startEnv ? this.getDate(this.startEnv) : null;
+					let endDate = this.endEnv ? this.getDate(this.endEnv) : null;
+					picks.map((item) => {
+						let item_date = item.year+ '/' + (item.month < 10 ? '0'+item.month : item.month) + '/' + (item.dateNum < 10 ? '0'+item.dateNum : item.dateNum);
+						if(startDate && item.year == startDate.year && item.month == startDate.month && item.dateNum == startDate.dateNum){
+							item.isCheck = true;
+						}
+						if(endDate && item.year == endDate.year && item.month == endDate.month && item.dateNum == endDate.dateNum){
+							item.isCheck = true;
+						}
+						if(Date.parse(new Date(item_date)) > Date.parse(new Date(this.startEnv)) && Date.parse(new Date(item_date)) < Date.parse(new Date(this.endEnv))){
+							item['isBl'] = true;
+						}else{
+							item['isBl'] = false;
+						}
+					})
+				}
+				
                 this.picker = picks
             },
 			preYear(){
@@ -150,9 +158,6 @@
 				this.createCalendar(this.year, this.month);
 			},
             preMon () {//上一月
-                // if (this.year == new Date().getFullYear() && this.month <= new Date().getMonth() + 1) {
-                //     return;
-                // }
                 this.month -= 1;
                 if (this.month < 1) {
                     this.year -= 1;
@@ -168,48 +173,61 @@
                 }
                 this.createCalendar(this.year, this.month);
             },
-            checkDay (dateNum, outfocus) {
-				console.log(dateNum);
-				console.log(outfocus);
-                // if(!outfocus) {
-                //     let check_day = this.year + '-' + this.month + '-' + dateNum;
-                //     if (this.dateCompare(this.endEnv, check_day) == 0) { //开始后
-                //         this.endEnv = check_day;
-                //         this.showEndEnvfun(dateNum);
-                //     } else if (this.dateCompare(this.endEnv, check_day) == 3) {  //点结束当天
-                //         this.startEnv = check_day;
-                //         this.showHalffun(dateNum)
-                //     } else if (this.dateCompare(this.startEnv, check_day) == 3) {  //点开始当天
-                //         this.endEnv = check_day;
-                //         this.showHalffun(dateNum);
-                //     } else if (this.dateCompare(this.startEnv, check_day) == 1) {
-                //         this.startEnv = check_day;
-                //         this.showStartEnvfun(dateNum);
-                //     } else if (this.dateCompare(this.startEnv, check_day) == 0 && this.dateCompare(this.endEnv, check_day) == 1) {
-                //         var disStartEnvLen = this.getDatePeriod(this.startEnv, check_day) - 1;
-                //         var disSEndEnvLen = this.getDatePeriod(this.endEnv, check_day) - 1;
-                //         if (disStartEnvLen > disSEndEnvLen) {
-                //             this.endEnv = check_day;
-                //             this.showEndEnvfun(dateNum);
-                //         } else {
-                //             this.startEnv = check_day;
-                //             this.showStartEnvfun(dateNum);
-                //         }
-                //     }
-                // }
-            },
-//             //两个日期之间间隔多少天
-//             getDatePeriod: function (sDate1, sDate2) {
-//                 var aDate, oDate1, oDate2, iDays;
-// 
-//                 aDate = sDate1.split("-");
-//                 oDate1 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0]); //转换为12-18-2016格式
-//                 aDate = sDate2.split("-");
-//                 oDate2 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0]);
-// 
-//                 iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数
-//                 return iDays;
-//             },
+			checkDate(dateYear,dateMonth,dateday,obj){
+				// console.log(dateYear+'====='+(dateMonth < 10 ? '0'+dateMonth : dateMonth)+'====='+(dateday < 10 ? '0'+dateday : dateday));
+				let check_date = dateYear+ '/' + (dateMonth < 10 ? '0'+dateMonth : dateMonth) + '/' + (dateday < 10 ? '0'+dateday : dateday);
+				if(this.startEnv && this.endEnv){
+					this.startEnv = '';
+					this.endEnv = '';
+					this.picker.map(item => {item.isCheck = false;item.isBl = false;});
+				}
+				if((!this.startEnv || this.startEnv == '') && (!this.endEnv || this.endEnv == '')){
+					this.startEnv = check_date;
+					obj.isCheck = true;
+					return false
+				}
+				if(this.startEnv){
+					this.endEnv = check_date;
+					obj.isCheck = true;
+				}
+				if(this.startEnv && this.endEnv){
+					this.dateCompare(this.startEnv,this.endEnv);
+				}	
+			},
+			dateCompare(date1,date2){
+				let dateStr1 = Date.parse(new Date(date1));
+				let dateStr2 = Date.parse(new Date(date2));
+				if(dateStr1 < dateStr2){
+					this.startEnv = date1;
+					this.endEnv = date2;
+				}else{
+					this.startEnv = date2;
+					this.endEnv = date1;
+				}
+				this.picker.map(item => {
+					let item_date = item.year+ '/' + (item.month < 10 ? '0'+item.month : item.month) + '/' + (item.dateNum < 10 ? '0'+item.dateNum : item.dateNum);
+					if(Date.parse(new Date(item_date)) > Date.parse(new Date(this.startEnv)) && Date.parse(new Date(item_date)) < Date.parse(new Date(this.endEnv))){
+						item['isBl'] = true;
+					}else{
+						item['isBl'] = false;
+					}
+				});
+			},
+			getDate(dateStr){//把选中日期切换回year month day
+				let dateArr = dateStr.split("/");
+				let year = parseInt(dateArr[0]);
+				let month = parseInt(dateArr[1]);
+				let day = parseInt(dateArr[2]);
+				let obj = {
+					year:year,
+					month:month,
+					dateNum:day
+				}
+				return obj;
+			},
+			showDateBg(){
+				
+			},
             //获得每个月的天数
             getMonthLen: function (year, month) {
                 let nextMonth = new Date(year, month, 1);
@@ -221,95 +239,10 @@
                 let firstDay = new Date(year, month - 1, 1);
                 return firstDay.getDay();
             },
-//             //获得每个月的天数
-//             getMonthLen: function (year, month) {
-//                 let nextMonth = new Date(year, month, 1);
-//                 nextMonth.setHours(nextMonth.getHours() - 1);
-//                 return nextMonth.getDate();
-//             },
-//             //计算距离今天的后两天日期
-//             getTwoDay: function (date) {
-//                 let result = new Date((new Date(date)).getTime() + 2 * 24 * 60 * 60 * 1000);
-//                 return result.getFullYear() + "-" + (result.getMonth() + 1) + "-" + result.getDate();
-//             },
-//             //计算距离今天的后六天日期
-//             getSixDay: function (date) {
-//                 let result = new Date((new Date(date)).getTime() + 6 * 24 * 60 * 60 * 1000);
-//                 return result.getFullYear() + "-" + (result.getMonth() + 1) + "-" + result.getDate();
-//             },
 //             confimDate () {
 //                 this.$emit('showTimePicker')
 //                 this.$emit('confirm', this.startEnv, this.endEnv)
 //             },
-//             //比较两日期的大小
-            dateCompare (date1, date2) {
-                var str1 = [];
-                var str2 = [];
-                str1 = date1.split('-');
-                str2 = date2.split('-');
-                if (parseInt(str1[0]) == parseInt(str2[0]) && parseInt(str1[1]) == parseInt(str2[1]) && parseInt(str1[2]) == parseInt(str2[2])) {
-                    return 3;
-                } else {
-                    if (parseInt(str1[0]) > parseInt(str2[0])) {
-                        return 1;
-                    } else if (parseInt(str1[0]) < parseInt(str2[0])) {
-                        return 0;
-                    } else {
-                    }
-                    if (parseInt(str1[1]) > parseInt(str2[1])) {
-                        return 1;
-                    } else if (parseInt(str1[1]) < parseInt(str2[1])) {
-                        return 0;
-                    } else {
-                    }
-                    if (parseInt(str1[2]) > parseInt(str2[2])) {
-                        return 1;
-                    } else if (parseInt(str1[2]) < parseInt(str2[2])) {
-                        return 0;
-                    } else {
-                    }
-                    return 0;
-                }
-            },
-            showStartEnvfun (dateNum, outfocus) {
-				console.log('showStartEnvfun============'+dateNum+'===='+outfocus);
-                if (!outfocus) {
-                    if (this.startEnv == this.year + '-' + this.month + '-' + dateNum) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            },
-            showEndEnvfun (dateNum, outfocus) {
-				console.log('showEndEnvfun============'+dateNum+'=========='+outfocus);
-                if (!outfocus) {
-                    if (this.endEnv == this.year + '-' + this.month + '-' + dateNum) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            },
-            showBlack (dateNum, outfocus) {//显示区间的颜色
-                if (!outfocus) {
-                    if (this.dateCompare(this.startEnv, this.year + '-' + this.month + '-' + dateNum) == 0 &&
-                        this.dateCompare(this.year + '-' + this.month + '-' + dateNum, this.endEnv) == 0) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            },
-            showHalffun (dateNum, outfocus) {
-                if (!outfocus) {
-                    if (this.startEnv == this.year + '-' + this.month + '-' + dateNum && this.endEnv == this.year + '-' + this.month + '-' + dateNum) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            },
             hideDatePicker () {
                 this.$emit('hideDatePicker')
             }
@@ -319,9 +252,6 @@
 			this.year = date.getFullYear()
 			this.month = date.getMonth() + 1
 			this.today = date.getDate()
-			// this.startEnv = this.getTwoDay(this.year + '-' + this.month + '-' + this.today)
-			// this.endEnv = this.getSixDay(this.year + '-' + this.month + '-' + this.today)
-			
 			this.createCalendar(this.year, this.month)
 		}
 	}
@@ -374,6 +304,7 @@
 				-webkit-box-pack: justify;
 				-ms-flex-pack: justify;
 				justify-content: space-between;
+				padding: 0 20px;
 			  }
 			  .picker-content{
 				  .picker-week{
@@ -400,29 +331,26 @@
 						width:percentage(100/7/100);
 						text-align: center;
 						line-height: 2;
-					}
-					.today {
-						
-					}
-					.start {
-						background: #009788;
-						color:#fff;
-					}
-					.black {
-						background: #e2e2e2;
-					}
-					.end {
-						background: #009788;
-						color:#fff;
-					}
-					.half {
-						background: #009788;
-						color:#fff;
-					}
-					.outfocus{
-						color:#e3e3e3;
+						.picker-text{
+							// margin:10%;
+						}
 					}
 					
+					.noMonthBg{
+						// background: #e2e2e2;
+						color:#e2e2e2;
+					}
+					.checked{
+						.picker-text{
+							background: #009788;
+							color:#fff;
+						}
+						
+					}
+					.inTime{
+						background:#ccc;
+					}
+
 				  }
 			  }
 		  }

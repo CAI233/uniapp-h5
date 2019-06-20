@@ -8,39 +8,60 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullList = function pullList() {return __webpack_require__.e(/*! import() | components/pull-list */ "components/pull-list").then(__webpack_require__.bind(null, /*! @/components/pull-list.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-list.vue"));};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
-    return {};
+    return {
+      SellerNo: '800001',
+      isShow: false,
+      SellerList: [
+      { "SellerNo": "800001", "SellerName": "1234656护肤" },
+      { "SellerNo": "800002", "SellerName": "1234656彩妆" },
+      { "SellerNo": "800003", "SellerName": "1234656养面膜" },
+      { "SellerNo": "800016", "SellerName": "1234656健康" },
+      { "SellerNo": "800018", "SellerName": "1234656全品牌" },
+      { "SellerNo": "8000012", "SellerName": "1234656123护肤" },
+      { "SellerNo": "8000022", "SellerName": "1234656123彩妆" },
+      { "SellerNo": "8000032", "SellerName": "1234656123养面膜" },
+      { "SellerNo": "8000162", "SellerName": "1234656123健康" },
+      { "SellerNo": "8000182", "SellerName": "1234656123全品牌" }] };
 
 
   },
-  components: {},
+  components: {
+    // pullRadio
+    // pullCheck
+    // pullDate,
+    pullList: pullList },
 
   onLoad: function onLoad() {
 
-    uni.getLocation({ //获取当前的位置坐标
-      type: 'wgs84',
-      success: function success(res) {
-        console.log('当前位置的经度：' + res.longitude, " at pages\\user\\user.vue:27");
-        console.log('当前位置的纬度：' + res.latitude, " at pages\\user\\user.vue:28");
-      } });
-
   },
   methods: {
-    outBtn: function outBtn() {
+    outBtn: function outBtn() {//清除
       uni.showModal({
         title: '清除launchFlag值',
         content: '确定要清除launchFlag值，进行重启测试？',
@@ -80,6 +101,22 @@ var _default =
           }
         } });
 
+    },
+    toggleTab: function toggleTab() {//显示底部弹窗
+      // this.$refs.pullRadio.show();
+      // this.$refs.pullCheck.show();
+      // this.$refs.pullDate.show();
+      this.$refs.pullList.show();
+      window.removeEventListener('scroll', this.onScroll); //移除全局滚动
+    },
+    onScroll: function onScroll(e) {
+      console.log(e, " at pages\\user\\user.vue:103");
+    },
+    submit: function submit(val) {
+      // console.log(val);
+    },
+    cancel: function cancel(val) {
+      // console.log(val);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

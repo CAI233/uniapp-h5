@@ -15,6 +15,7 @@ page {
   height: 100vh;
   overflow: hidden;
   background: #fff;
+  overflow: hidden;
 }
 .wrapper {
   position: relative;
