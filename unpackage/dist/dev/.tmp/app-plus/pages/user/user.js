@@ -8,7 +8,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullList = function pullList() {return __webpack_require__.e(/*! import() | components/pull-list */ "components/pull-list").then(__webpack_require__.bind(null, /*! @/components/pull-list.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-list.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullArea = function pullArea() {return Promise.all(/*! import() | components/pull-area */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/pull-area")]).then(__webpack_require__.bind(null, /*! @/components/pull-area.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-area.vue"));};var _default =
+
+
 
 
 
@@ -55,7 +57,8 @@
     // pullRadio
     // pullCheck
     // pullDate,
-    pullList: pullList },
+    // pullList
+    pullArea: pullArea },
 
   onLoad: function onLoad() {
 
@@ -107,10 +110,11 @@
       // this.$refs.pullCheck.show();
       // this.$refs.pullDate.show();
       this.$refs.pullList.show();
-      window.removeEventListener('scroll', this.onScroll); //移除全局滚动
+      this.$refs.pullArea.show();
+      // window.removeEventListener('scroll',this.onScroll);//移除全局滚动
     },
     onScroll: function onScroll(e) {
-      console.log(e, " at pages\\user\\user.vue:103");
+      console.log(e, " at pages\\user\\user.vue:107");
     },
     submit: function submit(val) {
       // console.log(val);

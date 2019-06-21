@@ -13,7 +13,8 @@
 		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
 		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
 		<!-- <pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date> -->
-		<pull-list v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullList" themeColor="#f00" :selectList="SellerList"></pull-list>
+		<!-- <pull-list v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullList" themeColor="#f00" :selectList="SellerList"></pull-list> -->
+		<pull-area v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullArea" themeColor="#f00" :selectList="SellerList"></pull-area>
 	</view>
 </template>
 
@@ -21,11 +22,12 @@
 	// import pullRadio from '@/components/pull-radio.vue';
 	// import pullCheck from '@/components/pull-check.vue';
 	// import pullDate from '@/components/pull-date.vue';
-	import pullList from '@/components/pull-list.vue';
+	// import pullList from '@/components/pull-list.vue';
+	import pullArea from '@/components/pull-area.vue';
 	export default{
 		data(){
 			return {
-				SellerNo:'800003',
+				SellerNo:'800001',
 				isShow:false,
 				SellerList: [
 					{"SellerNo": "800001","SellerName": "1234656护肤",}, 
@@ -45,7 +47,8 @@
 			// pullRadio
 			// pullCheck
 			// pullDate,
-			pullList
+			// pullList
+			pullArea
 		},
 		onLoad() {
 	
@@ -96,8 +99,9 @@
 				// this.$refs.pullRadio.show();
 				// this.$refs.pullCheck.show();
 				// this.$refs.pullDate.show();
-				this.$refs.pullList.show();
-				window.removeEventListener('scroll',this.onScroll);//移除全局滚动
+				// this.$refs.pullList.show();
+				this.$refs.pullArea.show();
+				// window.removeEventListener('scroll',this.onScroll);//移除全局滚动
 			},
 			onScroll(e){
 				console.log(e);

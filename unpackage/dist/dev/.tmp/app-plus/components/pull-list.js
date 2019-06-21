@@ -26,6 +26,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
 var _default2 =
 {
   data: function data() {
@@ -77,23 +80,22 @@ var _default2 =
       this.move = e.changedTouches[0].pageY;
       if (!this.isMove) return false;
       // let lisM = this.move - this.start;
-
       this.lisM = this.move - this.start;
-      this.lisY = this.move - this.start + this.startLate;
+      var lisM = this.lisM;
+      if (lisM < 0) {
+        lisM = Math.abs(lisM) < 40 ? lisM : -40;
+      } else {
+        lisM = Math.abs(lisM) < 40 ? lisM : 40;
+      }
+      var len = this.selectList.length;
+      if (this.lisIndex == 0 && lisM > 0) return false;
+      if (this.lisIndex == 1 - len && lisM < 0) return false;
+      this.lisY = Math.round(lisM / 40) * 40 + this.startLate;
     },
     lisEnd: function lisEnd(e) {
       if (!this.isMove) return false;
       if (this.lisY == this.startLate) return false;
-      var len = this.selectList.length;
-      if (this.lisY >= 160) {
-        this.lisY = 160;
-      } else if (this.lisY <= -(len - 3) * 80) {
-        this.lisY = -(len - 3) * 80;
-      } else {
-        // this.lisM = Math.abs(this.lisM) > this.step*80 ?  this.step*80 : this.lisM;
-        this.lisY = Math.floor(this.lisM / 80) * 80 + this.startLate;
-      }
-      this.lisIndex = Math.floor(this.lisY / 80) - 2;
+      this.lisIndex = this.lisY / 40 - 2;
       this.dSellerNo = this.selectList[Math.abs(this.lisIndex)].SellerNo;
       this.dSellerName = this.selectList[Math.abs(this.lisIndex)].SellerName;
     },
@@ -110,20 +112,19 @@ var _default2 =
     submit: function submit() {
       this.$emit("ok", '111');
       this.isShow = false;
-      // console.log(this.dSellerNo);
-      // console.log(this.dSellerName);
+      console.log(this.dSellerNo, " at components\\pull-list.vue:105");
+      console.log(this.dSellerName, " at components\\pull-list.vue:106");
     } },
 
   mounted: function mounted() {var _this = this;
     this.dSellerNo = this.defaultVal;
     this.selectList.map(function (item, index) {
       if (item.SellerNo == _this.defaultVal) {
-        _this.dSellerName = item.SellerNo;
+        _this.dSellerName = item.SellerName;
         _this.lisIndex = index;
       }
     });
-    // console.log(this.lisIndex)
-    this.lisY = 160 - this.lisIndex * 80;
+    this.lisY = 80 - this.lisIndex * 40;
   } };exports.default = _default2;
 
 /***/ }),

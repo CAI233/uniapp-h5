@@ -4,11 +4,14 @@
 		<view class="pull-list-cnt" :class="{'show':isShow}">
 			<view class="pull-list-hd" @touchmove.stop.prevent catchtouchmove="true">
 			  <view class="pull-list-btn" @tap="hide">取消</view>
-			  <view>{{lisY}}</view>
+			  <view>222{{lisY}}</view>
 			  <view class="pull-list-btn" :style="{'color':themeColor}" @tap="submit">确定</view>
 			</view>
 			<view class="pull-list-view" @touchmove="lisMove" @touchstart="lisStart" @touchend="lisEnd">
-				<view class="pull-list-cont" :style="'transform:translateY('+lisY+'px);transform-origin: center;'" >
+				<!-- :style="'transform:translateY('+lisY+'px);transform-origin: center;'" -->
+				<!-- :style="'margin-top:'+lisY+'px;'"  -->
+				
+				<view class="pull-list-cont" :style="'transform: translateY('+lisY+'px);-ms-transform: translateY('+lisY+'px);-moz-transform: translateY('+lisY+'px);-webkit-transform: translateY('+lisY+'px);-o-transform: translateY('+lisY+'px);'">
 					<view class="item" :class="item.SellerNo == dSellerNo ? 'active' : ''" v-for="(item,index) in selectList" :key="index">{{item.SellerName}}</view>
 				</view>
 			</view>
@@ -85,7 +88,6 @@
 				this.lisIndex = this.lisY/40 - 2;
 				this.dSellerNo = this.selectList[Math.abs(this.lisIndex)].SellerNo;
 				this.dSellerName = this.selectList[Math.abs(this.lisIndex)].SellerName;
-				// console.log(this.dSellerNo+'===='+this.dSellerName)
 			},
 			maskTap(){
 				this.isShow = false;
@@ -200,7 +202,7 @@
 		  z-index: 666;
 		  position: relative;
 		  .pull-list-cont{
-			  transition:all 0.6s;
+			  transition:all 0.2s;
 			  width: 100%;
 		  }
 		}

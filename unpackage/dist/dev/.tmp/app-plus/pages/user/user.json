@@ -3,6 +3,6 @@
   "bounce": "none",
   "titleNView": false,
   "usingComponents": {
-    "pull-list": "/components/pull-list"
+    "pull-area": "/components/pull-area"
   }
 }
