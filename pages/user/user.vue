@@ -14,16 +14,20 @@
 		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
 		<!-- <pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date> -->
 		<!-- <pull-list v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullList" themeColor="#f00" :selectList="SellerList"></pull-list> -->
-		<pull-area v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullArea" themeColor="#f00" :selectList="SellerList"></pull-area>
+		<!-- <pull-area :defaultVal="'海南省,海口市,市辖区'" @ok="submit" @cancel="cancel" ref="pullArea" themeColor="#f00" ></pull-area> -->
+		<!-- <pull-pay @ok="submit" @cancel="cancel" ref="pullPay" themeColor="#f00" ></pull-pay> -->
+		<!-- <wm-poster Width="250" imgSrc="https://sclmweb.saselomo.com//QRcode/MakeQRcode3?rMid=yxT+EFEy9oYMkfGfGWop4IUhYmHJLwcrpF8moKbtWOTaPJTOXW1lfZwa/MOzvPq+3cBh4IclWTo=" QrSrc="https://sclmweb.saselomo.com//QRcode/MakeQRcode3?rMid=yxT+EFEy9oYMkfGfGWop4IUhYmHJLwcrpF8moKbtWOTaPJTOXW1lfZwa/MOzvPq+3cBh4IclWTo=" Title="标题文本" PriceTxt="价格显示" OriginalTxt="划线价显示"></wm-poster> -->
 	</view>
 </template>
 
 <script>
-	// import pullRadio from '@/components/pull-radio.vue';
-	// import pullCheck from '@/components/pull-check.vue';
-	// import pullDate from '@/components/pull-date.vue';
-	// import pullList from '@/components/pull-list.vue';
-	import pullArea from '@/components/pull-area.vue';
+	// import pullRadio from '@/components/pull-radio.vue';//单选
+	// import pullCheck from '@/components/pull-check.vue';//选择
+	// import pullDate from '@/components/pull-date.vue';//日期区间选择
+	// import pullList from '@/components/pull-list.vue';//单列选择
+	// import pullArea from '@/components/pull-area.vue';//地区三级联动
+	// import pullPay from '@/components/pull-pay.vue';//支付密码
+	// import wmPoster from '@/components/wm-poster.vue';//二维码canvas
 	export default{
 		data(){
 			return {
@@ -48,7 +52,9 @@
 			// pullCheck
 			// pullDate,
 			// pullList
-			pullArea
+			// pullArea
+			// pullPay
+			// wmPoster
 		},
 		onLoad() {
 	
@@ -100,14 +106,15 @@
 				// this.$refs.pullCheck.show();
 				// this.$refs.pullDate.show();
 				// this.$refs.pullList.show();
-				this.$refs.pullArea.show();
+				// this.$refs.pullArea.show();
+				this.$refs.pullPay.show();
 				// window.removeEventListener('scroll',this.onScroll);//移除全局滚动
 			},
 			onScroll(e){
 				console.log(e);
 			},
 			submit(val){
-				// console.log(val);
+				console.log(val);
 			},
 			cancel(val){
 				// console.log(val);

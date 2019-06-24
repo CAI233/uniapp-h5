@@ -22,7 +22,6 @@
 							<view class="picker-weekday">六</view>
 						</view>
 						<view class="picker-con">
-							
 							<view class="picker-day" v-for="(pick,index) in picker" :key="index" 
 								:class="{'noMonthBg':pick.isBg,'checked':pick.isCheck,'inTime':pick.isBl,'onDaye':pick.showday}"
 							@click="checkDate(pick.year,pick.month,pick.dateNum,pick)"><view class="picker-text">{{pick.dateNum}}</view></view>

@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullArea = function pullArea() {return Promise.all(/*! import() | components/pull-area */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/pull-area")]).then(__webpack_require__.bind(null, /*! @/components/pull-area.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-area.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullPay = function pullPay() {return __webpack_require__.e(/*! import() | components/pull-pay */ "components/pull-pay").then(__webpack_require__.bind(null, /*! @/components/pull-pay.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue"));};
 
 
 
@@ -34,7 +34,9 @@
 
 
 
-{
+
+//支付密码
+var _default = {
   data: function data() {
     return {
       SellerNo: '800001',
@@ -58,7 +60,8 @@
     // pullCheck
     // pullDate,
     // pullList
-    pullArea: pullArea },
+    // pullArea
+    pullPay: pullPay },
 
   onLoad: function onLoad() {
 
@@ -109,15 +112,17 @@
       // this.$refs.pullRadio.show();
       // this.$refs.pullCheck.show();
       // this.$refs.pullDate.show();
-      this.$refs.pullList.show();
-      this.$refs.pullArea.show();
+      // this.$refs.pullList.show();
+      // this.$refs.pullArea.show();
+      this.$refs.pullPay.show();
       // window.removeEventListener('scroll',this.onScroll);//移除全局滚动
     },
     onScroll: function onScroll(e) {
-      console.log(e, " at pages\\user\\user.vue:107");
+      console.log(e, " at pages\\user\\user.vue:111");
     },
     submit: function submit(val) {
-      // console.log(val);
+      console.log(123, " at pages\\user\\user.vue:114");
+      console.log(val, " at pages\\user\\user.vue:115");
     },
     cancel: function cancel(val) {
       // console.log(val);

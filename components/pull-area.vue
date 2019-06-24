@@ -75,11 +75,11 @@
 				if(!this.isMove) return false;
 				this.lisM = this.move - this.start;
 				let lisM = this.lisM;
-				if(lisM <0){
-					lisM = Math.abs(lisM) < 40 ? lisM : -40
-				}else{
-					lisM = Math.abs(lisM) < 40 ? lisM : 40
-				}
+				// if(lisM <0){
+				// 	lisM = Math.abs(lisM) < 40 ? lisM : -40
+				// }else{
+				// 	lisM = Math.abs(lisM) < 40 ? lisM : 40
+				// }
 				let nowScoll = this.areaArray[this.pageIndex];
 				let len = nowScoll.list.length;
 				if(nowScoll.lisIndex == 0 && lisM >0) return false;
@@ -149,11 +149,17 @@
 						})
 					}
 				});
-				console.log(this.nPre+'====='+this.nCity+'======='+this.nCounty);
 			}
 		},
 		mounted() {
-			this.getArea('海南省','海口市','市辖区');
+			console.log(this.defaultVal);
+			let defaultArr = this.defaultVal.length >0 ? this.defaultVal.split(",") : [];
+			if(defaultArr.length > 0){
+				this.getArea(defaultArr[0],defaultArr[1],defaultArr[2]);
+			}else{
+				this.getArea();
+			}
+			
 		}
 	}
 </script>
@@ -242,7 +248,7 @@
 			  position: relative;
 		  }
 		  .pull-area-cont{
-			  transition:all 0.2s;
+			  transition:all 0.5s;
 			  width: 100%;
 		  }
 		}

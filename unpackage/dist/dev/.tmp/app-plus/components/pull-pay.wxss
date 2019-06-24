@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.pull-pay {
+  position: relative;
+  z-index: 999999;
+}
+.pull-pay .mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.pull-pay .mask.show {
+    visibility: visible;
+    opacity: 1;
+}
+.pull-pay .pull-pay-cnt {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    z-index: 3000;
+}
+.pull-pay .pull-pay-cnt.show {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+}
+.pull-pay .pull-pay-hd {
+    padding: 0 30rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    font-size: 32rpx;
+    border-bottom: 1px solid #ccc;
+}
+.pull-pay .pull-pay-hd .pull-pay-cancel {
+      font-size: 30rpx;
+      position: absolute;
+      left: 30rpx;
+}
+.pull-pay .pull-pay-view {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    z-index: 666;
+    padding-bottom: 30rpx;
+}
+.pull-pay .pull-pay-view .pull-pay-cont {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 40rpx 30rpx;
+}
+.pull-pay .pull-pay-view .pull-pay-cont .pull-pay-num {
+        border: 1px solid #ccc;
+        text-align: center;
+        width: 80rpx;
+        height: 80rpx;
+        line-height: 88rpx;
+}
+.pull-pay .pull-pay-view .pull-pay-cont .pull-pay-num:nth-child(1) {
+          -webkit-border-radius: 10rpx 0 0 10rpx;
+                  border-radius: 10rpx 0 0 10rpx;
+}
+.pull-pay .pull-pay-view .pull-pay-cont .pull-pay-num:nth-last-child(1) {
+          -webkit-border-radius: 0 10rpx 10rpx 0;
+                  border-radius: 0 10rpx 10rpx 0;
+}
+.pull-pay .pull-pay-view .pull-pay-cont .pull-pay-num:not(:nth-last-of-type(1)) {
+          border-right: none;
+}
+.pull-pay .pull-pay-view .pull-pay-text {
+      color: #2d8cf0;
+      text-align: center;
+      font-size: 30rpx;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis {
+    overflow: hidden;
+    background: #fff;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis .pull-pay-list {
+      float: left;
+      width: 33.33333%;
+      height: 90rpx;
+      line-height: 90rpx;
+      font-size: 36rpx;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis .pull-pay-list:nth-child(3n) {
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis .pull-pay-list:nth-child(3n+1) {
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis .pull-pay-list:nth-child(3n+2) {
+        border-bottom: 1px solid #ccc;
+}
+.pull-pay .pull-pay-foot .pull-pay-lis .active {
+      border: 1px solid #2d8cf0 !important;
+      color: #2d8cf0;
+}
+
