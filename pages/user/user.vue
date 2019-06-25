@@ -28,6 +28,7 @@
 	// import pullArea from '@/components/pull-area.vue';//地区三级联动
 	// import pullPay from '@/components/pull-pay.vue';//支付密码
 	// import wmPoster from '@/components/wm-poster.vue';//二维码canvas
+	import {pullLoading} from '@/components/pull-layer/pull-layer.js';
 	export default{
 		data(){
 			return {
@@ -57,9 +58,30 @@
 			// wmPoster
 		},
 		onLoad() {
-	
+			// pullToast
 		},
 		methods: {
+			toggleTab(){//显示底部弹窗
+				// this.$refs.pullRadio.show();
+				// this.$refs.pullCheck.show();
+				// this.$refs.pullDate.show();
+				// this.$refs.pullList.show();
+				// this.$refs.pullArea.show();
+				// this.$refs.pullPay.show();
+				// pullModal({id:'1111'},this.submit);
+				pullLoading();
+				// console.log(pullToast);
+			},
+			onScroll(e){
+				console.log(e);
+			},
+			submit(val,call){
+				console.log(val);
+				call();
+			},
+			cancel(val){
+				// console.log(val);
+			},
 			outBtn(){//清除
 				uni.showModal({
 					title: '清除launchFlag值',
@@ -100,24 +122,6 @@
 						}
 					}
 				});
-			},
-			toggleTab(){//显示底部弹窗
-				// this.$refs.pullRadio.show();
-				// this.$refs.pullCheck.show();
-				// this.$refs.pullDate.show();
-				// this.$refs.pullList.show();
-				// this.$refs.pullArea.show();
-				this.$refs.pullPay.show();
-				// window.removeEventListener('scroll',this.onScroll);//移除全局滚动
-			},
-			onScroll(e){
-				console.log(e);
-			},
-			submit(val){
-				console.log(val);
-			},
-			cancel(val){
-				// console.log(val);
 			}
 		},
 		

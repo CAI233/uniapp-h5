@@ -183,6 +183,7 @@ export default {
 				uni.getImageInfo({
 					src: imgSrc,
 					success: function(image) {
+						console.log(image);
 						resolve(image);
 					},
 					fail(err) {
