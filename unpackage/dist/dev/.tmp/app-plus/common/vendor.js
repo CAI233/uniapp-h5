@@ -505,7 +505,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6703,7 +6703,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6724,14 +6724,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6800,7 +6800,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -9343,6 +9343,333 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     checkType: "notnull",
     checkRule: "6,20",
     errorMsg: "密码不能少于6位" }] };exports.default = _default;
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.css":
+/*!****************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-layer.css ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-layer.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, "pullToast", { enumerable: true, get: function get() {return _pullToast.pullToast;} });Object.defineProperty(exports, "pullModal", { enumerable: true, get: function get() {return _pullModal.pullModal;} });Object.defineProperty(exports, "pullLoading", { enumerable: true, get: function get() {return _pullLoading.pullLoading;} });__webpack_require__(/*! ./pull-layer.css */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.css");
+var _pullToast = __webpack_require__(/*! ./pull-toast.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-toast.js");
+var _pullModal = __webpack_require__(/*! ./pull-modal.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-modal.js");
+var _pullLoading = __webpack_require__(/*! ./pull-loading.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-loading.js");
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-loading.js":
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-loading.js ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullLoading = pullLoading;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var style = ".pull-layer .pull-layer-plane-close {\n  background: rgba(255,255,255,0.9);\n}\n.pull-layer .pull-layer-plane-content {\n  justify-content: center;\n  align-items: center;\n  background: none;\n  min-height: 100%;\n  opacity: 0;\n  transition: all 0.5s;\n  background:none;\n}\n.pull-layer.active .pull-layer-plane-content {\n  opacity: 1;\n}\n.pull-layer.active .pull-layer-plane-content .pull-layer-loading{\n\tbackground:#fff;\n}";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+var el = '';
+var newBaseExtend = '';
+function pullLoading(t, w, c) {//t:文本 w:宽  c:颜色
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    //https://www.jianshu.com/p/b931abe383e3   //方法介绍 Vue.extend
+    render: function render(h) {
+      return h('view', { style: 'style' }, [
+      h('style', { domProps: { type: 'text/css' } }, style),
+      h('view', { class: 'pull-layer pull-layer-plane' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close' }),
+      h('view', { class: 'pull-layer-plane-content flex-row' }, [
+      h('canvas', { domProps: { width: this.width, height: this.height, id: 'pull-layer-plane-canvas' }, class: 'pull-layer-loading' })])])]);
+
+
+
+    },
+    data: function data() {
+      return {
+        width: w || 150,
+        height: w || 150,
+        ctx: '',
+        size: '',
+        text: t || '',
+        options: {
+          radius: (w || 150) / 2 - 15,
+          lineWidth: 4,
+          strokeStyle: c || '#aacaf1',
+          degreeStart: -90,
+          degreeEnd: 270,
+          stepStart: 12,
+          stepEnd: 9 } };
+
+
+    } });
+
+  newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  var canvas = el.querySelector("#pull-layer-plane-canvas");
+  console.log(canvas, " at components\\pull-layer\\pull-loading.js:61");
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+  // initCanvas(canvas,newBaseExtend.options);
+  setInterval(function (_) {
+    initCanvas(canvas, newBaseExtend.options);
+  }, 20);
+}
+function init() {
+  document.body.removeChild(el);
+  isActive = false;
+  newBaseExtend.$destroy();
+}
+// 开始画canvas
+function initCanvas(canvas, opts) {
+  newBaseExtend.ctx = canvas.getContext('2d');
+  newBaseExtend.size = Math.min(canvas.clientWidth, canvas.clientHeight);
+  newBaseExtend.options.radius = opts.radius;
+  newBaseExtend.options.lineWidth = opts.lineWidth;
+  newBaseExtend.options.strokeStyle = opts.strokeStyle;
+  newBaseExtend.options.degreeStart = opts.degreeStart;
+  newBaseExtend.options.degreeEnd = opts.degreeEnd;
+  newBaseExtend.options.stepStart = opts.stepStart;
+  newBaseExtend.options.stepEnd = opts.stepEnd;
+  strokeCanvas();
+}
+function strokeCanvas() {
+  newBaseExtend.options.degreeStart = newBaseExtend.options.degreeStart + newBaseExtend.options.stepStart;
+  newBaseExtend.options.degreeEnd = newBaseExtend.options.degreeEnd + newBaseExtend.options.stepEnd;
+  if (newBaseExtend.options.degreeStart - 360 > newBaseExtend.options.degreeEnd) {
+    newBaseExtend.options.degreeStart -= 720;
+  }
+  newBaseExtend.ctx.clearRect(0, 0, newBaseExtend.size, newBaseExtend.size);
+  newBaseExtend.ctx.lineWidth = newBaseExtend.options.lineWidth;
+  newBaseExtend.ctx.beginPath();
+  newBaseExtend.ctx.strokeStyle = newBaseExtend.options.strokeStyle;
+  newBaseExtend.ctx.arc(newBaseExtend.size / 2, newBaseExtend.size / 2, newBaseExtend.options.radius + newBaseExtend.options.lineWidth / 2, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeStart : newBaseExtend.options.degreeEnd) * Math.PI / 180, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeEnd : newBaseExtend.options.degreeStart) * Math.PI / 180, false);
+  newBaseExtend.ctx.stroke();
+  newBaseExtend.ctx.beginPath();
+  newBaseExtend.ctx.font = "18px Arial";
+  newBaseExtend.ctx.fillStyle = newBaseExtend.options.strokeStyle;
+  newBaseExtend.ctx.textAlign = 'center';
+  newBaseExtend.ctx.textBaseline = "middle";
+  newBaseExtend.ctx.fillText(newBaseExtend.text, newBaseExtend.width / 2, newBaseExtend.height / 2, newBaseExtend.size);
+}
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-modal.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-modal.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullModal = pullModal;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var style = ".pull-layer-modal {\n  justify-content: center;\n  align-items: center;\n}\n.pull-layer-modal .pull-layer-plane-content {\n  /* padding: 20upx; */\n  border-radius: 5px;\n  width: 72%;\n  overflow: hidden;\n  transition: all 0.3s;\n  transform: scale(0);\n\tmargin-bottom: 100upx;\n}\n.pull-layer-modal.active .pull-layer-plane-content {\n  transform: scale(1);\n}\n.pull-layer-modal .pull-layer-btn{\n  margin: 0;\n  height: 44px;\n  line-height: 44px;\n  width: 100%;\n  border-radius: 0;\n  padding: 0;\n  text-align: center;\n  background:#fff;\n  color:#101010;\n  border:none;\n}\n.pull-layer-modal .pull-layer-btn-default{\n\tbackground:#fff;\n\tcolor:#101010;\n\tborder-right:1px solid #ccc;\n}\n.pull-layer-modal .pull-layer-btn-primary{\n\tbackground:#007aff;\n\tcolor:#fff;\n}\n.pull-layer-modal .pull-layer-modal-title {\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  font-size: 16px;\n  padding: 0 15px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n}\n.pull-layer-modal .pull-layer-modal-content {\n  min-height: 50px;\n  font-size: 14px;\n  color: #666;\n  padding:15px;\n  box-sizing: border-box;\n}";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+var el = '';
+var newBaseExtend = '';
+function pullModal(obj, call) {
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    render: function render(h) {
+      return h('view', { class: 'pull-layer' }, [
+      h('style', { type: 'text/css', domProps: { type: 'text/css' } }, style),
+      h('view', { class: 'pull-layer-modal pull-layer-plane flex-row' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close', on: { click: function click() {
+            init();
+          } } }),
+      h('view', { class: 'pull-layer-plane-content' }, [
+      h('view', { class: 'pull-layer-modal-box' }, [
+      h('view', { class: 'pull-layer-modal-title hide-text-1' }, '标题'),
+      h('view', { class: 'pull-layer-modal-content', style: { display: 'block' } }, '主体内容'),
+      h('view', { class: 'flex-row', style: { borderTop: '1px solid #ccc' } }, [
+      h('button', { class: 'pull-layer-btn pull-layer-btn-default', domProps: { type: 'default' }, on: { click: function click() {
+            init();
+          } } }, '取消s'),
+      h('button', { class: 'pull-layer-btn pull-layer-btn-primary', domProps: { type: 'primary' }, on: { click: function click() {
+            console.log('确定', " at components\\pull-layer\\pull-modal.js:78");
+            call(obj, init);
+          } } }, '确定')])])])])]);
+
+
+
+
+
+    } });
+
+  newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+}
+function init() {
+  document.body.removeChild(el);
+  isActive = false;
+  newBaseExtend.$destroy();
+}
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-toast.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-toast.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullToast = pullToast;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var style = ".pull-layer .pull-layer-plane-close {\n  background: none;\n}\n.pull-layer .pull-layer-plane-content {\n  justify-content: center;\n  align-items: center;\n  background: none;\n  min-height: 100%;\n  opacity: 0;\n  transition: all 0.5s;\n}\n.pull-layer.active .pull-layer-plane-content {\n  opacity: 1;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box {\n  background:#2db7f5;\n  color: #ffffff;\n  padding: 10px;\n  min-width: 36%;\n  max-width: 64%;\n  font-size: 14px;\n  border-radius: 5px;\n  text-align:center;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .warning{\n\tbackground:#ff9900;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .error{\n\tbackground:#ed4014;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .success{\n\tbackground:#19be6b;\n}\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+function pullToast(msg, durtion, type) {
+  if (!msg || msg == '') {
+    return false;
+  }
+  var el = '';
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    render: function render(h) {
+      return h('view', { style: '' }, [
+      h('style', { type: 'text/css' }, style),
+      h('view', { class: 'pull-layer pull-layer-plane' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close' }),
+      h('view', { class: 'pull-layer-plane-content flex-row' }, [
+      h('view', { class: 'pull-layer-box ' + type }, msg)])])]);
+
+
+
+    } });
+
+  var newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+  var set = setTimeout(function (_) {
+    clearTimeout(set);
+    document.body.removeChild(el);
+    isActive = false;
+    newBaseExtend.$destroy();
+  }, durtion || 1500);
+}
 
 /***/ }),
 

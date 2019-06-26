@@ -69,7 +69,7 @@
 				// this.$refs.pullArea.show();
 				// this.$refs.pullPay.show();
 				// pullModal({id:'1111'},this.submit);
-				pullLoading();
+				pullLoading('加载中···');
 				// console.log(pullToast);
 			},
 			onScroll(e){

@@ -1066,7 +1066,6 @@ function gz$gwx_2(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
 __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([[7],[3,'isFocus']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
 }
 function gz$gwx_3(){
@@ -1172,7 +1171,7 @@ __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/empty.wxml','./components/pull-pay.wxml','./components/pull-up.wxml','./components/uni-load-more/uni-load-more.wxml','./pages/cart/cart.wxml','./pages/category/category.wxml','./pages/index/guide.wxml','./pages/index/index.wxml','./pages/login/login.wxml','./pages/user/user.wxml'];d_[x[0]]={}
+var x=['./components/empty.wxml','./components/pull-pay2.wxml','./components/pull-up.wxml','./components/uni-load-more/uni-load-more.wxml','./pages/cart/cart.wxml','./pages/category/category.wxml','./pages/index/guide.wxml','./pages/index/index.wxml','./pages/login/login.wxml','./pages/user/user.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -1181,11 +1180,6 @@ e_[x[0]]={f:m0,j:[],i:[],ti:[],ic:[]}
 d_[x[1]]={}
 var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
-var xC=_v()
-_(r,xC)
-if(_oz(z,0,e,s,gg)){xC.wxVkey=1
-}
-xC.wxXCkey=1
 return r
 }
 e_[x[1]]={f:m1,j:[],i:[],ti:[],ic:[]}
@@ -1222,86 +1216,86 @@ e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var oJ=_mz(z,'swiper',['bindchange',0,'class',1,'current',1,'data-event-opts',2,'duration',3],[],e,s,gg)
-var lK=_v()
-_(oJ,lK)
-var aL=function(eN,tM,bO,gg){
-var xQ=_mz(z,'scroll-view',['scrollY',-1,'bindscrolltolower',9,'class',1,'data-event-opts',2],[],eN,tM,gg)
-var oR=_v()
+var cI=_mz(z,'swiper',['bindchange',0,'class',1,'current',1,'data-event-opts',2,'duration',3],[],e,s,gg)
+var oJ=_v()
+_(cI,oJ)
+var lK=function(tM,aL,eN,gg){
+var oP=_mz(z,'scroll-view',['scrollY',-1,'bindscrolltolower',9,'class',1,'data-event-opts',2],[],tM,aL,gg)
+var xQ=_v()
+_(oP,xQ)
+if(_oz(z,12,tM,aL,gg)){xQ.wxVkey=1
+var oR=_mz(z,'empty',['bind:__l',13,'vueId',1],[],tM,aL,gg)
 _(xQ,oR)
-if(_oz(z,12,eN,tM,gg)){oR.wxVkey=1
-var fS=_mz(z,'empty',['bind:__l',13,'vueId',1],[],eN,tM,gg)
-_(oR,fS)
 }
-var cT=_v()
-_(xQ,cT)
-var hU=function(cW,oV,oX,gg){
-var aZ=_n('view')
-_rz(z,aZ,'class',19,cW,oV,gg)
+var fS=_v()
+_(oP,fS)
+var cT=function(oV,hU,cW,gg){
+var lY=_n('view')
+_rz(z,lY,'class',19,oV,hU,gg)
+var aZ=_v()
+_(lY,aZ)
+if(_oz(z,20,oV,hU,gg)){aZ.wxVkey=1
+}
 var t1=_v()
-_(aZ,t1)
-if(_oz(z,20,cW,oV,gg)){t1.wxVkey=1
+_(lY,t1)
+if(_oz(z,21,oV,hU,gg)){t1.wxVkey=1
 }
-var e2=_v()
-_(aZ,e2)
-if(_oz(z,21,cW,oV,gg)){e2.wxVkey=1
-}
-var o4=_v()
-_(aZ,o4)
-var x5=function(f7,o6,c8,gg){
-var o0=_v()
-_(c8,o0)
-if(_oz(z,26,f7,o6,gg)){o0.wxVkey=1
-}
-o0.wxXCkey=1
-return c8
-}
-o4.wxXCkey=2
-_2z(z,24,x5,cW,oV,gg,o4,'goodsItem','goodsIndex','goodsIndex')
 var b3=_v()
-_(aZ,b3)
-if(_oz(z,27,cW,oV,gg)){b3.wxVkey=1
+_(lY,b3)
+var o4=function(o6,x5,f7,gg){
+var h9=_v()
+_(f7,h9)
+if(_oz(z,26,o6,x5,gg)){h9.wxVkey=1
 }
+h9.wxXCkey=1
+return f7
+}
+b3.wxXCkey=2
+_2z(z,24,o4,oV,hU,gg,b3,'goodsItem','goodsIndex','goodsIndex')
+var e2=_v()
+_(lY,e2)
+if(_oz(z,27,oV,hU,gg)){e2.wxVkey=1
+}
+aZ.wxXCkey=1
 t1.wxXCkey=1
 e2.wxXCkey=1
-b3.wxXCkey=1
-_(oX,aZ)
-return oX
+_(cW,lY)
+return cW
 }
-cT.wxXCkey=2
-_2z(z,17,hU,eN,tM,gg,cT,'item','index','index')
-var cAB=_mz(z,'uni-load-more',['bind:__l',28,'status',1,'vueId',2],[],eN,tM,gg)
-_(xQ,cAB)
-oR.wxXCkey=1
-oR.wxXCkey=3
-_(bO,xQ)
-return bO
+fS.wxXCkey=2
+_2z(z,17,cT,tM,aL,gg,fS,'item','index','index')
+var o0=_mz(z,'uni-load-more',['bind:__l',28,'status',1,'vueId',2],[],tM,aL,gg)
+_(oP,o0)
+xQ.wxXCkey=1
+xQ.wxXCkey=3
+_(eN,oP)
+return eN
 }
-lK.wxXCkey=4
-_2z(z,7,aL,e,s,gg,lK,'tabItem','tabIndex','tabIndex')
-_(r,oJ)
+oJ.wxXCkey=4
+_2z(z,7,lK,e,s,gg,oJ,'tabItem','tabIndex','tabIndex')
+_(r,cI)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var lCB=_v()
-_(r,lCB)
-if(_oz(z,0,e,s,gg)){lCB.wxVkey=1
-var aDB=_mz(z,'pull-up',['bind:__l',1,'bind:confirm',1,'class',2,'current',3,'data-event-opts',4,'data-ref',5,'defaultVal',6,'selectList',7,'step',8,'themeColor',9,'vueId',10],[],e,s,gg)
-_(lCB,aDB)
+var oBB=_v()
+_(r,oBB)
+if(_oz(z,0,e,s,gg)){oBB.wxVkey=1
+var lCB=_mz(z,'pull-up',['bind:__l',1,'bind:confirm',1,'class',2,'current',3,'data-event-opts',4,'data-ref',5,'defaultVal',6,'selectList',7,'step',8,'themeColor',9,'vueId',10],[],e,s,gg)
+_(oBB,lCB)
 }
-lCB.wxXCkey=1
-lCB.wxXCkey=3
+oBB.wxXCkey=1
+oBB.wxXCkey=3
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var eFB=_mz(z,'pull-pay',['bind:__l',0,'bind:cancel',1,'bind:ok',1,'class',2,'data-event-opts',3,'data-ref',4,'themeColor',5,'vueId',6],[],e,s,gg)
-_(r,eFB)
+var tEB=_mz(z,'pull-pay',['bind:__l',0,'bind:cancel',1,'bind:ok',1,'class',2,'data-event-opts',3,'data-ref',4,'themeColor',5,'vueId',6],[],e,s,gg)
+_(r,tEB)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
@@ -1328,8 +1322,8 @@ __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 __wxAppCode__['components/empty.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/empty.wxml']=$gwx('./components/empty.wxml');
 
-__wxAppCode__['components/pull-pay.json']={"usingComponents":{},"component":true};
-__wxAppCode__['components/pull-pay.wxml']=$gwx('./components/pull-pay.wxml');
+__wxAppCode__['components/pull-pay2.json']={"usingComponents":{},"component":true};
+__wxAppCode__['components/pull-pay2.wxml']=$gwx('./components/pull-pay2.wxml');
 
 __wxAppCode__['components/pull-up.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/pull-up.wxml']=$gwx('./components/pull-up.wxml');
@@ -1352,7 +1346,7 @@ __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 __wxAppCode__['pages/login/login.json']={"navigationBarTitleText":"","navigationStyle":"custom","titleNView":false,"animationType":"slide-in-bottom","usingComponents":{"pull-up":"/components/pull-up"}};
 __wxAppCode__['pages/login/login.wxml']=$gwx('./pages/login/login.wxml');
 
-__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"我的","bounce":"none","titleNView":false,"usingComponents":{"pull-pay":"/components/pull-pay"}};
+__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"我的","bounce":"none","titleNView":false,"usingComponents":{"pull-pay":"/components/pull-pay2"}};
 __wxAppCode__['pages/user/user.wxml']=$gwx('./pages/user/user.wxml');
 
 
@@ -1610,11 +1604,11 @@ define('common/runtime.js',function(require, module, exports, window, document, 
     /******/
     /******/
     /******/ // mini-css-extract-plugin CSS loading
-    /******/var cssChunks = { "components/empty": 1, "components/uni-load-more/uni-load-more": 1, "components/pull-up": 1, "components/pull-pay": 1 };
+    /******/var cssChunks = { "components/empty": 1, "components/uni-load-more/uni-load-more": 1, "components/pull-up": 1, "components/pull-pay2": 1 };
     /******/if (installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
     /******/else if (installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
         /******/promises.push(installedCssChunks[chunkId] = new Promise(function (resolve, reject) {
-          /******/var href = "" + ({ "components/empty": "components/empty", "components/uni-load-more/uni-load-more": "components/uni-load-more/uni-load-more", "components/pull-up": "components/pull-up", "components/pull-pay": "components/pull-pay" }[chunkId] || chunkId) + ".wxss";
+          /******/var href = "" + ({ "components/empty": "components/empty", "components/uni-load-more/uni-load-more": "components/uni-load-more/uni-load-more", "components/pull-up": "components/pull-up", "components/pull-pay2": "components/pull-pay2" }[chunkId] || chunkId) + ".wxss";
           /******/var fullhref = __webpack_require__.p + href;
           /******/var existingLinkTags = document.getElementsByTagName("link");
           /******/for (var i = 0; i < existingLinkTags.length; i++) {
@@ -2279,7 +2273,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8477,7 +8471,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8498,14 +8492,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8574,7 +8568,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -11120,6 +11114,333 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.css":
+/*!****************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-layer.css ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-layer.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, "pullToast", { enumerable: true, get: function get() {return _pullToast.pullToast;} });Object.defineProperty(exports, "pullModal", { enumerable: true, get: function get() {return _pullModal.pullModal;} });Object.defineProperty(exports, "pullLoading", { enumerable: true, get: function get() {return _pullLoading.pullLoading;} });__webpack_require__(/*! ./pull-layer.css */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.css");
+var _pullToast = __webpack_require__(/*! ./pull-toast.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-toast.js");
+var _pullModal = __webpack_require__(/*! ./pull-modal.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-modal.js");
+var _pullLoading = __webpack_require__(/*! ./pull-loading.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-loading.js");
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-loading.js":
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-loading.js ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullLoading = pullLoading;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var style = ".pull-layer .pull-layer-plane-close {\n  background: rgba(255,255,255,0.9);\n}\n.pull-layer .pull-layer-plane-content {\n  justify-content: center;\n  align-items: center;\n  background: none;\n  min-height: 100%;\n  opacity: 0;\n  transition: all 0.5s;\n  background:none;\n}\n.pull-layer.active .pull-layer-plane-content {\n  opacity: 1;\n}\n.pull-layer.active .pull-layer-plane-content .pull-layer-loading{\n\tbackground:#fff;\n}";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+var el = '';
+var newBaseExtend = '';
+function pullLoading(t, w, c) {//t:文本 w:宽  c:颜色
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    //https://www.jianshu.com/p/b931abe383e3   //方法介绍 Vue.extend
+    render: function render(h) {
+      return h('view', { style: 'style' }, [
+      h('style', { domProps: { type: 'text/css' } }, style),
+      h('view', { class: 'pull-layer pull-layer-plane' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close' }),
+      h('view', { class: 'pull-layer-plane-content flex-row' }, [
+      h('canvas', { domProps: { width: this.width, height: this.height, id: 'pull-layer-plane-canvas' }, class: 'pull-layer-loading' })])])]);
+
+
+
+    },
+    data: function data() {
+      return {
+        width: w || 150,
+        height: w || 150,
+        ctx: '',
+        size: '',
+        text: t || '',
+        options: {
+          radius: (w || 150) / 2 - 15,
+          lineWidth: 4,
+          strokeStyle: c || '#aacaf1',
+          degreeStart: -90,
+          degreeEnd: 270,
+          stepStart: 12,
+          stepEnd: 9 } };
+
+
+    } });
+
+  newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  var canvas = el.querySelector("#pull-layer-plane-canvas");
+  console.log(canvas, " at components\\pull-layer\\pull-loading.js:61");
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+  // initCanvas(canvas,newBaseExtend.options);
+  setInterval(function (_) {
+    initCanvas(canvas, newBaseExtend.options);
+  }, 20);
+}
+function init() {
+  document.body.removeChild(el);
+  isActive = false;
+  newBaseExtend.$destroy();
+}
+// 开始画canvas
+function initCanvas(canvas, opts) {
+  newBaseExtend.ctx = canvas.getContext('2d');
+  newBaseExtend.size = Math.min(canvas.clientWidth, canvas.clientHeight);
+  newBaseExtend.options.radius = opts.radius;
+  newBaseExtend.options.lineWidth = opts.lineWidth;
+  newBaseExtend.options.strokeStyle = opts.strokeStyle;
+  newBaseExtend.options.degreeStart = opts.degreeStart;
+  newBaseExtend.options.degreeEnd = opts.degreeEnd;
+  newBaseExtend.options.stepStart = opts.stepStart;
+  newBaseExtend.options.stepEnd = opts.stepEnd;
+  strokeCanvas();
+}
+function strokeCanvas() {
+  newBaseExtend.options.degreeStart = newBaseExtend.options.degreeStart + newBaseExtend.options.stepStart;
+  newBaseExtend.options.degreeEnd = newBaseExtend.options.degreeEnd + newBaseExtend.options.stepEnd;
+  if (newBaseExtend.options.degreeStart - 360 > newBaseExtend.options.degreeEnd) {
+    newBaseExtend.options.degreeStart -= 720;
+  }
+  newBaseExtend.ctx.clearRect(0, 0, newBaseExtend.size, newBaseExtend.size);
+  newBaseExtend.ctx.lineWidth = newBaseExtend.options.lineWidth;
+  newBaseExtend.ctx.beginPath();
+  newBaseExtend.ctx.strokeStyle = newBaseExtend.options.strokeStyle;
+  newBaseExtend.ctx.arc(newBaseExtend.size / 2, newBaseExtend.size / 2, newBaseExtend.options.radius + newBaseExtend.options.lineWidth / 2, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeStart : newBaseExtend.options.degreeEnd) * Math.PI / 180, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeEnd : newBaseExtend.options.degreeStart) * Math.PI / 180, false);
+  newBaseExtend.ctx.stroke();
+  newBaseExtend.ctx.beginPath();
+  newBaseExtend.ctx.font = "18px Arial";
+  newBaseExtend.ctx.fillStyle = newBaseExtend.options.strokeStyle;
+  newBaseExtend.ctx.textAlign = 'center';
+  newBaseExtend.ctx.textBaseline = "middle";
+  newBaseExtend.ctx.fillText(newBaseExtend.text, newBaseExtend.width / 2, newBaseExtend.height / 2, newBaseExtend.size);
+}
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-modal.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-modal.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullModal = pullModal;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var style = ".pull-layer-modal {\n  justify-content: center;\n  align-items: center;\n}\n.pull-layer-modal .pull-layer-plane-content {\n  /* padding: 20upx; */\n  border-radius: 5px;\n  width: 72%;\n  overflow: hidden;\n  transition: all 0.3s;\n  transform: scale(0);\n\tmargin-bottom: 100upx;\n}\n.pull-layer-modal.active .pull-layer-plane-content {\n  transform: scale(1);\n}\n.pull-layer-modal .pull-layer-btn{\n  margin: 0;\n  height: 44px;\n  line-height: 44px;\n  width: 100%;\n  border-radius: 0;\n  padding: 0;\n  text-align: center;\n  background:#fff;\n  color:#101010;\n  border:none;\n}\n.pull-layer-modal .pull-layer-btn-default{\n\tbackground:#fff;\n\tcolor:#101010;\n\tborder-right:1px solid #ccc;\n}\n.pull-layer-modal .pull-layer-btn-primary{\n\tbackground:#007aff;\n\tcolor:#fff;\n}\n.pull-layer-modal .pull-layer-modal-title {\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  font-size: 16px;\n  padding: 0 15px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n}\n.pull-layer-modal .pull-layer-modal-content {\n  min-height: 50px;\n  font-size: 14px;\n  color: #666;\n  padding:15px;\n  box-sizing: border-box;\n}";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+var el = '';
+var newBaseExtend = '';
+function pullModal(obj, call) {
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    render: function render(h) {
+      return h('view', { class: 'pull-layer' }, [
+      h('style', { type: 'text/css', domProps: { type: 'text/css' } }, style),
+      h('view', { class: 'pull-layer-modal pull-layer-plane flex-row' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close', on: { click: function click() {
+            init();
+          } } }),
+      h('view', { class: 'pull-layer-plane-content' }, [
+      h('view', { class: 'pull-layer-modal-box' }, [
+      h('view', { class: 'pull-layer-modal-title hide-text-1' }, '标题'),
+      h('view', { class: 'pull-layer-modal-content', style: { display: 'block' } }, '主体内容'),
+      h('view', { class: 'flex-row', style: { borderTop: '1px solid #ccc' } }, [
+      h('button', { class: 'pull-layer-btn pull-layer-btn-default', domProps: { type: 'default' }, on: { click: function click() {
+            init();
+          } } }, '取消s'),
+      h('button', { class: 'pull-layer-btn pull-layer-btn-primary', domProps: { type: 'primary' }, on: { click: function click() {
+            console.log('确定', " at components\\pull-layer\\pull-modal.js:78");
+            call(obj, init);
+          } } }, '确定')])])])])]);
+
+
+
+
+
+    } });
+
+  newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+}
+function init() {
+  document.body.removeChild(el);
+  isActive = false;
+  newBaseExtend.$destroy();
+}
+
+/***/ }),
+
+/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-toast.js":
+/*!***************************************************************************************************!*\
+  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-layer/pull-toast.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pullToast = pullToast;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var style = ".pull-layer .pull-layer-plane-close {\n  background: none;\n}\n.pull-layer .pull-layer-plane-content {\n  justify-content: center;\n  align-items: center;\n  background: none;\n  min-height: 100%;\n  opacity: 0;\n  transition: all 0.5s;\n}\n.pull-layer.active .pull-layer-plane-content {\n  opacity: 1;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box {\n  background:#2db7f5;\n  color: #ffffff;\n  padding: 10px;\n  min-width: 36%;\n  max-width: 64%;\n  font-size: 14px;\n  border-radius: 5px;\n  text-align:center;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .warning{\n\tbackground:#ff9900;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .error{\n\tbackground:#ed4014;\n}\n.pull-layer .pull-layer-plane-content .pull-layer-box .success{\n\tbackground:#19be6b;\n}\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isActive = false;
+function pullToast(msg, durtion, type) {
+  if (!msg || msg == '') {
+    return false;
+  }
+  var el = '';
+  isActive = true;
+  var baseExtend = _vue.default.extend({
+    render: function render(h) {
+      return h('view', { style: '' }, [
+      h('style', { type: 'text/css' }, style),
+      h('view', { class: 'pull-layer pull-layer-plane' + (isActive ? ' active' : '') }, [
+      h('view', { class: 'pull-layer-plane-close' }),
+      h('view', { class: 'pull-layer-plane-content flex-row' }, [
+      h('view', { class: 'pull-layer-box ' + type }, msg)])])]);
+
+
+
+    } });
+
+  var newBaseExtend = new baseExtend();
+  var vm = newBaseExtend.$mount();
+  el = vm.$el;
+  document.body.appendChild(el); // 把生成的提示的dom插入body中
+  var set = setTimeout(function (_) {
+    clearTimeout(set);
+    document.body.removeChild(el);
+    isActive = false;
+    newBaseExtend.$destroy();
+  }, durtion || 1500);
+}
+
+/***/ }),
+
 /***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js":
 /*!***********************************************************************!*\
   !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js ***!
@@ -11562,25 +11883,20 @@ define('components/empty.js',function(require, module, exports, window, document
 [['components/empty-create-component']]]);
 });
 require('components/empty.js');
-__wxRoute = 'components/pull-pay';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/pull-pay.js';
+__wxRoute = 'components/pull-pay2';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/pull-pay2.js';
 
-define('components/pull-pay.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
-"use strict";(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/pull-pay"], {
+define('components/pull-pay2.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+"use strict";(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/pull-pay2"], {
 
-  /***/"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=script&lang=js&":
-  /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-                                                                                                                                                                                                                                                                                                                                                                   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=script&lang=js& ***!
-                                                                                                                                                                                                                                                                                                                                                                   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+  /***/"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=script&lang=js&":
+  /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+                                                                                                                                                                                                                                                                                                                                                                    !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=script&lang=js& ***!
+                                                                                                                                                                                                                                                                                                                                                                    \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
   /*! no static exports found */
-  /***/function node_modulesBabelLoaderLibIndexJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibScriptJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeScriptLangJs(module, exports, __webpack_require__) {
+  /***/function node_modulesBabelLoaderLibIndexJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibScriptJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeScriptLangJs(module, exports, __webpack_require__) {
 
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-    //
-    //
-    //
-    //
-    //
     //
     //
     //
@@ -11601,24 +11917,16 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
     {
       data: function data() {
         return {
-          isFocus: false,
-          payVal: '',
           isShow: false,
-          numData: [
-          { num: '1', isCheck: false },
-          { num: '2', isCheck: false },
-          { num: '3', isCheck: false },
-          { num: '4', isCheck: false },
-          { num: '5', isCheck: false },
-          { num: '6', isCheck: false },
-          { num: '7', isCheck: false },
-          { num: '8', isCheck: false },
-          { num: '9', isCheck: false },
-          { num: '', isCheck: false },
-          { num: '0', isCheck: false },
-          { num: 'x', isCheck: false }],
+          // 验证码的个数（现在是6个）
+          list: [
+          { val: '', fs: true }, // 初始发时使第一个输入框架得到焦点
+          { val: '', fs: false },
+          { val: '', fs: false },
+          { val: '', fs: false },
+          { val: '', fs: false },
+          { val: '', fs: false }] };
 
-          payData: [{ val: '' }, { val: '' }, { val: '' }, { val: '' }, { val: '' }, { val: '' }] };
 
       },
       computed: {},
@@ -11630,62 +11938,44 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
       methods: {
         maskTap: function maskTap() {
           this.isShow = false;
-          this.isFocus = false;
         },
         show: function show() {
           this.isShow = true;
-          this.isFocus = true;
         },
         hide: function hide() {
           this.isShow = false;
-          this.isFocus = false;
-          this.payVal = '';
-          this.numData.map(function (item) {return item.isCheck = false;});
-          this.payData.map(function (item) {return item.val = '';});
-        },
-        payCancel: function payCancel() {
-          this.$emit("cancel", {
-            result: '' });
-
-          this.hide();
         },
         payConfirm: function payConfirm() {
           this.$emit("ok", this.payVal);
           this.hide();
         },
-        showKey: function showKey() {
-          this.isFocus = !this.isFocus;
+        // 当输入框的内容改变时的操作
+        onInput: function onInput(e, i) {
+          // 输入完成时，跳到下一个输入框(得到焦点)
+          if (i < this.list.length - 1 && e.target.value) {
+            // 如果下一个输入框有值，则不跳
+            if (!this.list[i + 1].val) this.onFocus(i + 1, true);
+          };
+          // 删除时，跳到上一个输入框
+          if (i && !e.target.value) {
+            // if(!this.list[i - 1].val)
+            this.onFocus(i - 1, true);
+          };
         },
-        payNum: function payNum(val) {
-          if (val == '') {
-            return false;
-          }
-          this.numData.map(function (item) {
-            if (item.num == val) {
-              item.isCheck = true;
-            } else {
-              item.isCheck = false;
-            }
-          });
-          if (val == 'x') {
-            this.revNum();
-            return false;
-          }
-          this.payVal += val;
-          this.getPayNum(this.payVal);
-          if (this.payVal.length >= 6) {
-            this.payConfirm();
-            return false;
-          }
+        // 得到焦点 激活下边框样式
+        onFocus: function onFocus(i, t) {
+          // this.list[i].val = '';	// 清除输入框中的内容
+
+          // if(!this.list[i].val || this.list[i].val == ''){
+          // 	console.log(123);
+          // 	return false;
+          // }
+          // console.log(456)
+          this.list[i].fs = true;
         },
-        revNum: function revNum() {
-          this.payVal = this.payVal.slice(0, this.payVal.length - 1);
-        },
-        getPayNum: function getPayNum(str) {
-          var strLen = str.length;
-          for (var i = 0; i < strLen; i++) {
-            this.payData[i].val = str.slice(i, i + 1);
-          }
+        // 失去焦点 去除下边框样式
+        onBlur: function onBlur(i) {
+          this.list[i].fs = false;
         } },
 
       mounted: function mounted() {
@@ -11694,23 +11984,23 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
 
     /***/},
 
-  /***/"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=style&index=0&lang=scss&":
-  /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=style&index=0&lang=scss& ***!
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+  /***/"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=style&index=0&lang=scss&":
+  /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=style&index=0&lang=scss& ***!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
   /*! no static exports found */
-  /***/function node_modulesMiniCssExtractPluginDistLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesCssLoaderIndexJsNode_modulesVueLoaderLibLoadersStylePostLoaderJsNode_modulesPostcssLoaderSrcIndexJsNode_modulesSassLoaderLibLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeStyleIndex0LangScss(module, exports, __webpack_require__) {
+  /***/function node_modulesMiniCssExtractPluginDistLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesCssLoaderIndexJsNode_modulesVueLoaderLibLoadersStylePostLoaderJsNode_modulesPostcssLoaderSrcIndexJsNode_modulesSassLoaderLibLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeStyleIndex0LangScss(module, exports, __webpack_require__) {
 
     // extracted by mini-css-extract-plugin
 
     /***/},
 
-  /***/"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=template&id=32d759ce&":
-  /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-                                                                                                                                                                                                                                                                                                                                                                                           !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=template&id=32d759ce& ***!
-                                                                                                                                                                                                                                                                                                                                                                                           \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+  /***/"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=template&id=27e48d2e&":
+  /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+                                                                                                                                                                                                                                                                                                                                                                                            !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=template&id=27e48d2e& ***!
+                                                                                                                                                                                                                                                                                                                                                                                            \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
   /*! exports provided: render, staticRenderFns */
-  /***/function node_modulesVueLoaderLibLoadersTemplateLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibTemplateJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeTemplateId32d759ce(module, __webpack_exports__, __webpack_require__) {
+  /***/function node_modulesVueLoaderLibLoadersTemplateLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibTemplateJsNode_modulesVueLoaderLibIndexJsCUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeTemplateId27e48d2e(module, __webpack_exports__, __webpack_require__) {
 
     "use strict";
     __webpack_require__.r(__webpack_exports__);
@@ -11728,19 +12018,19 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
 
     /***/},
 
-  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue":
-  /*!***************************************************************************************!*\
-                                                                                                   !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue ***!
-                                                                                                   \***************************************************************************************/
+  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue":
+  /*!****************************************************************************************!*\
+                                                                                                    !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue ***!
+                                                                                                    \****************************************************************************************/
   /*! no static exports found */
-  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVue(module, __webpack_exports__, __webpack_require__) {
+  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2Vue(module, __webpack_exports__, __webpack_require__) {
 
     "use strict";
     __webpack_require__.r(__webpack_exports__);
-    /* harmony import */var _pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./pull-pay.vue?vue&type=template&id=32d759ce& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=template&id=32d759ce&");
-    /* harmony import */var _pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ./pull-pay.vue?vue&type=script&lang=js& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=script&lang=js&");
-    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key];});})(__WEBPACK_IMPORT_KEY__);}
-    /* harmony import */var _pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./pull-pay.vue?vue&type=style&index=0&lang=scss& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=style&index=0&lang=scss&");
+    /* harmony import */var _pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./pull-pay2.vue?vue&type=template&id=27e48d2e& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=template&id=27e48d2e&");
+    /* harmony import */var _pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ./pull-pay2.vue?vue&type=script&lang=js& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=script&lang=js&");
+    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key];});})(__WEBPACK_IMPORT_KEY__);}
+    /* harmony import */var _pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./pull-pay2.vue?vue&type=style&index=0&lang=scss& */"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=style&index=0&lang=scss&");
     /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */"./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -11751,9 +12041,9 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
     /* normalize component */
 
     var component = Object(_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-    _pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-    _pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__["render"],
-    _pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+    _pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+    _pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__["render"],
+    _pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
     false,
     null,
     null,
@@ -11763,56 +12053,56 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
 
     /* hot reload */
     if (false) {var api;}
-    component.options.__file = "C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue";
+    component.options.__file = "C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue";
     /* harmony default export */__webpack_exports__["default"] = component.exports;
 
     /***/},
 
-  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=script&lang=js&":
-  /*!****************************************************************************************************************!*\
-                                                                                                                            !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=script&lang=js& ***!
-                                                                                                                            \****************************************************************************************************************/
+  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=script&lang=js&":
+  /*!*****************************************************************************************************************!*\
+                                                                                                                             !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=script&lang=js& ***!
+                                                                                                                             \*****************************************************************************************************************/
   /*! no static exports found */
-  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeScriptLangJs(module, __webpack_exports__, __webpack_require__) {
+  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeScriptLangJs(module, __webpack_exports__, __webpack_require__) {
 
     "use strict";
     __webpack_require__.r(__webpack_exports__);
-    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay.vue?vue&type=script&lang=js& */"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=script&lang=js&");
-    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key];});})(__WEBPACK_IMPORT_KEY__);}
-    /* harmony default export */__webpack_exports__["default"] = _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a;
+    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay2.vue?vue&type=script&lang=js& */"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=script&lang=js&");
+    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key];});})(__WEBPACK_IMPORT_KEY__);}
+    /* harmony default export */__webpack_exports__["default"] = _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a;
 
     /***/},
 
-  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=style&index=0&lang=scss&":
-  /*!*************************************************************************************************************************!*\
-                                                                                                                                     !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=style&index=0&lang=scss& ***!
-                                                                                                                                     \*************************************************************************************************************************/
+  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=style&index=0&lang=scss&":
+  /*!**************************************************************************************************************************!*\
+                                                                                                                                      !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=style&index=0&lang=scss& ***!
+                                                                                                                                      \**************************************************************************************************************************/
   /*! no static exports found */
-  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeStyleIndex0LangScss(module, __webpack_exports__, __webpack_require__) {
+  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeStyleIndex0LangScss(module, __webpack_exports__, __webpack_require__) {
 
     "use strict";
     __webpack_require__.r(__webpack_exports__);
-    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay.vue?vue&type=style&index=0&lang=scss& */"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=style&index=0&lang=scss&");
-    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key];});})(__WEBPACK_IMPORT_KEY__);}
-    /* harmony default export */__webpack_exports__["default"] = _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a;
+    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay2.vue?vue&type=style&index=0&lang=scss& */"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=style&index=0&lang=scss&");
+    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key];});})(__WEBPACK_IMPORT_KEY__);}
+    /* harmony default export */__webpack_exports__["default"] = _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a;
 
     /***/},
 
-  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=template&id=32d759ce&":
-  /*!**********************************************************************************************************************!*\
-                                                                                                                                  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay.vue?vue&type=template&id=32d759ce& ***!
-                                                                                                                                  \**********************************************************************************************************************/
+  /***/"C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=template&id=27e48d2e&":
+  /*!***********************************************************************************************************************!*\
+                                                                                                                                   !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/components/pull-pay2.vue?vue&type=template&id=27e48d2e& ***!
+                                                                                                                                   \***********************************************************************************************************************/
   /*! exports provided: render, staticRenderFns */
-  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPayVueVueTypeTemplateId32d759ce(module, __webpack_exports__, __webpack_require__) {
+  /***/function CUsers120412DocumentsHBuilderProjectsHelloUniappComponentsPullPay2VueVueTypeTemplateId27e48d2e(module, __webpack_exports__, __webpack_require__) {
 
     "use strict";
     __webpack_require__.r(__webpack_exports__);
-    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay.vue?vue&type=template&id=32d759ce& */"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue?vue&type=template&id=32d759ce&");
-    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "render", function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__["render"];});
+    /* harmony import */var _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./pull-pay2.vue?vue&type=template&id=27e48d2e& */"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue?vue&type=template&id=27e48d2e&");
+    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "render", function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__["render"];});
 
-    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay_vue_vue_type_template_id_32d759ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"];});
+    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {return _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_pull_pay2_vue_vue_type_template_id_27e48d2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"];});
 
 
 
@@ -11820,15 +12110,15 @@ define('components/pull-pay.js',function(require, module, exports, window, docum
 
 
 ;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
-'components/pull-pay-create-component',
+'components/pull-pay2-create-component',
 {
-  'components/pull-pay-create-component': function componentsPullPayCreateComponent(module, exports, __webpack_require__) {
-    __webpack_require__('./node_modules/@dcloudio/uni-app-plus/dist/index.js')['createComponent'](__webpack_require__("C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue"));
+  'components/pull-pay2-create-component': function componentsPullPay2CreateComponent(module, exports, __webpack_require__) {
+    __webpack_require__('./node_modules/@dcloudio/uni-app-plus/dist/index.js')['createComponent'](__webpack_require__("C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue"));
   } },
 
-[['components/pull-pay-create-component']]]);
+[['components/pull-pay2-create-component']]]);
 });
-require('components/pull-pay.js');
+require('components/pull-pay2.js');
 __wxRoute = 'components/pull-up';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/pull-up.js';
 
 define('components/pull-up.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
@@ -13445,7 +13735,7 @@ define('pages/user/user.js',function(require, module, exports, window, document,
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullPay = function pullPay() {return __webpack_require__.e(/*! import() | components/pull-pay */ "components/pull-pay").then(__webpack_require__.bind(null, /*! @/components/pull-pay.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue"));};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -13472,8 +13762,11 @@ define('pages/user/user.js',function(require, module, exports, window, document,
 
 
 
-//支付密码
-var _default = {
+
+
+
+var _pullLayer = __webpack_require__(/*! @/components/pull-layer/pull-layer.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.js");var pullPay = function pullPay() {return __webpack_require__.e(/*! import() | components/pull-pay2 */ "components/pull-pay2").then(__webpack_require__.bind(null, /*! @/components/pull-pay2.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue"));};var _default =
+{
   data: function data() {
     return {
       SellerNo: '800001',
@@ -13498,12 +13791,34 @@ var _default = {
     // pullDate,
     // pullList
     // pullArea
-    pullPay: pullPay },
-
+    pullPay: pullPay
+    // wmPoster
+  },
   onLoad: function onLoad() {
-
+    // pullToast
   },
   methods: {
+    toggleTab: function toggleTab() {//显示底部弹窗
+      // this.$refs.pullRadio.show();
+      // this.$refs.pullCheck.show();
+      // this.$refs.pullDate.show();
+      // this.$refs.pullList.show();
+      // this.$refs.pullArea.show();
+      this.$refs.pullPay.show();
+      // pullModal({id:'1111'},this.submit);
+      // pullLoading('加载中···');
+      // console.log(pullToast);
+    },
+    onScroll: function onScroll(e) {
+      console.log(e, " at pages\\user\\user.vue:76");
+    },
+    submit: function submit(val, call) {
+      console.log(val, " at pages\\user\\user.vue:79");
+      call();
+    },
+    cancel: function cancel(val) {
+      // console.log(val);
+    },
     outBtn: function outBtn() {//清除
       uni.showModal({
         title: '清除launchFlag值',
@@ -13544,25 +13859,6 @@ var _default = {
           }
         } });
 
-    },
-    toggleTab: function toggleTab() {//显示底部弹窗
-      // this.$refs.pullRadio.show();
-      // this.$refs.pullCheck.show();
-      // this.$refs.pullDate.show();
-      // this.$refs.pullList.show();
-      // this.$refs.pullArea.show();
-      this.$refs.pullPay.show();
-      // window.removeEventListener('scroll',this.onScroll);//移除全局滚动
-    },
-    onScroll: function onScroll(e) {
-      console.log(e, " at pages\\user\\user.vue:111");
-    },
-    submit: function submit(val) {
-      console.log(123, " at pages\\user\\user.vue:114");
-      console.log(val, " at pages\\user\\user.vue:115");
-    },
-    cancel: function cancel(val) {
-      // console.log(val);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

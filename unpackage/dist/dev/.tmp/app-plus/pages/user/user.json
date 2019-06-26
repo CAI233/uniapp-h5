@@ -3,6 +3,6 @@
   "bounce": "none",
   "titleNView": false,
   "usingComponents": {
-    "pull-pay": "/components/pull-pay"
+    "pull-pay": "/components/pull-pay2"
   }
 }

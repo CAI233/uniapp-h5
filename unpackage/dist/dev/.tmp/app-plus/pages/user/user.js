@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pullPay = function pullPay() {return __webpack_require__.e(/*! import() | components/pull-pay */ "components/pull-pay").then(__webpack_require__.bind(null, /*! @/components/pull-pay.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay.vue"));};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -35,8 +35,11 @@
 
 
 
-//支付密码
-var _default = {
+
+
+
+var _pullLayer = __webpack_require__(/*! @/components/pull-layer/pull-layer.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-layer\\pull-layer.js");var pullPay = function pullPay() {return __webpack_require__.e(/*! import() | components/pull-pay2 */ "components/pull-pay2").then(__webpack_require__.bind(null, /*! @/components/pull-pay2.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\components\\pull-pay2.vue"));};var _default =
+{
   data: function data() {
     return {
       SellerNo: '800001',
@@ -61,12 +64,34 @@ var _default = {
     // pullDate,
     // pullList
     // pullArea
-    pullPay: pullPay },
-
+    pullPay: pullPay
+    // wmPoster
+  },
   onLoad: function onLoad() {
-
+    // pullToast
   },
   methods: {
+    toggleTab: function toggleTab() {//显示底部弹窗
+      // this.$refs.pullRadio.show();
+      // this.$refs.pullCheck.show();
+      // this.$refs.pullDate.show();
+      // this.$refs.pullList.show();
+      // this.$refs.pullArea.show();
+      this.$refs.pullPay.show();
+      // pullModal({id:'1111'},this.submit);
+      // pullLoading('加载中···');
+      // console.log(pullToast);
+    },
+    onScroll: function onScroll(e) {
+      console.log(e, " at pages\\user\\user.vue:76");
+    },
+    submit: function submit(val, call) {
+      console.log(val, " at pages\\user\\user.vue:79");
+      call();
+    },
+    cancel: function cancel(val) {
+      // console.log(val);
+    },
     outBtn: function outBtn() {//清除
       uni.showModal({
         title: '清除launchFlag值',
@@ -107,25 +132,6 @@ var _default = {
           }
         } });
 
-    },
-    toggleTab: function toggleTab() {//显示底部弹窗
-      // this.$refs.pullRadio.show();
-      // this.$refs.pullCheck.show();
-      // this.$refs.pullDate.show();
-      // this.$refs.pullList.show();
-      // this.$refs.pullArea.show();
-      this.$refs.pullPay.show();
-      // window.removeEventListener('scroll',this.onScroll);//移除全局滚动
-    },
-    onScroll: function onScroll(e) {
-      console.log(e, " at pages\\user\\user.vue:111");
-    },
-    submit: function submit(val) {
-      console.log(123, " at pages\\user\\user.vue:114");
-      console.log(val, " at pages\\user\\user.vue:115");
-    },
-    cancel: function cancel(val) {
-      // console.log(val);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

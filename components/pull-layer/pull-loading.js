@@ -1,6 +1,6 @@
 import Vue from 'vue';
 let style = `.pull-layer .pull-layer-plane-close {
-  background: rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.9);
 }
 .pull-layer .pull-layer-plane-content {
   justify-content: center;
@@ -9,36 +9,43 @@ let style = `.pull-layer .pull-layer-plane-close {
   min-height: 100%;
   opacity: 0;
   transition: all 0.5s;
+  background:none;
 }
 .pull-layer.active .pull-layer-plane-content {
   opacity: 1;
+}
+.pull-layer.active .pull-layer-plane-content .pull-layer-loading{
+	background:#fff;
 }`;
 let isActive = false;
 let el = '';
 let newBaseExtend = '';
-function pullLoading(){
+function pullLoading(t,w,c){//t:文本 w:宽  c:颜色
 	isActive = true;
 	let baseExtend = Vue.extend({
 		//https://www.jianshu.com/p/b931abe383e3   //方法介绍 Vue.extend
 		render(h){
-			return h('view',{style:''},[
-				h('style',{type:'text/css'}),
+			return h('view',{style:'style'},[
+				h('style',{domProps:{type:'text/css'}},style),
 				h('view',{class:'pull-layer pull-layer-plane'+(isActive? ' active' : '')},[
 					h('view',{class:'pull-layer-plane-close'}),
 					h('view',{class:'pull-layer-plane-content flex-row'},[
-						h('canvas',{domProps:{width:200,height:200,id:'pull-layer-plane-canvas'},class:'pull-layer-loading'})
+						h('canvas',{domProps:{width:this.width,height:this.height,id:'pull-layer-plane-canvas'},class:'pull-layer-loading'})
 					])
 				])
 			])
 		},
 		data() {
           return {
+			width:w || 150,
+			height:w || 150,
 			ctx:'',
 			size:'',
+			text:t || '',
             options:{
-				radius: 50,
-				lineWidth: 3,
-				strokeStyle: '#aacaf1',
+				radius: (w || 150)/2 - 15,
+				lineWidth: 6,
+				strokeStyle: c || '#aacaf1',
 				degreeStart: -90,
 				degreeEnd: 270,
 				stepStart: 12,
@@ -64,7 +71,6 @@ function init(){
 	newBaseExtend.$destroy();
 }
 // 开始画canvas
-
 function initCanvas(canvas,opts){
 	newBaseExtend.ctx = canvas.getContext('2d');
 	newBaseExtend.size = Math.min(canvas.clientWidth, canvas.clientHeight);
@@ -87,13 +93,16 @@ function strokeCanvas(){
 	newBaseExtend.ctx.lineWidth = newBaseExtend.options.lineWidth;
 	newBaseExtend.ctx.beginPath();
 	newBaseExtend.ctx.strokeStyle = newBaseExtend.options.strokeStyle;
-	newBaseExtend.ctx.arc(newBaseExtend.size / 2, newBaseExtend.size / 2, newBaseExtend.options.radius - newBaseExtend.options.lineWidth / 2, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeStart : newBaseExtend.options.degreeEnd) * Math.PI / 180, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeEnd : newBaseExtend.options.degreeStart) * Math.PI / 180, false);
+	newBaseExtend.ctx.arc(newBaseExtend.size / 2, newBaseExtend.size / 2, newBaseExtend.options.radius + newBaseExtend.options.lineWidth / 2, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeStart : newBaseExtend.options.degreeEnd) * Math.PI / 180, (newBaseExtend.options.degreeStart < newBaseExtend.options.degreeEnd ? newBaseExtend.options.degreeEnd : newBaseExtend.options.degreeStart) * Math.PI / 180, false);
+	// newBaseExtend.ctx.setLineCap('round');
+	newBaseExtend.ctx.lineCap = "round";
 	newBaseExtend.ctx.stroke();
 	newBaseExtend.ctx.beginPath();
-	newBaseExtend.ctx.font = "bold 50px";
+	newBaseExtend.ctx.font = "18px Arial";
 	newBaseExtend.ctx.fillStyle = newBaseExtend.options.strokeStyle;
 	newBaseExtend.ctx.textAlign = 'center';
-	newBaseExtend.ctx.fillText('加载中···', 100,100,newBaseExtend.size);
+	newBaseExtend.ctx.textBaseline = "middle";
+	newBaseExtend.ctx.fillText(newBaseExtend.text, newBaseExtend.width/2,newBaseExtend.height/2,newBaseExtend.size);
 }
 
 export {pullLoading};
