@@ -10,6 +10,7 @@
 		<view class="wrapper">
 			<button class="confirm-btn" @tap="toggleTab()">选择弹窗</button>
 		</view>
+		<graphic-verify :width="300" :height="200"></graphic-verify>
 		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
 		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
 		<!-- <pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date> -->
@@ -29,6 +30,7 @@
 	// import pullPay from '@/components/pull-pay.vue';//支付密码
 	// import wmPoster from '@/components/wm-poster.vue';//二维码canvas
 	import {pullLoading} from '@/components/pull-layer/pull-layer.js';
+	import graphicVerify from '@/components/graphic-verify.vue'
 	export default{
 		data(){
 			return {
@@ -56,6 +58,7 @@
 			// pullArea
 			// pullPay
 			// wmPoster
+			graphicVerify
 		},
 		onLoad() {
 			// pullToast
