@@ -58,19 +58,33 @@
 <style>
 	page,
 	.content{
-		width: 100%;
-		height: 100%;
-		background-size: 100% auto ;
+		
+		/* width: 100%;
+		height: 100%; */
+		/* #ifdef MP-WEIXIN */
+		width: 100vw;
+		height: 100vh;
+		/* #endif */
+		/* background-size: 100% auto ; */
 		padding: 0;
+		background-color: rgba(0,0,0,1);
 	}
 	.swiper{
-		width: 100%;
-		height: 100%;
+		/* width: 100%;
+		height: 100%; */
+		/* #ifdef MP-WEIXIN */
+		width: 100vw;
+		height: 100vh;
+		/* #endif */
 		background: #FFFFFF;
 	}
 	.swiper-item {
-		width: 100%;
-		height: 100%;
+		/* width: 100%;
+		height: 100%; */
+		/* #ifdef MP-WEIXIN */
+		width: 100vw;
+		height: 100vh;
+		/* #endif */
 		text-align: center;
 		position: relative;
 		/* display: flex;
@@ -79,14 +93,22 @@
 		flex-direction:column-reverse */
 	}
 	.swiper-item-img{
-		width: 100%;
-		height: 100%;
+		/* width: 100%;
+		height: 100%; */
+		/* #ifdef MP-WEIXIN */
+		width: 100vw;
+		height: 100vh;
+		/* #endif */
 		margin: 0 auto;
 	}
 	.swiper-item-img image{
 		/* width: 80%; */
-		width:100%;
-		height:100%;
+		/* width:100%;
+		height:100%; */
+		/* #ifdef MP-WEIXIN */
+		width: 100vw;
+		height: 100vh;
+		/* #endif */
 	}
 	.uniapp-img{
 		/* height: 20%; */

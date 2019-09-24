@@ -58,8 +58,7 @@ page,
 	height: 60rpx;
 	line-height: 60rpx;
 	padding: 0 40rpx;
-	-webkit-border-radius: 30rpx;
-	        border-radius: 30rpx;
+	border-radius: 30rpx;
 	font-size: 32rpx;
 	color: #fff;
 	border: 1px solid #fff;

@@ -28,9 +28,13 @@ function HTTP(obj, config) {
 				uni.hideLoading();
 				// 状态码为200
 				if (res.statusCode == 200) {
-					
+					// console.log(res);
 					let data = res.data;
 					
+					// if(!data){
+					// 	resolve(true);
+					// 	return false;
+					// }
 					data = typeof(data) == 'object' ? data : JSON.parse(data);
 					// console.log(data)
 					// console.log(typeof(data));
@@ -55,7 +59,8 @@ function HTTP(obj, config) {
 								mask:false,
 								icon:'none'
 							});
-							reject(data.details ? data.details : data.message);
+							reject();
+							// reject(data.details ? data.details : data.message);
 						}
 					}
 				} else {
@@ -76,6 +81,7 @@ function HTTP(obj, config) {
 			...obj
 		};
 		if (options.url && options.method) {
+			// console.log(options);
 			wx.request(options);
 		} else {
 			wx.showToast({
@@ -108,6 +114,9 @@ export default {
 		return HTTP({url:apiUrl+url,data,method: "POST",header:reqParam}, config);
 	},
 	outGet(url,data = {},config){
-		return HTTP({url:url,data,method: "GET",}, config);
+		return HTTP({url:url,data,method: "GET",header:{'Content-Type': 'application/x-www-form-urlencoded'}}, config);
+	},
+	outPost(url,data = {},config){
+		return HTTP({url:url,data,method: "POST",}, config);
 	}
 }

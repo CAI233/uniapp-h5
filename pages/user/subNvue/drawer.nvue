@@ -1,0 +1,120 @@
+<template>
+    <div class="wrapper">
+		<view class="mask" @tap="maskTap" @touchmove.stop.prevent catchtouchmove="true"></view>
+		<view class="pull-list-cnt">
+			<text class="nav-text">左侧列表</text>
+			<list class="list-wrapper">
+				<cell v-for="item in lists" :key="item.id">
+					<div class="text-wrapper" @click="clickitem(item.id)">
+						<text style="font-size: 30upx; ">{{item.name}}</text>
+					</div>
+				</cell>
+			</list>
+			<div style="flex: 1; text-align: center;">
+				<div class="close-drawer" @click="hideDrawer">
+					<text style="font-size: 34upx; text-align: center;">关闭抽屉</text>
+				</div>
+			</div>
+		</view>
+    </div>
+</template>
+
+<script>
+    export default {
+		data() {
+			return {
+				lists: []
+			}
+		},
+		created() {
+			for(let i = 0; i < 5; i++){
+				this.lists.push({
+					id: i,
+					name: 'Item' + i,
+				});
+			}
+		},
+        methods: {
+            hideDrawer() {
+				console.log(122222222222);
+                uni.getCurrentSubNVue().hide('auto')
+            },
+			maskTap(){
+				uni.getCurrentSubNVue().hide('auto')
+			},
+			clickitem(e) {
+				uni.$emit('drawer-page', e);
+			}
+        }
+    }
+</script>
+
+<style lang='scss'>
+	.wrapper {
+		position: relative;
+		z-index: 999999;
+		flex-direction: column;
+		flex: 1;
+		text-align: center;
+		padding: 60upx 0upx 0upx 20upx;
+		background-color: yellow;
+		/* background-image:url(../static/img/logo.png) no-repeat center center; */
+	}
+	.mask {
+	  position: fixed;
+	  z-index: 1000;
+	  top: 0;
+	  right: 0;
+	  left: 0;
+	  bottom: 0;
+	  background-color:black;
+	}
+	.pull-list-cnt {
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+	  width: 50%;
+	}
+	.nav-text {
+		color: #8f8f94; 
+		/* #ifndef APP-PLUS-NVUE */
+		margin-bottom: 40px;
+		/* #endif */
+		/* #ifdef APP-PLUS-NVUE */
+		margin-bottom: 40upx;
+		/* #endif */
+	}
+	.list-wrapper {
+		/* #ifdef APP-PLUS-NVUE */
+		height: 450upx;
+		/* #endif */
+		/* #ifndef APP-PLUS-NVUE */
+		height: 450px;
+		/* #endif */
+	}
+	.text-wrapper {
+		justify-content: center;
+		border-bottom-style: solid;
+		border-bottom-width: 1upx;
+		border-bottom-color: rgba(0,0,0,.2);
+		margin-bottom: 35upx;
+		padding-bottom: 15upx;
+	}
+	.close-drawer {
+		background-color: #f8f8f8;
+		width: 300upx;
+		padding: 15upx;
+		border-radius: 20upx;
+		border-style: solid;
+		border-width: 1upx;
+		border-color: rgba(0,0,0,.2);
+	}
+	.icon {
+		position: absolute;
+		right: 10upx;
+		color: #000000;
+		font-family: unibtn;
+		font-size: 30upx;
+		font-weight: 400;
+	}
+</style>

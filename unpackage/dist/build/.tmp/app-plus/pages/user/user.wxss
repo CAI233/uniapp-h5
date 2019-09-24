@@ -8,6 +8,16 @@
 page {
   background: #fff;
 }
+.example {
+  padding: 0 10px 10px;
+}
+.example-title {
+  font-size: 14px;
+  line-height: 14px;
+  color: #777;
+  margin: 40px 2rpx;
+  position: relative;
+}
 .container {
   padding-top: 115px;
   position: relative;
@@ -37,8 +47,7 @@ page {
   left: -270rpx;
   bottom: -320rpx;
   border: 100rpx solid #d0d1fd;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
+  border-radius: 50%;
   padding: 180rpx;
 }
 .right-top-sign {
@@ -58,8 +67,7 @@ page {
     -webkit-transform: rotate(50deg);
         -ms-transform: rotate(50deg);
             transform: rotate(50deg);
-    -webkit-border-radius: 0 50px 0 0;
-            border-radius: 0 50px 0 0;
+    border-radius: 0 50px 0 0;
 }
 .right-top-sign:after {
     position: absolute;
@@ -68,23 +76,20 @@ page {
     -webkit-transform: rotate(-50deg);
         -ms-transform: rotate(-50deg);
             transform: rotate(-50deg);
-    -webkit-border-radius: 50px 0 0 0;
-            border-radius: 50px 0 0 0;
+    border-radius: 50px 0 0 0;
     /* background: pink; */
 }
 .confirm-btn {
   width: 630rpx;
   height: 76rpx;
   line-height: 76rpx;
-  -webkit-border-radius: 50px;
-          border-radius: 50px;
+  border-radius: 50px;
   margin-top: 70rpx;
   background: #fa436a;
   color: #fff;
   font-size: 32rpx;
 }
 .confirm-btn:after {
-    -webkit-border-radius: 100px;
-            border-radius: 100px;
+    border-radius: 100px;
 }
 

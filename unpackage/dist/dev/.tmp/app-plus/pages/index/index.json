@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "我的订单",
   "bounce": "none",
+  "animationType": "fade-in",
+  "animationDuration": 300,
   "usingComponents": {
     "uni-load-more": "/components/uni-load-more/uni-load-more",
     "empty": "/components/empty"

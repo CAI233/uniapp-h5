@@ -80,13 +80,16 @@
 				// }else{
 				// 	lisM = Math.abs(lisM) < 40 ? lisM : 40
 				// }
+				lisM = Math.round(lisM/80)*40;
+				console.log(lisM)
 				let nowScoll = this.areaArray[this.pageIndex];
 				let len = nowScoll.list.length;
 				if(nowScoll.lisIndex == 0 && lisM >0) return false;
 				if(nowScoll.lisIndex == 1-len && lisM <0) return false;
 				if(nowScoll.list.length < 2) return false;//当市或区长度小于2时，不准滑动 
 				//上 就是往下走
-				nowScoll.roll = Math.round(lisM/40)*40 + this.startLate ;
+				// nowScoll.roll = Math.round(lisM/40)*40 + this.startLate ;
+				nowScoll.roll = lisM + this.startLate ;
 				nowScoll.lisIndex = nowScoll.roll/40 - 2;
 				nowScoll.place = nowScoll.list[Math.abs(nowScoll.lisIndex)].areaName;	
 			},

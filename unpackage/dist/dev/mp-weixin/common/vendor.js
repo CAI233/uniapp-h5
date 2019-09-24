@@ -1,18 +1,56 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
-
-/***/ "./node_modules/@babel/runtime/regenerator/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
+/* 0 */
+/*!************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ 4);
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ 5));
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 7));
+var _http = _interopRequireDefault(__webpack_require__(/*! ./api/http.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+//本地打包  https://www.jianshu.com/p/e41d80c0cbc2
+var msg = function msg(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;var mask = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var icon = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'none';
+  //统一提示方便全局修改
+  if (Boolean(title) === false) {
+    return;
+  }
+  uni.showToast({
+    title: title,
+    duration: duration,
+    mask: mask,
+    icon: icon });
+
+};
+var prePage = function prePage() {
+  var pages = getCurrentPages();
+  var prePage = pages[pages.length - 2];
+
+
+
+  return prePage.$vm;
+};
+
+_vue.default.config.productionTip = false;
+
+_App.default.mpType = 'app';
+
+_vue.default.prototype.$store = _store.default;
+_vue.default.prototype.$api = { msg: msg, prePage: prePage };
+_vue.default.prototype.$http = _http.default;
+
+var app = new _vue.default(_objectSpread({},
+_App.default));
+
+createApp(app).$mount();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
 
 /***/ }),
-
-/***/ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js":
+/* 1 */
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -20,7 +58,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createPage = createPage;exports.createComponent = createComponent;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
 
 var _toString = Object.prototype.toString;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -62,7 +100,198 @@ var camelize = cached(function (str) {
   return str.replace(camelizeRE, function (_, c) {return c ? c.toUpperCase() : '';});
 });
 
-var SYNC_API_RE = /^\$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
+var HOOKS = [
+'invoke',
+'success',
+'fail',
+'complete',
+'returnValue'];
+
+
+var globalInterceptors = {};
+var scopedInterceptors = {};
+
+function mergeHook(parentVal, childVal) {
+  var res = childVal ?
+  parentVal ?
+  parentVal.concat(childVal) :
+  Array.isArray(childVal) ?
+  childVal : [childVal] :
+  parentVal;
+  return res ?
+  dedupeHooks(res) :
+  res;
+}
+
+function dedupeHooks(hooks) {
+  var res = [];
+  for (var i = 0; i < hooks.length; i++) {
+    if (res.indexOf(hooks[i]) === -1) {
+      res.push(hooks[i]);
+    }
+  }
+  return res;
+}
+
+function removeHook(hooks, hook) {
+  var index = hooks.indexOf(hook);
+  if (index !== -1) {
+    hooks.splice(index, 1);
+  }
+}
+
+function mergeInterceptorHook(interceptor, option) {
+  Object.keys(option).forEach(function (hook) {
+    if (HOOKS.indexOf(hook) !== -1 && isFn(option[hook])) {
+      interceptor[hook] = mergeHook(interceptor[hook], option[hook]);
+    }
+  });
+}
+
+function removeInterceptorHook(interceptor, option) {
+  if (!interceptor || !option) {
+    return;
+  }
+  Object.keys(option).forEach(function (hook) {
+    if (HOOKS.indexOf(hook) !== -1 && isFn(option[hook])) {
+      removeHook(interceptor[hook], option[hook]);
+    }
+  });
+}
+
+function addInterceptor(method, option) {
+  if (typeof method === 'string' && isPlainObject(option)) {
+    mergeInterceptorHook(scopedInterceptors[method] || (scopedInterceptors[method] = {}), option);
+  } else if (isPlainObject(method)) {
+    mergeInterceptorHook(globalInterceptors, method);
+  }
+}
+
+function removeInterceptor(method, option) {
+  if (typeof method === 'string') {
+    if (isPlainObject(option)) {
+      removeInterceptorHook(scopedInterceptors[method], option);
+    } else {
+      delete scopedInterceptors[method];
+    }
+  } else if (isPlainObject(method)) {
+    removeInterceptorHook(globalInterceptors, method);
+  }
+}
+
+function wrapperHook(hook) {
+  return function (data) {
+    return hook(data) || data;
+  };
+}
+
+function isPromise(obj) {
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+}
+
+function queue(hooks, data) {
+  var promise = false;
+  for (var i = 0; i < hooks.length; i++) {
+    var hook = hooks[i];
+    if (promise) {
+      promise = Promise.then(wrapperHook(hook));
+    } else {
+      var res = hook(data);
+      if (isPromise(res)) {
+        promise = Promise.resolve(res);
+      }
+      if (res === false) {
+        return {
+          then: function then() {} };
+
+      }
+    }
+  }
+  return promise || {
+    then: function then(callback) {
+      return callback(data);
+    } };
+
+}
+
+function wrapperOptions(interceptor) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  ['success', 'fail', 'complete'].forEach(function (name) {
+    if (Array.isArray(interceptor[name])) {
+      var oldCallback = options[name];
+      options[name] = function callbackInterceptor(res) {
+        queue(interceptor[name], res).then(function (res) {
+          /* eslint-disable no-mixed-operators */
+          return isFn(oldCallback) && oldCallback(res) || res;
+        });
+      };
+    }
+  });
+  return options;
+}
+
+function wrapperReturnValue(method, returnValue) {
+  var returnValueHooks = [];
+  if (Array.isArray(globalInterceptors.returnValue)) {
+    returnValueHooks.push.apply(returnValueHooks, _toConsumableArray(globalInterceptors.returnValue));
+  }
+  var interceptor = scopedInterceptors[method];
+  if (interceptor && Array.isArray(interceptor.returnValue)) {
+    returnValueHooks.push.apply(returnValueHooks, _toConsumableArray(interceptor.returnValue));
+  }
+  returnValueHooks.forEach(function (hook) {
+    returnValue = hook(returnValue) || returnValue;
+  });
+  return returnValue;
+}
+
+function getApiInterceptorHooks(method) {
+  var interceptor = Object.create(null);
+  Object.keys(globalInterceptors).forEach(function (hook) {
+    if (hook !== 'returnValue') {
+      interceptor[hook] = globalInterceptors[hook].slice();
+    }
+  });
+  var scopedInterceptor = scopedInterceptors[method];
+  if (scopedInterceptor) {
+    Object.keys(scopedInterceptor).forEach(function (hook) {
+      if (hook !== 'returnValue') {
+        interceptor[hook] = (interceptor[hook] || []).concat(scopedInterceptor[hook]);
+      }
+    });
+  }
+  return interceptor;
+}
+
+function invokeApi(method, api, options) {for (var _len = arguments.length, params = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {params[_key - 3] = arguments[_key];}
+  var interceptor = getApiInterceptorHooks(method);
+  if (interceptor && Object.keys(interceptor).length) {
+    if (Array.isArray(interceptor.invoke)) {
+      var res = queue(interceptor.invoke, options);
+      return res.then(function (options) {
+        return api.apply(void 0, [wrapperOptions(interceptor, options)].concat(params));
+      });
+    } else {
+      return api.apply(void 0, [wrapperOptions(interceptor, options)].concat(params));
+    }
+  }
+  return api.apply(void 0, [options].concat(params));
+}
+
+var promiseInterceptor = {
+  returnValue: function returnValue(res) {
+    if (!isPromise(res)) {
+      return res;
+    }
+    return res.then(function (res) {
+      return res[1];
+    }).catch(function (res) {
+      return res[0];
+    });
+  } };
+
+
+var SYNC_API_RE =
+/^\$|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
 
 var CONTEXT_API_RE = /^create|Manager$/;
 
@@ -101,12 +330,12 @@ function promisify(name, api) {
   if (!shouldPromise(name)) {
     return api;
   }
-  return function promiseApi() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};for (var _len = arguments.length, params = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {params[_key - 1] = arguments[_key];}
+  return function promiseApi() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};for (var _len2 = arguments.length, params = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {params[_key2 - 1] = arguments[_key2];}
     if (isFn(options.success) || isFn(options.fail) || isFn(options.complete)) {
-      return api.apply(void 0, [options].concat(params));
+      return wrapperReturnValue(name, invokeApi.apply(void 0, [name, api, options].concat(params)));
     }
-    return handlePromise(new Promise(function (resolve, reject) {
-      api.apply(void 0, [Object.assign({}, options, {
+    return wrapperReturnValue(name, handlePromise(new Promise(function (resolve, reject) {
+      invokeApi.apply(void 0, [name, api, Object.assign({}, options, {
         success: resolve,
         fail: reject })].concat(
       params));
@@ -122,7 +351,7 @@ function promisify(name, api) {
 
         };
       }
-    }));
+    })));
   };
 }
 
@@ -167,6 +396,19 @@ function upx2px(number, newDeviceWidth) {
   }
   return number < 0 ? -result : result;
 }
+
+var interceptors = {
+  promiseInterceptor: promiseInterceptor };
+
+
+
+
+var baseApi = /*#__PURE__*/Object.freeze({
+  upx2px: upx2px,
+  interceptors: interceptors,
+  addInterceptor: addInterceptor,
+  removeInterceptor: removeInterceptor });
+
 
 var previewImage = {
   args: function args(fromArgs) {
@@ -379,8 +621,6 @@ function $emit() {
   return apply(getEmitter(), '$emit', Array.prototype.slice.call(arguments));
 }
 
-
-
 var eventApi = /*#__PURE__*/Object.freeze({
   $on: $on,
   $off: $off,
@@ -410,7 +650,7 @@ function initTriggerEvent(mpInstance) {
     }
   }
   var oldTriggerEvent = mpInstance.triggerEvent;
-  mpInstance.triggerEvent = function (event) {for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {args[_key2 - 1] = arguments[_key2];}
+  mpInstance.triggerEvent = function (event) {for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {args[_key3 - 1] = arguments[_key3];}
     return oldTriggerEvent.apply(mpInstance, [customize(event)].concat(args));
   };
 }
@@ -423,7 +663,7 @@ function initHook(name, options) {
     };
   } else {
     options[name] = function () {
-      initTriggerEvent(this);for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {args[_key3] = arguments[_key3];}
+      initTriggerEvent(this);for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {args[_key4] = arguments[_key4];}
       return oldHook.apply(this, args);
     };
   }
@@ -457,22 +697,56 @@ function initMocks(vm, mocks) {
   });
 }
 
-function initHooks(mpOptions, hooks) {
+function hasHook(hook, vueOptions) {
+  if (!vueOptions) {
+    return true;
+  }
+
+  if (_vue.default.options && Array.isArray(_vue.default.options[hook])) {
+    return true;
+  }
+
+  vueOptions = vueOptions.default || vueOptions;
+
+  if (isFn(vueOptions)) {
+    if (isFn(vueOptions.extendOptions[hook])) {
+      return true;
+    }
+    if (vueOptions.super &&
+    vueOptions.super.options &&
+    Array.isArray(vueOptions.super.options[hook])) {
+      return true;
+    }
+    return false;
+  }
+
+  if (isFn(vueOptions[hook])) {
+    return true;
+  }
+  var mixins = vueOptions.mixins;
+  if (Array.isArray(mixins)) {
+    return !!mixins.find(function (mixin) {return hasHook(hook, mixin);});
+  }
+}
+
+function initHooks(mpOptions, hooks, vueOptions) {
   hooks.forEach(function (hook) {
-    mpOptions[hook] = function (args) {
-      return this.$vm && this.$vm.__call_hook(hook, args);
-    };
+    if (hasHook(hook, vueOptions)) {
+      mpOptions[hook] = function (args) {
+        return this.$vm && this.$vm.__call_hook(hook, args);
+      };
+    }
   });
 }
 
-function initVueComponent(Vue$$1, vueOptions) {
+function initVueComponent(Vue, vueOptions) {
   vueOptions = vueOptions.default || vueOptions;
   var VueComponent;
   if (isFn(vueOptions)) {
     VueComponent = vueOptions;
     vueOptions = VueComponent.extendOptions;
   } else {
-    VueComponent = Vue$$1.extend(vueOptions);
+    VueComponent = Vue.extend(vueOptions);
   }
   return [VueComponent, vueOptions];
 }
@@ -507,7 +781,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -561,8 +835,14 @@ function initBehaviors(vueOptions, initBehavior) {
           vueProps.push('name');
           vueProps.push('value');
         } else {
-          vueProps['name'] = String;
-          vueProps['value'] = null;
+          vueProps['name'] = {
+            type: String,
+            default: '' };
+
+          vueProps['value'] = {
+            type: [String, Number, Boolean, Array, Object, Date],
+            default: '' };
+
         }
       }
     });
@@ -633,7 +913,7 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
           value = value();
         }
 
-        opts.type = parsePropType(key, opts.type, value, file);
+        opts.type = parsePropType(key, opts.type);
 
         properties[key] = {
           type: PROP_TYPES.indexOf(opts.type) !== -1 ? opts.type : null,
@@ -641,7 +921,7 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
           observer: createObserver(key) };
 
       } else {// content:String
-        var type = parsePropType(key, opts, null, file);
+        var type = parsePropType(key, opts);
         properties[key] = {
           type: PROP_TYPES.indexOf(type) !== -1 ? type : null,
           observer: createObserver(key) };
@@ -716,16 +996,16 @@ function processEventExtra(vm, extra, event) {
 
   if (Array.isArray(extra) && extra.length) {
     /**
-                                                  *[
-                                                  *    ['data.items', 'data.id', item.data.id],
-                                                  *    ['metas', 'id', meta.id]
-                                                  *],
-                                                  *[
-                                                  *    ['data.items', 'data.id', item.data.id],
-                                                  *    ['metas', 'id', meta.id]
-                                                  *],
-                                                  *'test'
-                                                  */
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *'test'
+                                              */
     extra.forEach(function (dataPath, index) {
       if (typeof dataPath === 'string') {
         if (!dataPath) {// model,prop.sync
@@ -817,13 +1097,20 @@ function handleEvent(event) {var _this = this;
   event = wrapper$1(event);
 
   // [['tap',[['handle',[1,2,a]],['handle1',[1,2,a]]]]]
-  var eventOpts = (event.currentTarget || event.target).dataset.eventOpts;
+  var dataset = (event.currentTarget || event.target).dataset;
+  if (!dataset) {
+    return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
+  }
+  var eventOpts = dataset.eventOpts || dataset['event-opts']; // 支付宝 web-view 组件 dataset 非驼峰
   if (!eventOpts) {
     return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
   }
 
   // [['handle',[1,2,a]],['handle1',[1,2,a]]]
   var eventType = event.type;
+
+  var ret = [];
+
   eventOpts.forEach(function (eventOpt) {
     var type = eventOpt[0];
     var eventsArray = eventOpt[1];
@@ -855,18 +1142,26 @@ function handleEvent(event) {var _this = this;
             }
             handler.once = true;
           }
-          handler.apply(handlerCtx, processEventArgs(
+          ret.push(handler.apply(handlerCtx, processEventArgs(
           _this.$vm,
           event,
           eventArray[1],
           eventArray[2],
           isCustom,
-          methodName));
+          methodName)));
 
         }
       });
     }
   });
+
+  if (
+  eventType === 'input' &&
+  ret.length === 1 &&
+  typeof ret[0] !== 'undefined')
+  {
+    return ret[0];
+  }
 }
 
 var hooks = [
@@ -909,6 +1204,9 @@ function parseBaseApp(vm, _ref3)
 
   var appOptions = {
     onLaunch: function onLaunch(args) {
+      if (this.$vm) {// 已经初始化过了，主要是为了百度，百度 onShow 在 onLaunch 之前
+        return;
+      }
       {
         if (!wx.canIUse('nextTick')) {// 事实 上2.2.3 即可，简单使用 2.3.0 的 nextTick 判断
           console.error('当前微信基础库版本过低，请将 微信开发者工具-详情-项目设置-调试基础库版本 更换为`2.3.0`以上');
@@ -1025,7 +1323,7 @@ function createApp(vm) {
 function parseBaseComponent(vueComponentOptions)
 
 
-{var _ref5 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},isPage$$1 = _ref5.isPage,initRelation$$1 = _ref5.initRelation;var _initVueComponent =
+{var _ref5 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},isPage = _ref5.isPage,initRelation = _ref5.initRelation;var _initVueComponent =
   initVueComponent(_vue.default, vueComponentOptions),_initVueComponent2 = _slicedToArray(_initVueComponent, 2),VueComponent = _initVueComponent2[0],vueOptions = _initVueComponent2[1];
 
   var componentOptions = {
@@ -1041,7 +1339,7 @@ function parseBaseComponent(vueComponentOptions)
         var properties = this.properties;
 
         var options = {
-          mpType: isPage$$1.call(this) ? 'page' : 'component',
+          mpType: isPage.call(this) ? 'page' : 'component',
           mpInstance: this,
           propsData: properties };
 
@@ -1049,7 +1347,7 @@ function parseBaseComponent(vueComponentOptions)
         initVueIds(properties.vueId, this);
 
         // 处理父子关系
-        initRelation$$1.call(this, {
+        initRelation.call(this, {
           vuePid: this._$vuePid,
           vueOptions: options });
 
@@ -1093,7 +1391,7 @@ function parseBaseComponent(vueComponentOptions)
 
 
 
-  if (isPage$$1) {
+  if (isPage) {
     return componentOptions;
   }
   return [componentOptions, VueComponent];
@@ -1118,12 +1416,9 @@ function parseBasePage(vuePageOptions, _ref6)
 
 
 {var isPage = _ref6.isPage,initRelation = _ref6.initRelation;
-  var pageOptions = parseComponent(vuePageOptions, {
-    isPage: isPage,
-    initRelation: initRelation });
+  var pageOptions = parseComponent(vuePageOptions);
 
-
-  initHooks(pageOptions.methods, hooks$1);
+  initHooks(pageOptions.methods, hooks$1, vuePageOptions);
 
   pageOptions.methods.onLoad = function (args) {
     this.$vm.$mp.query = args; // 兼容 mpvue
@@ -1166,11 +1461,11 @@ canIUses.forEach(function (canIUseApi) {
 
 var uni = {};
 
-if (typeof Proxy !== 'undefined') {
+if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
   uni = new Proxy({}, {
     get: function get(target, name) {
-      if (name === 'upx2px') {
-        return upx2px;
+      if (baseApi[name]) {
+        return baseApi[name];
       }
       if (api[name]) {
         return promisify(name, api[name]);
@@ -1193,7 +1488,9 @@ if (typeof Proxy !== 'undefined') {
     } });
 
 } else {
-  uni.upx2px = upx2px;
+  Object.keys(baseApi).forEach(function (name) {
+    uni[name] = baseApi[name];
+  });
 
   {
     Object.keys(todoApis).forEach(function (name) {
@@ -1228,8 +1525,7 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-
-/***/ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js":
+/* 2 */
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -5795,8 +6091,22 @@ function initProps (vm, propsOptions) {
                 return
             }
             //fixed by xxxxxx __next_tick_pending,uni://form-field 时不告警
-            if(vm._getFormData || (vm.$parent && vm.$parent.__next_tick_pending)){
+            if(
+                key === 'value' && 
+                Array.isArray(vm.$options.behaviors) &&
+                vm.$options.behaviors.indexOf('uni://form-field') !== -1
+              ){
               return
+            }
+            if(vm._getFormData){
+              return
+            }
+            var $parent = vm.$parent;
+            while($parent){
+              if($parent.__next_tick_pending){
+                return  
+              }
+              $parent = $parent.$parent;
             }
           }
           warn(
@@ -6683,7 +6993,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6704,14 +7014,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6743,57 +7053,64 @@ function nextTick$1(vm, cb) {
 /*  */
 
 function cloneWithData(vm) {
-    // 确保当前 vm 所有数据被同步
-    var dataKeys = [].concat(
-        Object.keys(vm._data || {}),
-        Object.keys(vm._computedWatchers || {}));
+  // 确保当前 vm 所有数据被同步
+  var ret = Object.create(null);
+  var dataKeys = [].concat(
+    Object.keys(vm._data || {}),
+    Object.keys(vm._computedWatchers || {}));
 
-    var ret = dataKeys.reduce(function(ret, key) {
-        ret[key] = vm[key];
-        return ret
-    }, Object.create(null));
-    //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
-    Object.assign(ret, vm.$mp.data || {});
-    if (
-        Array.isArray(vm.$options.behaviors) &&
-        vm.$options.behaviors.indexOf('uni://form-field') !== -1
-    ) { //form-field
-        ret['name'] = vm.name;
-        ret['value'] = vm.value;
-    }
-    return JSON.parse(JSON.stringify(ret))
+  dataKeys.reduce(function(ret, key) {
+    ret[key] = vm[key];
+    return ret
+  }, ret);
+  //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
+  Object.assign(ret, vm.$mp.data || {});
+  if (
+    Array.isArray(vm.$options.behaviors) &&
+    vm.$options.behaviors.indexOf('uni://form-field') !== -1
+  ) { //form-field
+    ret['name'] = vm.name;
+    ret['value'] = vm.value;
+  }
+
+  return JSON.parse(JSON.stringify(ret))
 }
 
 var patch = function(oldVnode, vnode) {
-    var this$1 = this;
+  var this$1 = this;
 
-    if (vnode === null) { //destroy
-        return
+  if (vnode === null) { //destroy
+    return
+  }
+  if (this.mpType === 'page' || this.mpType === 'component') {
+    var mpInstance = this.$scope;
+    var data = Object.create(null);
+    try {
+      data = cloneWithData(this);
+    } catch (err) {
+      console.error(err);
     }
-    if (this.mpType === 'page' || this.mpType === 'component') {
-        var mpInstance = this.$scope;
-        var data = cloneWithData(this);
-        data.__webviewId__ = mpInstance.data.__webviewId__;
-        var mpData = Object.create(null);
-        Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
-            mpData[key] = mpInstance.data[key];
-        });
-        var diffData = diff(data, mpData);
-        if (Object.keys(diffData).length) {
-            if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
-                console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
-                    ']差量更新',
-                    JSON.stringify(diffData));
-            }
-            this.__next_tick_pending = true;
-            mpInstance.setData(diffData, function () {
-                this$1.__next_tick_pending = false;
-                flushCallbacks$1(this$1);
-            });
-        } else {
-            flushCallbacks$1(this);
-        }
+    data.__webviewId__ = mpInstance.data.__webviewId__;
+    var mpData = Object.create(null);
+    Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+      mpData[key] = mpInstance.data[key];
+    });
+    var diffData = diff(data, mpData);
+    if (Object.keys(diffData).length) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+          ']差量更新',
+          JSON.stringify(diffData));
+      }
+      this.__next_tick_pending = true;
+      mpInstance.setData(diffData, function () {
+        this$1.__next_tick_pending = false;
+        flushCallbacks$1(this$1);
+      });
+    } else {
+      flushCallbacks$1(this);
     }
+  }
 };
 
 /*  */
@@ -6939,111 +7256,136 @@ function normalizeStyleBinding (bindingStyle) {
 var MP_METHODS = ['createSelectorQuery', 'createIntersectionObserver', 'selectAllComponents', 'selectComponent'];
 
 function getTarget(obj, path) {
-    var parts = path.split('.');
-    var key = parts[0];
-    if (key.indexOf('__$n') === 0) { //number index
-        key = parseInt(key.replace('__$n', ''));
-    }
-    if (parts.length === 1) {
-        return obj[key]
-    }
-    return getTarget(obj[key], parts.slice(1).join('.'))
+  var parts = path.split('.');
+  var key = parts[0];
+  if (key.indexOf('__$n') === 0) { //number index
+    key = parseInt(key.replace('__$n', ''));
+  }
+  if (parts.length === 1) {
+    return obj[key]
+  }
+  return getTarget(obj[key], parts.slice(1).join('.'))
 }
 
 function internalMixin(Vue) {
 
-    var oldEmit = Vue.prototype.$emit;
+  Vue.config.errorHandler = function(err) {
+    console.error(err);
+  };
 
-    Vue.prototype.$emit = function(event) {
-        if (this.$scope && event) {
-            this.$scope['triggerEvent'](event, {
-                __args__: toArray(arguments, 1)
-            });
-        }
-        return oldEmit.apply(this, arguments)
+  var oldEmit = Vue.prototype.$emit;
+
+  Vue.prototype.$emit = function(event) {
+    if (this.$scope && event) {
+      this.$scope['triggerEvent'](event, {
+        __args__: toArray(arguments, 1)
+      });
+    }
+    return oldEmit.apply(this, arguments)
+  };
+
+  Vue.prototype.$nextTick = function(fn) {
+    return nextTick$1(this, fn)
+  };
+
+  MP_METHODS.forEach(function (method) {
+    Vue.prototype[method] = function(args) {
+      if (this.$scope) {
+        return this.$scope[method](args)
+      }
     };
-    
-    Vue.prototype.$nextTick = function (fn) {
-      return nextTick$1(this, fn)
-    };
+  });
 
-    MP_METHODS.forEach(function (method) {
-        Vue.prototype[method] = function(args) {
-            if (this.$scope) {
-                return this.$scope[method](args)
-            }
-        };
-    });
+  Vue.prototype.__init_provide = initProvide;
 
-    Vue.prototype.__init_provide = initProvide;
+  Vue.prototype.__init_injections = initInjections;
 
-    Vue.prototype.__init_injections = initInjections;
+  Vue.prototype.__call_hook = function(hook, args) {
+    var vm = this;
+    // #7573 disable dep collection when invoking lifecycle hooks
+    pushTarget();
+    var handlers = vm.$options[hook];
+    var info = hook + " hook";
+    var ret;
+    if (handlers) {
+      for (var i = 0, j = handlers.length; i < j; i++) {
+        ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
+      }
+    }
+    if (vm._hasHookEvent) {
+      vm.$emit('hook:' + hook);
+    }
+    popTarget();
+    return ret
+  };
 
-    Vue.prototype.__call_hook = function(hook, args) {
-        var vm = this;
-        // #7573 disable dep collection when invoking lifecycle hooks
-        pushTarget();
-        var handlers = vm.$options[hook];
-        var info = hook + " hook";
-        var ret;
-        if (handlers) {
-            for (var i = 0, j = handlers.length; i < j; i++) {
-                ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
-            }
-        }
-        if (vm._hasHookEvent) {
-            vm.$emit('hook:' + hook);
-        }
-        popTarget();
-        return ret
-    };
+  Vue.prototype.__set_model = function(target, key, value, modifiers) {
+    if (Array.isArray(modifiers)) {
+      if (modifiers.indexOf('trim') !== -1) {
+        value = value.trim();
+      }
+      if (modifiers.indexOf('number') !== -1) {
+        value = this._n(value);
+      }
+    }
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
 
-    Vue.prototype.__set_model = function(target, key, value, modifiers) {
-        if (Array.isArray(modifiers)) {
-            if (modifiers.indexOf('trim') !== -1) {
-                value = value.trim();
-            }
-            if (modifiers.indexOf('number') !== -1) {
-                value = this._n(value);
-            }
-        }
-        if(!target){
-            target = this;
-        }
-        target[key] = value;
-    };
+  Vue.prototype.__set_sync = function(target, key, value) {
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
 
-    Vue.prototype.__set_sync = function(target, key, value) {
-        if(!target){
-            target = this;
-        }
-        target[key] = value;
-    };
+  Vue.prototype.__get_orig = function(item) {
+    if (isPlainObject(item)) {
+      return item['$orig'] || item
+    }
+    return item
+  };
 
-    Vue.prototype.__get_orig = function(item) {
-        if (isPlainObject(item)) {
-            return item['$orig'] || item
-        }
-        return item
-    };
-
-    Vue.prototype.__get_value = function(dataPath, target) {
-        return getTarget(target || this, dataPath)
-    };
+  Vue.prototype.__get_value = function(dataPath, target) {
+    return getTarget(target || this, dataPath)
+  };
 
 
-    Vue.prototype.__get_class = function(dynamicClass, staticClass) {
-        return renderClass(staticClass, dynamicClass)
-    };
+  Vue.prototype.__get_class = function(dynamicClass, staticClass) {
+    return renderClass(staticClass, dynamicClass)
+  };
 
-    Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
-        if (!dynamicStyle && !staticStyle) {
-            return ''
-        }
-        var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
-        var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
-        return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
-    };
+  Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
+    if (!dynamicStyle && !staticStyle) {
+      return ''
+    }
+    var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
+    var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
+    return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
+  };
+
+  Vue.prototype.__map = function(val, iteratee) {
+    //TODO 暂不考虑 string,number
+    var ret, i, l, keys, key;
+    if (Array.isArray(val)) {
+      ret = new Array(val.length);
+      for (i = 0, l = val.length; i < l; i++) {
+        ret[i] = iteratee(val[i], i);
+      }
+      return ret
+    } else if (isObject(val)) {
+      keys = Object.keys(val);
+      ret = Object.create(null);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[key] = iteratee(val[key], key, i);
+      }
+      return ret
+    }
+    return []
+  };
 
 }
 
@@ -7128,898 +7470,109 @@ internalMixin(Vue);
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-
-/***/ "./node_modules/regenerator-runtime/runtime-module.js":
-/*!************************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-// This method of obtaining a reference to the global object needs to be
-// kept identical to the way it is obtained in runtime.js
-var g = (function() {
-  return this || (typeof self === "object" && self);
-})() || Function("return this")();
-
-// Use `getOwnPropertyNames` because not all browsers support calling
-// `hasOwnProperty` on the global `self` object in a worker. See #183.
-var hadRuntime = g.regeneratorRuntime &&
-  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
-
-// Save the old regeneratorRuntime in case it needs to be restored later.
-var oldRuntime = hadRuntime && g.regeneratorRuntime;
-
-// Force reevalutation of runtime.js.
-g.regeneratorRuntime = undefined;
-
-module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/regenerator-runtime/runtime.js");
-
-if (hadRuntime) {
-  // Restore the original runtime.
-  g.regeneratorRuntime = oldRuntime;
-} else {
-  // Remove the global property added by runtime.js.
-  try {
-    delete g.regeneratorRuntime;
-  } catch(e) {
-    g.regeneratorRuntime = undefined;
-  }
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/regenerator-runtime/runtime.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime.js ***!
-  \*****************************************************/
+/* 3 */
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-!(function(global) {
-  "use strict";
-
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined; // More compressible than void 0.
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-
-  var inModule = typeof module === "object";
-  var runtime = global.regeneratorRuntime;
-  if (runtime) {
-    if (inModule) {
-      // If regeneratorRuntime is defined globally and we're in a module,
-      // make the exports object identical to regeneratorRuntime.
-      module.exports = runtime;
-    }
-    // Don't bother evaluating the rest of this file if the runtime was
-    // already defined globally.
-    return;
-  }
-
-  // Define the runtime globally (as expected by generated code) as either
-  // module.exports (if we're in a module) or a new, empty object.
-  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
-
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []);
-
-    // The ._invoke method unifies the implementations of the .next,
-    // .throw, and .return methods.
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
-
-    return generator;
-  }
-  runtime.wrap = wrap;
-
-  // Try/catch helper to minimize deoptimizations. Returns a completion
-  // record like context.tryEntries[i].completion. This interface could
-  // have been (and was previously) designed to take a closure to be
-  // invoked without arguments, but in all the cases we care about we
-  // already have an existing method we want to call, so there's no need
-  // to create a new function object. We can even get away with assuming
-  // the method takes exactly one argument, since that happens to be true
-  // in every case, so we don't have to touch the arguments object. The
-  // only additional allocation required is the completion record, which
-  // has a stable shape and so hopefully should be cheap to allocate.
-  function tryCatch(fn, obj, arg) {
-    try {
-      return { type: "normal", arg: fn.call(obj, arg) };
-    } catch (err) {
-      return { type: "throw", arg: err };
-    }
-  }
-
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed";
-
-  // Returning this object from the innerFn has the same effect as
-  // breaking out of the dispatch switch statement.
-  var ContinueSentinel = {};
-
-  // Dummy constructor functions that we use as the .constructor and
-  // .constructor.prototype properties for functions that return Generator
-  // objects. For full spec compliance, you may wish to configure your
-  // minifier not to mangle the names of these two functions.
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-
-  // This is a polyfill for %IteratorPrototype% for environments that
-  // don't natively support it.
-  var IteratorPrototype = {};
-  IteratorPrototype[iteratorSymbol] = function () {
-    return this;
-  };
-
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  if (NativeIteratorPrototype &&
-      NativeIteratorPrototype !== Op &&
-      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
-    // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-  }
-
-  var Gp = GeneratorFunctionPrototype.prototype =
-    Generator.prototype = Object.create(IteratorPrototype);
-  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
-  GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] =
-    GeneratorFunction.displayName = "GeneratorFunction";
-
-  // Helper for defining the .next, .throw, and .return methods of the
-  // Iterator interface in terms of a single ._invoke method.
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function(method) {
-      prototype[method] = function(arg) {
-        return this._invoke(method, arg);
-      };
-    });
-  }
-
-  runtime.isGeneratorFunction = function(genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
-    return ctor
-      ? ctor === GeneratorFunction ||
-        // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction"
-      : false;
-  };
-
-  runtime.mark = function(genFun) {
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-    } else {
-      genFun.__proto__ = GeneratorFunctionPrototype;
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
-    }
-    genFun.prototype = Object.create(Gp);
-    return genFun;
-  };
-
-  // Within the body of any async function, `await x` is transformed to
-  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-  // `hasOwn.call(value, "__await")` to determine if the yielded value is
-  // meant to be awaited.
-  runtime.awrap = function(arg) {
-    return { __await: arg };
-  };
-
-  function AsyncIterator(generator) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-        if (value &&
-            typeof value === "object" &&
-            hasOwn.call(value, "__await")) {
-          return Promise.resolve(value.__await).then(function(value) {
-            invoke("next", value, resolve, reject);
-          }, function(err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return Promise.resolve(value).then(function(unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration.
-          result.value = unwrapped;
-          resolve(result);
-        }, function(error) {
-          // If a rejected Promise was yielded, throw the rejection back
-          // into the async generator function so it can be handled there.
-          return invoke("throw", error, resolve, reject);
-        });
-      }
-    }
-
-    var previousPromise;
-
-    function enqueue(method, arg) {
-      function callInvokeWithMethodAndArg() {
-        return new Promise(function(resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
-      }
-
-      return previousPromise =
-        // If enqueue has been called before, then we want to wait until
-        // all previous Promises have been resolved before calling invoke,
-        // so that results are always delivered in the correct order. If
-        // enqueue has not been called before, then it is important to
-        // call invoke immediately, without waiting on a callback to fire,
-        // so that the async generator function has the opportunity to do
-        // any necessary setup in a predictable way. This predictability
-        // is why the Promise constructor synchronously invokes its
-        // executor callback, and why async functions synchronously
-        // execute code before the first await. Since we implement simple
-        // async functions in terms of async generators, it is especially
-        // important to get this right, even though it requires care.
-        previousPromise ? previousPromise.then(
-          callInvokeWithMethodAndArg,
-          // Avoid propagating failures to Promises returned by later
-          // invocations of the iterator.
-          callInvokeWithMethodAndArg
-        ) : callInvokeWithMethodAndArg();
-    }
-
-    // Define the unified helper method that is used to implement .next,
-    // .throw, and .return (see defineIteratorMethods).
-    this._invoke = enqueue;
-  }
-
-  defineIteratorMethods(AsyncIterator.prototype);
-  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
-    return this;
-  };
-  runtime.AsyncIterator = AsyncIterator;
-
-  // Note that simple async functions are implemented on top of
-  // AsyncIterator objects; they just return a Promise for the value of
-  // the final result produced by the iterator.
-  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
-    var iter = new AsyncIterator(
-      wrap(innerFn, outerFn, self, tryLocsList)
-    );
-
-    return runtime.isGeneratorFunction(outerFn)
-      ? iter // If outerFn is a generator, return the full iterator.
-      : iter.next().then(function(result) {
-          return result.done ? result.value : iter.next();
-        });
-  };
-
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
-
-    return function invoke(method, arg) {
-      if (state === GenStateExecuting) {
-        throw new Error("Generator is already running");
-      }
-
-      if (state === GenStateCompleted) {
-        if (method === "throw") {
-          throw arg;
-        }
-
-        // Be forgiving, per 25.3.3.3.3 of the spec:
-        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-        return doneResult();
-      }
-
-      context.method = method;
-      context.arg = arg;
-
-      while (true) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
-          }
-        }
-
-        if (context.method === "next") {
-          // Setting context._sent for legacy support of Babel's
-          // function.sent implementation.
-          context.sent = context._sent = context.arg;
-
-        } else if (context.method === "throw") {
-          if (state === GenStateSuspendedStart) {
-            state = GenStateCompleted;
-            throw context.arg;
-          }
-
-          context.dispatchException(context.arg);
-
-        } else if (context.method === "return") {
-          context.abrupt("return", context.arg);
-        }
-
-        state = GenStateExecuting;
-
-        var record = tryCatch(innerFn, self, context);
-        if (record.type === "normal") {
-          // If an exception is thrown from innerFn, we leave state ===
-          // GenStateExecuting and loop back for another invocation.
-          state = context.done
-            ? GenStateCompleted
-            : GenStateSuspendedYield;
-
-          if (record.arg === ContinueSentinel) {
-            continue;
-          }
-
-          return {
-            value: record.arg,
-            done: context.done
-          };
-
-        } else if (record.type === "throw") {
-          state = GenStateCompleted;
-          // Dispatch the exception by looping back around to the
-          // context.dispatchException(context.arg) call above.
-          context.method = "throw";
-          context.arg = record.arg;
-        }
-      }
-    };
-  }
-
-  // Call delegate.iterator[context.method](context.arg) and handle the
-  // result, either by returning a { value, done } result from the
-  // delegate iterator, or by modifying context.method and context.arg,
-  // setting context.delegate to null, and returning the ContinueSentinel.
-  function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-    if (method === undefined) {
-      // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
-      context.delegate = null;
-
-      if (context.method === "throw") {
-        if (delegate.iterator.return) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
-
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
-        }
-
-        context.method = "throw";
-        context.arg = new TypeError(
-          "The iterator does not provide a 'throw' method");
-      }
-
-      return ContinueSentinel;
-    }
-
-    var record = tryCatch(method, delegate.iterator, context.arg);
-
-    if (record.type === "throw") {
-      context.method = "throw";
-      context.arg = record.arg;
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    var info = record.arg;
-
-    if (! info) {
-      context.method = "throw";
-      context.arg = new TypeError("iterator result is not an object");
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    if (info.done) {
-      // Assign the result of the finished delegate to the temporary
-      // variable specified by delegate.resultName (see delegateYield).
-      context[delegate.resultName] = info.value;
-
-      // Resume execution at the desired location (see delegateYield).
-      context.next = delegate.nextLoc;
-
-      // If context.method was "throw" but the delegate handled the
-      // exception, let the outer generator proceed normally. If
-      // context.method was "next", forget context.arg since it has been
-      // "consumed" by the delegate iterator. If context.method was
-      // "return", allow the original .return call to continue in the
-      // outer generator.
-      if (context.method !== "return") {
-        context.method = "next";
-        context.arg = undefined;
-      }
-
-    } else {
-      // Re-yield the result returned by the delegate method.
-      return info;
-    }
-
-    // The delegate iterator is finished, so forget it and continue with
-    // the outer generator.
-    context.delegate = null;
-    return ContinueSentinel;
-  }
-
-  // Define Generator.prototype.{next,throw,return} in terms of the
-  // unified ._invoke helper method.
-  defineIteratorMethods(Gp);
-
-  Gp[toStringTagSymbol] = "Generator";
-
-  // A Generator should always return itself as the iterator object when the
-  // @@iterator function is called on it. Some browsers' implementations of the
-  // iterator prototype chain incorrectly implement this, causing the Generator
-  // object to not be returned from this call. This ensures that doesn't happen.
-  // See https://github.com/facebook/regenerator/issues/274 for more details.
-  Gp[iteratorSymbol] = function() {
-    return this;
-  };
-
-  Gp.toString = function() {
-    return "[object Generator]";
-  };
-
-  function pushTryEntry(locs) {
-    var entry = { tryLoc: locs[0] };
-
-    if (1 in locs) {
-      entry.catchLoc = locs[1];
-    }
-
-    if (2 in locs) {
-      entry.finallyLoc = locs[2];
-      entry.afterLoc = locs[3];
-    }
-
-    this.tryEntries.push(entry);
-  }
-
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal";
-    delete record.arg;
-    entry.completion = record;
-  }
-
-  function Context(tryLocsList) {
-    // The root entry object (effectively a try statement without a catch
-    // or a finally block) gives us a place to store values thrown from
-    // locations where there is no enclosing try statement.
-    this.tryEntries = [{ tryLoc: "root" }];
-    tryLocsList.forEach(pushTryEntry, this);
-    this.reset(true);
-  }
-
-  runtime.keys = function(object) {
-    var keys = [];
-    for (var key in object) {
-      keys.push(key);
-    }
-    keys.reverse();
-
-    // Rather than returning an object with a next method, we keep
-    // things simple and return the next function itself.
-    return function next() {
-      while (keys.length) {
-        var key = keys.pop();
-        if (key in object) {
-          next.value = key;
-          next.done = false;
-          return next;
-        }
-      }
-
-      // To avoid creating an additional object, we just hang the .value
-      // and .done properties off the next function object itself. This
-      // also ensures that the minifier will not anonymize the function.
-      next.done = true;
-      return next;
-    };
-  };
-
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) {
-        return iteratorMethod.call(iterable);
-      }
-
-      if (typeof iterable.next === "function") {
-        return iterable;
-      }
-
-      if (!isNaN(iterable.length)) {
-        var i = -1, next = function next() {
-          while (++i < iterable.length) {
-            if (hasOwn.call(iterable, i)) {
-              next.value = iterable[i];
-              next.done = false;
-              return next;
-            }
-          }
-
-          next.value = undefined;
-          next.done = true;
-
-          return next;
-        };
-
-        return next.next = next;
-      }
-    }
-
-    // Return an iterator with no values.
-    return { next: doneResult };
-  }
-  runtime.values = values;
-
-  function doneResult() {
-    return { value: undefined, done: true };
-  }
-
-  Context.prototype = {
-    constructor: Context,
-
-    reset: function(skipTempReset) {
-      this.prev = 0;
-      this.next = 0;
-      // Resetting context._sent for legacy support of Babel's
-      // function.sent implementation.
-      this.sent = this._sent = undefined;
-      this.done = false;
-      this.delegate = null;
-
-      this.method = "next";
-      this.arg = undefined;
-
-      this.tryEntries.forEach(resetTryEntry);
-
-      if (!skipTempReset) {
-        for (var name in this) {
-          // Not sure about the optimal order of these conditions:
-          if (name.charAt(0) === "t" &&
-              hasOwn.call(this, name) &&
-              !isNaN(+name.slice(1))) {
-            this[name] = undefined;
-          }
-        }
-      }
-    },
-
-    stop: function() {
-      this.done = true;
-
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
-      if (rootRecord.type === "throw") {
-        throw rootRecord.arg;
-      }
-
-      return this.rval;
-    },
-
-    dispatchException: function(exception) {
-      if (this.done) {
-        throw exception;
-      }
-
-      var context = this;
-      function handle(loc, caught) {
-        record.type = "throw";
-        record.arg = exception;
-        context.next = loc;
-
-        if (caught) {
-          // If the dispatched exception was caught by a catch block,
-          // then let that catch block handle the exception normally.
-          context.method = "next";
-          context.arg = undefined;
-        }
-
-        return !! caught;
-      }
-
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        var record = entry.completion;
-
-        if (entry.tryLoc === "root") {
-          // Exception thrown outside of any try block that could handle
-          // it, so set the completion value of the entire function to
-          // throw the exception.
-          return handle("end");
-        }
-
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
-
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            } else if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            }
-
-          } else if (hasFinally) {
-            if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else {
-            throw new Error("try statement without catch or finally");
-          }
-        }
-      }
-    },
-
-    abrupt: function(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev &&
-            hasOwn.call(entry, "finallyLoc") &&
-            this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
-          break;
-        }
-      }
-
-      if (finallyEntry &&
-          (type === "break" ||
-           type === "continue") &&
-          finallyEntry.tryLoc <= arg &&
-          arg <= finallyEntry.finallyLoc) {
-        // Ignore the finally entry if control is not jumping to a
-        // location outside the try/catch block.
-        finallyEntry = null;
-      }
-
-      var record = finallyEntry ? finallyEntry.completion : {};
-      record.type = type;
-      record.arg = arg;
-
-      if (finallyEntry) {
-        this.method = "next";
-        this.next = finallyEntry.finallyLoc;
-        return ContinueSentinel;
-      }
-
-      return this.complete(record);
-    },
-
-    complete: function(record, afterLoc) {
-      if (record.type === "throw") {
-        throw record.arg;
-      }
-
-      if (record.type === "break" ||
-          record.type === "continue") {
-        this.next = record.arg;
-      } else if (record.type === "return") {
-        this.rval = this.arg = record.arg;
-        this.method = "return";
-        this.next = "end";
-      } else if (record.type === "normal" && afterLoc) {
-        this.next = afterLoc;
-      }
-
-      return ContinueSentinel;
-    },
-
-    finish: function(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) {
-          this.complete(entry.completion, entry.afterLoc);
-          resetTryEntry(entry);
-          return ContinueSentinel;
-        }
-      }
-    },
-
-    "catch": function(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if (record.type === "throw") {
-            var thrown = record.arg;
-            resetTryEntry(entry);
-          }
-          return thrown;
-        }
-      }
-
-      // The context.catch method must only be called with a location
-      // argument that corresponds to a known catch block.
-      throw new Error("illegal catch attempt");
-    },
-
-    delegateYield: function(iterable, resultName, nextLoc) {
-      this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      };
-
-      if (this.method === "next") {
-        // Deliberately forget the last sent value so that we don't
-        // accidentally pass it on to the delegate.
-        this.arg = undefined;
-      }
-
-      return ContinueSentinel;
-    }
-  };
-})(
-  // In sloppy mode, unbound `this` refers to the global object, fallback to
-  // Function constructor if we're in global strict mode. That is sadly a form
-  // of indirect eval which violates Content Security Policy.
-  (function() {
-    return this || (typeof self === "object" && self);
-  })() || Function("return this")()
-);
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
 }
 
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
+/* 4 */
+/*!***************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/pages.json ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "./node_modules/vuex/dist/vuex.esm.js":
+"use strict";
+
+
+/***/ }),
+/* 5 */
+/*!*******************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/store/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 6));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+_vue.default.use(_vuex.default);
+
+var store = new _vuex.default.Store({
+  state: {
+    hasLogin: false,
+    userInfo: uni.getStorageSync('userInfo') || {},
+    token: uni.getStorageSync('token') || '' },
+
+  mutations: {
+    login: function login(state, provider) {
+      state.hasLogin = true;
+      state.userInfo = provider;
+      uni.setStorage({ //缓存用户登陆状态
+        key: 'userInfo',
+        data: provider });
+
+    },
+    setToken: function setToken(state, provider) {
+      state.token = provider;
+      uni.setStorage({ //缓存用户登陆状态
+        key: 'token',
+        data: provider });
+
+    },
+    loginOut: function loginOut(state) {
+      state.hasLogin = false;
+      state.userInfo = {};
+      state.token = '';
+      uni.removeStorage(_defineProperty({
+        key: 'userInfo' }, "key",
+      'token'));
+
+      console.log('123');
+      uni.reLaunch({
+        url: '../pages/login/login' });
+
+    } },
+
+  actions: {} });var _default =
+
+
+
+
+store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 6 */
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
@@ -8969,52 +8522,131 @@ var index_esm = {
 
 
 /***/ }),
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/***/ "./node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
 
-var g;
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
 }
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
 
 
 /***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\api\\http.js":
-/*!***************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/api/http.js ***!
-  \***************************************************************************/
+/* 13 */
+/*!****************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/api/http.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _store = _interopRequireDefault(__webpack_require__(/*! @/store */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _store = _interopRequireDefault(__webpack_require__(/*! @/store */ 5));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 function HTTP(obj, config) {
 
   var defaultConfig = {
     isRes: false,
-    loading: true };
+    loading: false };
 
 
   config = _objectSpread({}, defaultConfig,
@@ -9033,18 +8665,19 @@ function HTTP(obj, config) {
       url: "",
       data: {},
       dataType: "json",
-      header: {
-        // "content-type": "application/json",
-        // "X-requested-With": "XMLHttpRequest"
-      },
+      header: {},
       success: function success(res) {
         // console.log("HTTP请求结果：",res)
         uni.hideLoading();
         // 状态码为200
         if (res.statusCode == 200) {
-
+          // console.log(res);
           var data = res.data;
 
+          // if(!data){
+          // 	resolve(true);
+          // 	return false;
+          // }
           data = typeof data == 'object' ? data : JSON.parse(data);
           // console.log(data)
           // console.log(typeof(data));
@@ -9069,7 +8702,8 @@ function HTTP(obj, config) {
                   mask: false,
                   icon: 'none' });
 
-                reject(data.details ? data.details : data.message);
+                reject();
+                // reject(data.details ? data.details : data.message);
               }
             }
         } else {
@@ -9089,9 +8723,8 @@ function HTTP(obj, config) {
     options = _objectSpread({}, options,
     obj);
 
-    // const OPENID = uni.getStorageSync("openId");
-    // if (OPENID) options["header"]["openId"] = OPENID;
     if (options.url && options.method) {
+      // console.log(options);
       wx.request(options);
     } else {
       wx.showToast({
@@ -9103,7 +8736,7 @@ function HTTP(obj, config) {
   });
 }
 var apiUrl = 'https://sclmdrpapi.saselomo.com/';
-console.log(_store.default.state);
+// console.log(store.state);
 
 var reqParam = {
   'access_token': _store.default.state.token,
@@ -9122,15 +8755,898 @@ var reqParam = {
   },
   ReqPOST: function ReqPOST(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var config = arguments.length > 2 ? arguments[2] : undefined;
     return HTTP({ url: apiUrl + url, data: data, method: "POST", header: reqParam }, config);
+  },
+  outGet: function outGet(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var config = arguments.length > 2 ? arguments[2] : undefined;
+    return HTTP({ url: url, data: data, method: "GET", header: { 'Content-Type': 'application/x-www-form-urlencoded' } }, config);
+  },
+  outPost: function outPost(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var config = arguments.length > 2 ? arguments[2] : undefined;
+    return HTTP({ url: url, data: data, method: "POST" }, config);
   } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 14 */
+/*!*********************************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\common\\graceRules.js":
-/*!************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/common/graceRules.js ***!
-  \************************************************************************************/
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 21);
+
+
+/***/ }),
+/* 21 */
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() {
+  return this || (typeof self === "object" && self);
+})() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(/*! ./runtime */ 22);
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+/* 22 */
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+!(function(global) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  var inModule = typeof module === "object";
+  var runtime = global.regeneratorRuntime;
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    }
+    // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+    return;
+  }
+
+  // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  runtime.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  runtime.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  runtime.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  runtime.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  runtime.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList)
+    );
+
+    return runtime.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        if (delegate.iterator.return) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  runtime.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  runtime.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+})(
+  // In sloppy mode, unbound `this` refers to the global object, fallback to
+  // Function constructor if we're in global strict mode. That is sadly a form
+  // of indirect eval which violates Content Security Policy.
+  (function() {
+    return this || (typeof self === "object" && self);
+  })() || Function("return this")()
+);
+
+
+/***/ }),
+/* 23 */,
+/* 24 */,
+/* 25 */
+/*!*********************************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Findex%2Fguide"} ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _guide = _interopRequireDefault(__webpack_require__(/*! ./pages/index/guide.vue */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_guide.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */
+/*!*********************************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_login.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
+/*!********************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/common/rules.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  /* 用户登录 */
+  loginRule: [{
+    name: "UserPhone",
+    checkType: "notnull",
+    checkRule: "",
+    errorMsg: "请输入手机号/微信号" },
+  {
+    name: "PassWord",
+    checkType: "notnull",
+    checkRule: "6,20",
+    errorMsg: "密码不能少于6位" }] };exports.default = _default;
+
+/***/ }),
+/* 40 */
+/*!*************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/common/graceRules.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9246,6 +9762,8 @@ function graceHideLoading() {
   uni.hideLoading();
 }
 function graceModel(model, obj) {
+  console.log(model);
+  console.log(obj);
   if (obj.checkRule) {//有限制长度
     var typeArr = obj.checkRule.split(",");
     if (typeArr.length == 1) {//单独一个限制  必须满足最小值
@@ -9253,7 +9771,9 @@ function graceModel(model, obj) {
         graceToast(obj.errorMsg, 1500, true);
         return false;
       }
+      return true;
     } else {//两个限制，区间 
+      console.log(model[obj.name]);
       if (model[obj.name].length < typeArr[0]) {
         graceToast(obj.errorMsg, 1500, true);
         return false;
@@ -9262,258 +9782,103 @@ function graceModel(model, obj) {
         graceToast(obj.errorMsg, 1500, true);
         return false;
       }
-
+      return true;
     }
-  }
-}
-function graceRules(obj, rule) {
-  for (var i = 0; i < rule.length; i++) {
-    switch (rule[i].checkType) {//按类型校验
-      case 'notnull':
-        if (obj[rule[i].name].length < 1) {
-          graceToast(rule[i].errorMsg, 1500, true);
-          return false;
-        }
-        console.log(graceModel(obj, rule[i]));
-        graceModel(obj, rule[i]);
-        break;
-      case 'string':
-        console.log('string');
-        break;}
-
   }
   return true;
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+function graceRules(obj, rule) {
+  for (var i = 0; i < rule.length; i++) {
+    if (!obj[rule[i].name] || obj[rule[i].name] == '') {
+      graceToast(rule[i].errorMsg, 1500, true);
+      return false;
+    } else {
+      if (obj[rule[i].name] && rule[i].checkRule) {
+        var typeArr = rule[i].checkRule.split(",");
+        if (typeArr.length == 1) {//单独一个限制  必须满足最小值
+          if (obj[rule[i].name].length < typeArr[0]) {
+            graceToast(rule[i].errorMsg, 1500, true);
+            return false;
+          }
+          return true;
+        } else {//两个限制，区间 
+          if (obj[rule[i].name].length < typeArr[0]) {
+            graceToast(rule[i].errorMsg, 1500, true);
+            return false;
+          }
+          if (obj[rule[i].name].length > typeArr[1]) {
+            graceToast(rule[i].errorMsg, 1500, true);
+            return false;
+          }
+          return true;
+        }
+      }
+    }
+  }
+  return true;
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 41 */,
+/* 42 */,
+/* 43 */
+/*!***************************************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fcategory%2Fcategory"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\common\\rules.js":
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_category.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */
 /*!*******************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/common/rules.js ***!
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fcart%2Fcart"} ***!
   \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  /* 用户登录 */
-  loginRule: [{
-    name: "UserPhone",
-    checkType: "notnull",
-    checkRule: "",
-    errorMsg: "请输入手机号/微信号" },
-  {
-    name: "password",
-    checkType: "notnull",
-    checkRule: "6,20",
-    errorMsg: "密码不能少于6位" }] };exports.default = _default;
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js":
-/*!***********************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-
-var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\store\\index.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\App.vue"));
-var _http = _interopRequireDefault(__webpack_require__(/*! ./api/http.js */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\api\\http.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
-var msg = function msg(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;var mask = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var icon = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'none';
-  //统一提示方便全局修改
-  if (Boolean(title) === false) {
-    return;
-  }
-  uni.showToast({
-    title: title,
-    duration: duration,
-    mask: mask,
-    icon: icon });
-
-};
-var prePage = function prePage() {
-  var pages = getCurrentPages();
-  var prePage = pages[pages.length - 2];
-
-
-
-  return prePage.$vm;
-};
-
-_vue.default.config.productionTip = false;
-
-_App.default.mpType = 'app';
-
-_vue.default.prototype.$store = _store.default;
-_vue.default.prototype.$api = { msg: msg, prePage: prePage };
-_vue.default.prototype.$http = _http.default;
-
-var app = new _vue.default(_objectSpread({},
-_App.default));
-
-createApp(app).$mount();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createApp"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js?{\"page\":\"pages%2Fcart%2Fcart\"}":
-/*!******************************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fcart%2Fcart"} ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _cart = _interopRequireDefault(__webpack_require__(/*! ./pages/cart/cart.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages\\cart\\cart.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _cart = _interopRequireDefault(__webpack_require__(/*! ./pages/cart/cart.vue */ 50));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_cart.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js?{\"page\":\"pages%2Fcategory%2Fcategory\"}":
-/*!**************************************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fcategory%2Fcategory"} ***!
-  \**************************************************************************************************************/
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
+/*!*******************************************************************************!*\
+  !*** E:/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fuser%2Fuser"} ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages\\category\\category.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_category.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js?{\"page\":\"pages%2Findex%2Findex\"}":
-/*!********************************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages\\index\\index.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_index.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
-/*!********************************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
-  \********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages\\login\\login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_login.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\main.js?{\"page\":\"pages%2Fuser%2Fuser\"}":
-/*!******************************************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/main.js?{"page":"pages%2Fuser%2Fuser"} ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _user = _interopRequireDefault(__webpack_require__(/*! ./pages/user/user.vue */ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages\\user\\user.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _user = _interopRequireDefault(__webpack_require__(/*! ./pages/user/user.vue */ 56));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_user.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\pages.json":
-/*!**************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/pages.json ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/***/ }),
-
-/***/ "C:\\Users\\120412\\Documents\\HBuilderProjects\\hello-uniapp\\store\\index.js":
-/*!******************************************************************************!*\
-  !*** C:/Users/120412/Documents/HBuilderProjects/hello-uniapp/store/index.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
-_vue.default.use(_vuex.default);
-
-var store = new _vuex.default.Store({
-  state: {
-    hasLogin: false,
-    userInfo: uni.getStorageSync('userInfo') || {},
-    token: uni.getStorageSync('token') || '' },
-
-  mutations: {
-    login: function login(state, provider) {
-      state.hasLogin = true;
-      state.userInfo = provider;
-      uni.setStorage({ //缓存用户登陆状态
-        key: 'userInfo',
-        data: provider });
-
-    },
-    setToken: function setToken(state, provider) {
-      state.token = provider;
-      uni.setStorage({ //缓存用户登陆状态
-        key: 'token',
-        data: provider });
-
-    },
-    loginOut: function loginOut(state) {
-      state.hasLogin = false;
-      state.userInfo = {};
-      state.token = '';
-      uni.removeStorage(_defineProperty({
-        key: 'userInfo' }, "key",
-      'token'));
-
-    } },
-
-  actions: {} });var _default =
-
-
-
-
-store;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ })
-
-}]);
+]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

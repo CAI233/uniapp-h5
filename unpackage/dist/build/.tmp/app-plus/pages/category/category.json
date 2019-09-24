@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "分类",
   "bounce": "none",
+  "animationType": "fade-in",
+  "animationDuration": 300,
   "usingComponents": {}
 }

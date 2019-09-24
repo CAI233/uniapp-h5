@@ -13,10 +13,10 @@
 			}
 		},
 		methods: {
-			...mapMutations(['login'])
+			...mapMutations(['login','setToken'])
 		},
 		computed:{
-			 ...mapState(['userInfo','token']),
+			 ...mapState(['token']),
 			
 		},
 		onLaunch: function() {
@@ -31,6 +31,12 @@
 					key: 'userInfo',
 					success: (res) => {
 						this.login(res.data);
+					}
+				});
+				uni.getStorage({
+					key: 'token',
+					success: (res) => {
+						this.setToken(res.data);
 					}
 				});
 			}else{
@@ -54,6 +60,8 @@
 	/*
 		全局公共样式和字体图标
 	*/
+   /*每个页面公共css */
+   @import "/static/iconfont/font.scss";
 	@font-face {
 		font-family: yticon;
 		font-weight: normal;

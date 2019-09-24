@@ -1,8 +1,20 @@
 {
   "navigationBarTitleText": "我的",
-  "bounce": "none",
   "titleNView": false,
+  "bounce": "none",
+  "animationType": "fade-in",
+  "animationDuration": 300,
+  "subNVues": [
+    {
+      "id": "drawer",
+      "path": "pages/user/subNvue/drawer",
+      "type": "popup",
+      "style": {
+        "width": "100%"
+      }
+    }
+  ],
   "usingComponents": {
-    "pull-pay": "/components/pull-pay2"
+    "pull-list": "/components/pull-list"
   }
 }

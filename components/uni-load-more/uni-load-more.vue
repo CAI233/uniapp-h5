@@ -58,7 +58,7 @@
 	}
 </script>
 
-<style>
+<style lang="less">
 	@charset "UTF-8";
 
 	.uni-load-more {

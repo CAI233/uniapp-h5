@@ -31,6 +31,16 @@
 			<text @click="toRegist">马上注册</text>
 		</view>
 		<pull-up step="1" v-if="SellerList.length > 0" :defaultVal="SellerNo" :current="true" @confirm="onConfirm" ref="picker" themeColor="#f00" :selectList="SellerList"></pull-up>
+		<!-- 第三方登录 -->
+		<view class="oauth" >
+			<view class="text">— 快速登录 —</view>
+			<view class="list">
+				<view @tap="oauthLogin('weixin')" v-if="showProvider.weixin" class="icon weixin"></view>
+				<view @tap="oauthLogin('qq')" v-if="showProvider.qq" class="icon qq"></view>
+				<view @tap="oauthLogin('sinaweibo')" v-if="showProvider.sinaweibo" class="icon sinaweibo"></view>
+				<!-- <view @tap="oauthLogin('xiaomi')" v-if="showProvider.xiaomi" class="icon xiaomi"></view> -->
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -43,6 +53,13 @@
 	export default{
 		data(){
 			return {
+				isShowOauth:false,
+				showProvider:{
+					weixin:false,
+					qq:false,
+					sinaweibo:false,
+					xiaomi:false
+				},
 				// userInfo:{},
 				SellerNo:'',
 				SellerName:'',
@@ -57,7 +74,10 @@
 		},
 		onLoad(){
 			this.loadExecution();	
-			
+			// #ifdef APP-PLUS
+				this.isShowOauth=true;
+			// #endif
+			this.getProvider();
 		},
 		computed:{
 			...mapState(['userInfo']),
@@ -75,7 +95,7 @@
 					
 				}
 				// _this.$emit("SellerList",SellerList);
-				_this.SellerList.push(...SellerList);
+				_this.SellerList= [...SellerList];
 			},
 			toggleTab(){//显示底部弹窗
 				this.$refs.picker.show();
@@ -157,7 +177,67 @@
 						url: '/pages/index/guide'
 					});
 				}
-			}
+			},
+			oauthLogin(provider){
+				uni.showLoading();
+				//第三方登录
+				console.log(provider);
+				uni.login({
+					provider: provider,
+					success: (loginRes)=>{
+						console.log("success: "+JSON.stringify(loginRes));
+						//案例直接获取用户信息，一般不是在APP端直接获取用户信息，比如微信，获取一个code，传递给后端，后端再去请求微信服务器获取用户信息
+						uni.getUserInfo({
+							provider: provider,
+							success: (infoRes)=>{
+								console.log('用户信息：' + JSON.stringify(infoRes.userInfo));
+								uni.hideLoading();
+								// uni.setStorage({
+								// 	key: 'UserInfo',
+								// 	data: {
+								// 		username:infoRes.userInfo.nickName,
+								// 		face:infoRes.userInfo.avatarUrl,
+								// 		signature:'个性签名',
+								// 		integral:0,
+								// 		balance:0,
+								// 		envelope:0
+								// 	},
+								// 	success: function () {
+								// 		uni.hideLoading()
+								// 		uni.showToast({title: '登录成功',icon:"success"});
+								// 		setTimeout(function(){
+								// 			uni.navigateBack();
+								// 		},300)
+								// 	}
+								// });
+							}
+						});
+					},
+					fail:(e)=>{
+						uni.hideLoading();
+						console.log("fail: "+JSON.stringify(e));
+					}
+				});
+			},
+			getProvider(){
+				//获取第三方登录服务
+				uni.getProvider({
+					service: 'oauth',
+					success: (res)=>{
+						console.log(res);
+						uni.hideLoading();
+						let len = res.provider.length;
+						for(let i=0;i<len;i++){
+							//有服务才显示按钮图标
+							console.log(res.provider[i]);
+							this.showProvider[res.provider[i]] = true;
+						}
+						if(res.provider.length==0){
+							this.isShowOauth=false;
+						}
+					}
+				});
+			},
 		},
 		
 
@@ -294,6 +374,38 @@
 		text{
 			color: $font-color-spec;
 			margin-left: 10upx;
+		}
+	}
+	.icon {
+		color:$uni-color-primary;
+	}
+	.oauth{
+		/* @media all and (max-height:150vw){
+			display: none;
+		} */
+		position: absolute;
+		bottom: 150upx;
+		width: 100%;
+		color:#000;
+		.text{
+			width: 100%;
+			height: 60upx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: rgba($color: #ffffff, $alpha: 0.8);
+			font-size: 28upx;
+		}
+		.list{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20upx 0;
+			.icon{
+				font-size:80upx;
+				margin: 0 30upx;
+			}
 		}
 	}
 </style>

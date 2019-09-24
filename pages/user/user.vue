@@ -10,70 +10,96 @@
 		<view class="wrapper">
 			<button class="confirm-btn" @tap="toggleTab()">选择弹窗</button>
 		</view>
-		<graphic-verify :width="300" :height="200"></graphic-verify>
-		<!-- <pull-radio  @ok="submit" @cancel="cancel" ref="pullRadio" themeColor="#f00" ></pull-radio> -->
-		<!-- <pull-check  @ok="submit" @cancel="cancel" ref="pullCheck" themeColor="#f00" ></pull-check> -->
-		<!-- <pull-date  @ok="submit" @cancel="cancel" ref="pullDate" themeColor="#f00" ></pull-date> -->
-		<!-- <pull-list v-if="SellerList.length > 0" :defaultVal="SellerNo" @ok="submit" @cancel="cancel" ref="pullList" themeColor="#f00" :selectList="SellerList"></pull-list> -->
-		<!-- <pull-area :defaultVal="'海南省,海口市,市辖区'" @ok="submit" @cancel="cancel" ref="pullArea" themeColor="#f00" ></pull-area> -->
-		<!-- <pull-pay @ok="submit" @cancel="cancel" ref="pullPay" themeColor="#f00" ></pull-pay> -->
-		<!-- <wm-poster Width="250" imgSrc="https://sclmweb.saselomo.com//QRcode/MakeQRcode3?rMid=yxT+EFEy9oYMkfGfGWop4IUhYmHJLwcrpF8moKbtWOTaPJTOXW1lfZwa/MOzvPq+3cBh4IclWTo=" QrSrc="https://sclmweb.saselomo.com//QRcode/MakeQRcode3?rMid=yxT+EFEy9oYMkfGfGWop4IUhYmHJLwcrpF8moKbtWOTaPJTOXW1lfZwa/MOzvPq+3cBh4IclWTo=" Title="标题文本" PriceTxt="价格显示" OriginalTxt="划线价显示"></wm-poster> -->
+		<!-- #ifdef APP-PLUS -->
+			<view class="example">
+				<view class="example-title">从左侧滑出</view>
+				<button @click="showDrawer">显示抽屉</button>
+			</view>
+		<!-- #endif -->
+		
+		<pull-list ref="pullList" :dataList="nowList" :lisIndex="0"></pull-list>
 	</view>
 </template>
 
 <script>
-	// import pullRadio from '@/components/pull-radio.vue';//单选
-	// import pullCheck from '@/components/pull-check.vue';//选择
-	// import pullDate from '@/components/pull-date.vue';//日期区间选择
-	// import pullList from '@/components/pull-list.vue';//单列选择
-	// import pullArea from '@/components/pull-area.vue';//地区三级联动
-	// import pullPay from '@/components/pull-pay.vue';//支付密码
-	// import wmPoster from '@/components/wm-poster.vue';//二维码canvas
-	import {pullLoading} from '@/components/pull-layer/pull-layer.js';
-	import graphicVerify from '@/components/graphic-verify.vue'
+	import pullList from '../../components/pull-list.vue'
 	export default{
 		data(){
 			return {
-				SellerNo:'800001',
-				isShow:false,
-				SellerList: [
-					{"SellerNo": "800001","SellerName": "1234656护肤",}, 
-					{"SellerNo": "800002","SellerName": "1234656彩妆",}, 
-					{"SellerNo": "800003","SellerName": "1234656养面膜",}, 
-					{"SellerNo": "800016","SellerName": "1234656健康",}, 
-					{"SellerNo": "800018","SellerName": "1234656全品牌",},
-					{"SellerNo": "8000012","SellerName": "1234656123护肤",}, 
-					{"SellerNo": "8000022","SellerName": "1234656123彩妆",}, 
-					{"SellerNo": "8000032","SellerName": "1234656123养面膜",}, 
-					{"SellerNo": "8000162","SellerName": "1234656123健康",}, 
-					{"SellerNo": "8000182","SellerName": "1234656123全品牌",},
+				nowList:[
+					{SellerName:'测试sa名称',SellerNo:'1002324'},
+					{SellerName:'测试sfsdf名称',SellerNo:'100232324'},
+					{SellerName:'测试名xcvxssd称',SellerNo:'100sdf2324'},
+					{SellerName:'测试xvxv名称',SellerNo:'100sfs2324'},
+					{SellerName:'测试名sdfsd称',SellerNo:'1002ada324'},
+					{SellerName:'测sfs试名称',SellerNo:'1002sdfs324'},
+					{SellerName:'测试sdfs名称',SellerNo:'100ada2324'},
+					{SellerName:'测试sf名称',SellerNo:'1002adas324'},
+					{SellerName:'测试sfsdf名称',SellerNo:'1002ada324'}
 					]
 			}
 		},
 		components:{
-			// pullRadio
-			// pullCheck
-			// pullDate,
-			// pullList
-			// pullArea
-			// pullPay
-			// wmPoster
-			graphicVerify
+			pullList
+		},
+		onReady: function (e) {
+
 		},
 		onLoad() {
 			// pullToast
+			// this.getToken();
+		    // initDraw();
+			// #ifdef APP-PLUS
+				// 监听 drawer 消息
+				uni.$on('drawer-page', (data) => {
+					uni.showToast({
+						title: '点击了第' + data + '项',
+						icon:"none"
+					});
+				})
+			// #endif
+			
+		},
+		onUnload() {
+			// #ifdef APP-PLUS
+				uni.$off('drawer-page');
+			// #endif
 		},
 		methods: {
+			// #ifdef APP-PLUS
+				showDrawer() {
+					uni.getSubNVueById('drawer').show('slide-in-left', 200);
+				},
+			// #endif
 			toggleTab(){//显示底部弹窗
-				// this.$refs.pullRadio.show();
-				// this.$refs.pullCheck.show();
-				// this.$refs.pullDate.show();
-				// this.$refs.pullList.show();
-				// this.$refs.pullArea.show();
-				// this.$refs.pullPay.show();
-				// pullModal({id:'1111'},this.submit);
-				pullLoading('加载中···');
-				// console.log(pullToast);
+				this.$refs.pullList.show();	
+				// this.$refs.anRef.show();
+				// pullLoading2('加载···',300);
+			},
+			getUrl(val){
+				this.srcImg = val
+			},
+			async getToken(){
+				// let aa = document.createElement("iframe");
+				// aa.src = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=48WK8Rz3GPAgeYiEdnLvd2q7&client_secret=VB4L7BKIM6gjhrLvRVfkHykN4vyq7VwF';
+				// document.body.appendChild(aa);
+				// uni.request({
+				// 	url: aa.src, //仅为示例，并非真实接口地址。
+				// 	data: {},
+				// 	header: {
+				// 		'content-type':'application/x-www-form-urlencoded',
+				// 		'custom-header': 'hello' ,//自定义请求头信息
+				// 		'Access-Control-Allow-Origin':'https://aip.baidubce.com/',
+				// 		'Access-Control-Allow-Methods':'*',
+				// 		'Access-Control-Allow-Headers':'x-requested-with,content-type'
+				// 	},
+				// 	success: (res) => {
+				// 		console.log(res);
+				// 		
+				// 	}
+				// });
+				// let option = await this.$http.outGet('https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=48WK8Rz3GPAgeYiEdnLvd2q7&client_secret=VB4L7BKIM6gjhrLvRVfkHykN4vyq7VwF');
+				// console.log(option)
 			},
 			onScroll(e){
 				console.log(e);
@@ -127,14 +153,22 @@
 				});
 			}
 		},
-		
-
 	}
 </script>
 
 <style lang='scss'>
 	page{
 		background: #fff;
+	}
+	.example {
+		padding: 0 10px 10px
+	}
+	.example-title {
+		font-size: 14px;
+		line-height: 14px;
+		color: #777;
+		margin: 40px 2upx;
+		position: relative
 	}
 	.container{
 		padding-top: 115px;

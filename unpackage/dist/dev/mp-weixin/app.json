@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
+    "pages/index/guide",
+    "pages/login/login",
     "pages/category/category",
     "pages/cart/cart",
     "pages/user/user"
@@ -45,5 +46,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

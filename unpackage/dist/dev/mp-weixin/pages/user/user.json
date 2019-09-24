@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "我的",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "titleNView": false,
+  "usingComponents": {
+    "pull-list": "/components/pull-list"
+  }
 }

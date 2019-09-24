@@ -4,15 +4,15 @@
 		<view class="pull-list-cnt" :class="{'show':isShow}">
 			<view class="pull-list-hd" @touchmove.stop.prevent catchtouchmove="true">
 			  <view class="pull-list-btn" @tap="hide">取消</view>
-			  <view>222{{lisY}}</view>
+			  <!-- <view>{{lisY}}</view> -->
 			  <view class="pull-list-btn" :style="{'color':themeColor}" @tap="submit">确定</view>
 			</view>
 			<view class="pull-list-view" @touchmove="lisMove" @touchstart="lisStart" @touchend="lisEnd">
 				<!-- :style="'transform:translateY('+lisY+'px);transform-origin: center;'" -->
 				<!-- :style="'margin-top:'+lisY+'px;'"  -->
 				
-				<view class="pull-list-cont" :style="'transform: translateY('+lisY+'px);-ms-transform: translateY('+lisY+'px);-moz-transform: translateY('+lisY+'px);-webkit-transform: translateY('+lisY+'px);-o-transform: translateY('+lisY+'px);'">
-					<view class="item" :class="item.SellerNo == dSellerNo ? 'active' : ''" v-for="(item,index) in selectList" :key="index">{{item.SellerName}}</view>
+				<view class="pull-list-cont" :style="[{transform: coverTransform,transition: coverTransition}]">
+					<view class="item" :class="(index == numIndex) ? 'active' : ''" v-for="(item,index) in dataList" :key="index">{{item.SellerName}}</view>
 				</view>
 			</view>
 		</view>
@@ -20,20 +20,19 @@
 </template>
 
 <script>
+	let startY = 0, moveY = 0, pageAtTop = true;
 	export default {
 		data() {
 			return {
 				isShow:false,
-				start:0,
-				startLate:0,
-				move:0,
-				lisY:0,
-				lisM:0,
-				isMove:false,
-				lisIndex:0,
-				dSellerNo:'',
-				step:1,//每次只能切换一个
-			};
+				baseSize:80,//每格高度
+				lisY:0,//Y轴偏移
+				moveDistance:0,//移动距离
+				numIndex:0,
+				coverTransform:'translateY(0px)',
+				coverTransition:'0s',
+				moving: false
+			}
 		},
 		computed:{
 			
@@ -45,49 +44,52 @@
 					return "#f00"
 				}
 			},
-			selectList:{
+			dataList:{
 				type:Array,
 				default(){
 					return [];
 				}
 			},
-			defaultVal:{
-				type:String,
+			lisIndex:{
+				type:Number,
 				default(){
-					return ""
+					return 0
 				}
-			},
+			}
+			
 		},
-
 		methods:{
 			lisStart(e){
-				// console.log(e.changedTouches[0].pageY);
-				this.start = e.changedTouches[0].pageY;
-				this.startLate = this.lisY;
-				this.isMove = true;
+				if(pageAtTop === false){
+					return;
+				}
+				this.coverTransition = 'transform .1s linear';
+				startY = e.touches[0].clientY;
 			},
 			lisMove(e){
-				this.move = e.changedTouches[0].pageY;
-				if(!this.isMove) return false;
-				// let lisM = this.move - this.start;
-				this.lisM = this.move - this.start;
-				let lisM = this.lisM;
-				if(lisM <0){
-					lisM = Math.abs(lisM) < 40 ? lisM : -40
-				}else{
-					lisM = Math.abs(lisM) < 40 ? lisM : 40
-				}
-				let len = this.selectList.length;
-				if(this.lisIndex == 0 && lisM >0) return false;
-				if(this.lisIndex == 1-len && lisM <0) return false;
-				this.lisY = Math.round(lisM/40)*40 + this.startLate ;
+				moveY = e.touches[0].clientY;
+				this.moveDistance = moveY - startY;
+				let lisY = parseInt(this.lisY)+parseInt(this.moveDistance);
+
+				this.numIndex = Math.abs(Math.round(lisY/this.baseSize*2)-2);
+				this.moving = true;
+				this.coverTransform = 'translateY('+lisY+'px)';
+				
 			},
 			lisEnd(e){
-				if(!this.isMove) return false;
-				if(this.lisY == this.startLate) return false;
-				this.lisIndex = this.lisY/40 - 2;
-				this.dSellerNo = this.selectList[Math.abs(this.lisIndex)].SellerNo;
-				this.dSellerName = this.selectList[Math.abs(this.lisIndex)].SellerName;
+				let lisY = parseInt(this.lisY) + parseInt(this.moveDistance);
+				// 
+				this.lisY = Math.round(lisY/this.baseSize*2)*this.baseSize/2;
+				if(this.lisY >= this.baseSize){
+					this.numIndex = 0;//到顶
+					this.lisY = this.baseSize;
+				}
+				if(this.lisY <= (-this.dataList.length+3)*this.baseSize/2){
+					this.numIndex = this.dataList.length -1;//到底
+					this.lisY = (-this.dataList.length+3)*this.baseSize/2;
+				}
+				this.coverTransition = 'transform 0.3s cubic-bezier(0.25,0.1,0.25,1)';
+				this.coverTransform = 'translateY('+this.lisY+'px)';
 			},
 			maskTap(){
 				this.isShow = false;
@@ -102,19 +104,21 @@
 			submit(){
 				this.$emit("ok",'111');
 				this.isShow = false;
-				console.log(this.dSellerNo);
-				console.log(this.dSellerName);
+				
 			},
 		},
 		mounted() {
-			this.dSellerNo = this.defaultVal;
-			this.selectList.map((item,index) => {
-				if(item.SellerNo == this.defaultVal){
-					this.dSellerName = item.SellerName;
-					this.lisIndex = index
-				}
-			});
-			this.lisY =  80 - this.lisIndex*40;
+			this.numIndex = this.lisIndex;
+			this.lisY = this.baseSize - this.lisIndex* this.baseSize/2;
+			this.coverTransform = 'translateY('+this.lisY+'px)';
+			// this.dSellerNo = this.defaultVal;
+			// this.dataList.map((item,index) => {
+			// 	if(item.SellerNo == this.defaultVal){
+			// 		this.dSellerName = item.SellerName;
+			// 		this.lisIndex = index
+			// 	}
+			// });
+			// this.lisY =  80 - this.lisIndex*40;
 		}
 	}
 </script>

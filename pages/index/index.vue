@@ -8,11 +8,7 @@
 
 		<swiper :current="tabCurrentIndex" class="swiper-box" duration="300" @change="changeTab">
 			<swiper-item class="tab-content" v-for="(tabItem,tabIndex) in navList" :key="tabIndex">
-				<scroll-view 
-					class="list-scroll-content" 
-					scroll-y
-					@scrolltolower="loadData"
-				>
+				<scroll-view class="list-scroll-content" scroll-y @scrolltolower="loadData">
 					<!-- 空白页 -->
 					<empty v-if="tabItem.loaded === true && tabItem.orderList.length === 0"></empty>
 					
@@ -21,26 +17,15 @@
 						<view class="i-top b-b">
 							<text class="time">{{item.time}}</text>
 							<text class="state" :style="{color: item.stateTipColor}">{{item.stateTip}}</text>
-							<text 
-								v-if="item.state===9" 
-								class="del-btn yticon icon-iconfontshanchu1"
-								@click="deleteOrder(index)"
-							></text>
+							<text v-if="item.state===9" class="del-btn yticon icon-iconfontshanchu1" @click="deleteOrder(index)"></text>
 						</view>
 						
 						<scroll-view v-if="item.goodsList.length > 1" class="goods-box" scroll-x>
-							<view
-								v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex"
-								class="goods-item"
-							>
+							<view v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex" class="goods-item">
 								<image class="goods-img" :src="goodsItem.image" mode="aspectFill"></image>
 							</view>
 						</scroll-view>
-						<view 
-							v-if="item.goodsList.length === 1" 
-							class="goods-box-single"
-							v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex"
-						>
+						<view v-if="item.goodsList.length === 1" class="goods-box-single" v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex">
 							<image class="goods-img" :src="goodsItem.image" mode="aspectFill"></image>
 							<view class="right">
 								<text class="title clamp">{{goodsItem.title}}</text>
@@ -62,7 +47,6 @@
 					</view>
 					 
 					<uni-load-more :status="tabItem.loadingType"></uni-load-more>
-					
 				</scroll-view>
 			</swiper-item>
 		</swiper>
@@ -153,11 +137,13 @@
 					//防止重复加载
 					return;
 				}
+				
 				if(navItem.orderList.length >= navItem.total){
 					return;
 				}
 				
 				navItem.loadingType = 'loading';
+				//https://easy-mock.com/ 模拟数据
 				let orderData = (await this.$http.outGet('https://easy-mock.com/mock/5cf0c1d2917df460b8cc8cd4/example/examlple')).data || [];
 				// console.log(orderData);
 				let orderList = orderData.filter(item=>{

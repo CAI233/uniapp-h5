@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+page {
+  background: #fff;
+}
+.example {
+  padding: 0 10px 10px;
+}
+.example-title {
+  font-size: 14px;
+  line-height: 14px;
+  color: #777;
+  margin: 40px 2rpx;
+  position: relative;
+}
+.container {
+  padding-top: 115px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
+  z-index: 90;
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+.back-btn {
+  position: absolute;
+  left: 40rpx;
+  z-index: 9999;
+  padding-top: 25px;
+  top: 40rpx;
+  font-size: 40rpx;
+  color: #303133;
+}
+.left-bottom-sign {
+  position: absolute;
+  left: -270rpx;
+  bottom: -320rpx;
+  border: 100rpx solid #d0d1fd;
+  border-radius: 50%;
+  padding: 180rpx;
+}
+.right-top-sign {
+  position: absolute;
+  top: 80rpx;
+  right: -30rpx;
+  z-index: 95;
+}
+.right-top-sign:before, .right-top-sign:after {
+    display: block;
+    content: "";
+    width: 400rpx;
+    height: 80rpx;
+    background: #b4f3e2;
+}
+.right-top-sign:before {
+    -webkit-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+            transform: rotate(50deg);
+    border-radius: 0 50px 0 0;
+}
+.right-top-sign:after {
+    position: absolute;
+    right: -198rpx;
+    top: 0;
+    -webkit-transform: rotate(-50deg);
+        -ms-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+    border-radius: 50px 0 0 0;
+    /* background: pink; */
+}
+.confirm-btn {
+  width: 630rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 50px;
+  margin-top: 70rpx;
+  background: #fa436a;
+  color: #fff;
+  font-size: 32rpx;
+}
+.confirm-btn:after {
+    border-radius: 100px;
+}
+

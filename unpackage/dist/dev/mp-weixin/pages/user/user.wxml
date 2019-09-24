@@ -1,1 +1,1 @@
-<view class="_div"></view>
+<view class="container"><view class="wrapper"><button data-event-opts="{{[['tap',[['outBtn',['$event']]]]]}}" class="confirm-btn" bindtap="__e">清除</button></view><view class="wrapper"><button data-event-opts="{{[['tap',[['toggleTab']]]]}}" class="confirm-btn" bindtap="__e">选择弹窗</button></view><pull-list class="vue-ref" vue-id="1" dataList="{{nowList}}" lisIndex="{{0}}" data-ref="pullList" bind:__l="__l"></pull-list></view>

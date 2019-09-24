@@ -5,7 +5,9 @@
 			"style": {
 				"navigationBarTitleText": "我的订单",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"animationType": "fade-in",
+					"animationDuration": 300
 				}
 			}
 		},
@@ -34,14 +36,18 @@
 		    "style" : {
 				"navigationBarTitleText": "分类",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"animationType": "fade-in",
+					"animationDuration": 300
 				}
 			}
 		},
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"navigationBarTitleText": "购物车",
+				"animationType": "fade-in",
+				"animationDuration": 300
 			}
 		},
 		{
@@ -51,9 +57,24 @@
 				// #ifdef MP
 				"navigationStyle": "custom",
 				// #endif
+				"titleNView": false , //禁用原生导航栏
 				"app-plus": {
 					"bounce": "none",
-					"titleNView":false
+					"titleNView":false,
+					"animationType": "fade-in",
+					"animationDuration": 300,
+					"subNVues": [{
+						"id": "drawer",
+						"path": "pages/user/subNvue/drawer",
+						"type": "popup",
+						"style": {
+							"width": "100%"
+							// "mask":"rgba(0,0,0,0.7)"
+							// "zindex":999
+						}
+
+						
+					}]
 					// "titleNView:": {
 						// "type": "transparent",
 						// "buttons": [{

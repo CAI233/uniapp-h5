@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "购物车",
+  "animationType": "fade-in",
+  "animationDuration": 300,
   "usingComponents": {}
 }

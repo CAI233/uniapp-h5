@@ -33,6 +33,10 @@ const store = new Vuex.Store({
                 key: 'userInfo' ,
 				key:'token'
             })
+			console.log('123')
+			uni.reLaunch({
+				url: '../pages/login/login'
+			});
 		}
 	},
 	actions: {
